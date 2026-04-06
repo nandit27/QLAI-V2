@@ -144,9 +144,9 @@ const EmailVerification = () => {
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             className="relative"
           >
-            <Loader className="w-20 h-20 text-[#00FF9D] mx-auto" />
+            <Loader className="w-20 h-20 text-[#95ff00] mx-auto" />
             <motion.div
-              className="absolute inset-0 w-20 h-20 border-4 border-[#00FF9D]/30 border-t-[#00FF9D] rounded-full"
+              className="absolute inset-0 w-20 h-20 border-4 border-[#95ff00]/30 border-t-[#95ff00] rounded-full"
               animate={{ rotate: -360 }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
             />
@@ -160,9 +160,9 @@ const EmailVerification = () => {
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
             className="relative"
           >
-            <CheckCircle className="w-20 h-20 text-[#00FF9D] mx-auto" />
+            <CheckCircle className="w-20 h-20 text-[#95ff00] mx-auto" />
             <motion.div
-              className="absolute inset-0 w-20 h-20 bg-[#00FF9D]/20 rounded-full"
+              className="absolute inset-0 w-20 h-20 bg-[#95ff00]/20 rounded-full"
               animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
@@ -199,9 +199,9 @@ const EmailVerification = () => {
   const getStatusColor = () => {
     switch (status) {
       case "verifying":
-        return "text-[#00FF9D]";
+        return "text-[#95ff00]";
       case "success":
-        return "text-[#00FF9D]";
+        return "text-[#95ff00]";
       case "error":
         return "text-red-400";
       default:
@@ -213,9 +213,9 @@ const EmailVerification = () => {
     <div className="min-h-screen bg-black text-white flex items-center justify-center p-4 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00FF9D]/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#95ff00]/5 rounded-full blur-3xl animate-pulse" />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#1BFFA8]/5 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#95ff00]/5 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         />
       </div>
@@ -242,7 +242,7 @@ const EmailVerification = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full max-w-md mx-auto relative z-10"
       >
-        <div className="bg-black/60 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-8 shadow-2xl shadow-[#00FF9D]/10">
+        <div className="bg-black/60 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-8 shadow-2xl shadow-[#95ff00]/10">
           {/* QuickLearnAI Branding */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -251,12 +251,12 @@ const EmailVerification = () => {
             className="text-center mb-8"
           >
             <div className="flex items-center justify-center mb-4">
-              <Mail className="w-8 h-8 text-[#00FF9D] mr-3" />
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-[#00FF9D] to-[#1BFFA8] bg-clip-text text-transparent">
+              <Mail className="w-8 h-8 text-[#95ff00] mr-3" />
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-[#95ff00] to-[#95ff00] bg-clip-text text-transparent">
                 QuickLearnAI
               </h1>
             </div>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-[#00FF9D] to-[#1BFFA8] rounded-full mx-auto" />
+            <div className="w-16 h-0.5 bg-gradient-to-r from-[#95ff00] to-[#95ff00] rounded-full mx-auto" />
           </motion.div>
 
           {/* Status Icon */}
@@ -333,7 +333,7 @@ const EmailVerification = () => {
               >
                 <a
                   href="/"
-                  className="group w-full bg-gradient-to-r from-[#00FF9D] to-[#1BFFA8] hover:from-[#00FF9D]/80 hover:to-[#1BFFA8]/80 text-black font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg shadow-[#00FF9D]/20"
+                  className="group w-full bg-gradient-to-r from-[#95ff00] to-[#95ff00] hover:from-[#95ff00]/80 hover:to-[#95ff00]/80 text-black font-semibold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg shadow-[#95ff00]/20"
                 >
                   <span>Continue to QuickLearnAI</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -361,7 +361,7 @@ const EmailVerification = () => {
                   href="/"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group w-full bg-black/50 border border-gray-800 hover:bg-black/70 hover:border-[#00FF9D]/30 text-gray-400 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2"
+                  className="group w-full bg-black/50 border border-gray-800 hover:bg-black/70 hover:border-[#95ff00]/30 text-gray-400 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2"
                 >
                   <Home className="w-4 h-4" />
                   <span>Go to Home</span>
@@ -370,7 +370,7 @@ const EmailVerification = () => {
             )}
 
             {status === "verifying" && (
-              <div className="w-full bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] font-semibold py-4 px-6 rounded-xl cursor-not-allowed opacity-60">
+              <div className="w-full bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] font-semibold py-4 px-6 rounded-xl cursor-not-allowed opacity-60">
                 <div className="flex items-center justify-center space-x-2">
                   <motion.div
                     animate={{ rotate: 360 }}
@@ -394,9 +394,9 @@ const EmailVerification = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}
-              className="mt-6 p-4 bg-[#00FF9D]/10 border border-[#00FF9D]/20 rounded-lg"
+              className="mt-6 p-4 bg-[#95ff00]/10 border border-[#95ff00]/20 rounded-lg"
             >
-              <p className="text-sm text-[#00FF9D] text-center flex items-center justify-center space-x-2">
+              <p className="text-sm text-[#95ff00] text-center flex items-center justify-center space-x-2">
                 <span>🚀</span>
                 <span>
                   You will be automatically redirected in 5 seconds...

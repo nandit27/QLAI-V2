@@ -46,7 +46,7 @@ const TextHoverEffect = ({ text = "QUICKLEARN" + "AI", className = "" }) => {
             cx={`${mousePosition.x}%`}
             cy={`${mousePosition.y}%`}
           >
-            <stop offset="0%" stopColor="#00FF9D" />
+            <stop offset="0%" stopColor="#95ff00" />
             <stop offset="100%" stopColor="transparent" />
           </radialGradient>
 
@@ -80,7 +80,7 @@ const TextHoverEffect = ({ text = "QUICKLEARN" + "AI", className = "" }) => {
           y="50%"
           textAnchor="middle"
           dominantBaseline="middle"
-          stroke="#00FF9D"
+          stroke="#95ff00"
           strokeWidth="2"
           fill="transparent"
           className="font-bold"

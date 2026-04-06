@@ -26,7 +26,7 @@ const QuestionCard = ({ question, index, isEditing, updateQuestion }) => {
   return (
     <div className="p-6 rounded-lg border border-white/10 bg-black/20 space-y-4">
       <div className="flex items-start gap-4">
-        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#00FF9D]/10 text-[#00FF9D] font-medium">
+        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#95ff00]/10 text-[#95ff00] font-medium">
           {index + 1}
         </span>
         <div className="flex-1 space-y-2">
@@ -82,12 +82,12 @@ const QuestionCard = ({ question, index, isEditing, updateQuestion }) => {
               key={idx}
               className={`flex items-center gap-3 p-3 rounded-lg border ${
                 isCorrect
-                  ? 'border-[#00FF9D]/30 bg-[#00FF9D]/5' 
+                  ? 'border-[#95ff00]/30 bg-[#95ff00]/5' 
                   : 'border-white/5 bg-black/20'
               }`}
             >
               {isCorrect && (
-                <Check className="w-5 h-5 text-[#00FF9D]" />
+                <Check className="w-5 h-5 text-[#95ff00]" />
               )}
               <span className="font-mono font-bold text-gray-400 shrink-0">
                 {displayLabel}.
@@ -111,7 +111,7 @@ const QuestionCard = ({ question, index, isEditing, updateQuestion }) => {
               ) : (
                 <span className={
                   isCorrect 
-                    ? 'text-[#00FF9D]' 
+                    ? 'text-[#95ff00]' 
                     : 'text-gray-300'
                 }>
                   {optionText}
@@ -329,7 +329,7 @@ const QuizPreviewNew = () => {
           <p className="text-red-400">No quiz data found. Please generate a quiz first.</p>
           <button 
             onClick={() => navigate('/create-quiz')}
-            className="text-[#00FF9D] hover:underline"
+            className="text-[#95ff00] hover:underline"
           >
             Return to Quiz Creator
           </button>
@@ -342,7 +342,7 @@ const QuizPreviewNew = () => {
     return (
       <div className="min-h-screen bg-black text-white pt-24 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00FF9D]"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#95ff00]"></div>
           <p className="text-gray-400">Loading quiz...</p>
         </div>
       </div>
@@ -393,7 +393,7 @@ const QuizPreviewNew = () => {
               )}
             </Button>
             <Button 
-              className="flex items-center gap-2 bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20"
+              className="flex items-center gap-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20"
               onClick={handleShareQuiz}
               disabled={isSaving}
             >
@@ -418,7 +418,7 @@ const QuizPreviewNew = () => {
         <Card className="bg-black/40 backdrop-blur-md border border-white/10">
           <CardHeader className="border-b border-white/10">
             <CardTitle className="text-2xl font-bold">
-              <span className="text-[#00FF9D]">{quizState.title}</span> Quiz
+              <span className="text-[#95ff00]">{quizState.title}</span> Quiz
             </CardTitle>
           </CardHeader>
           <CardContent className="p-6">

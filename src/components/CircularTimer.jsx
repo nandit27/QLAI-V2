@@ -39,7 +39,7 @@ const CircularTimer = ({ duration, onTimeUp }) => {
           cx="48"
           cy="48"
           r="45"
-          stroke="#00FF9D"
+          stroke="#95ff00"
           strokeWidth="6"
           fill="none"
           strokeDasharray={circumference}
@@ -47,7 +47,7 @@ const CircularTimer = ({ duration, onTimeUp }) => {
           className="transition-all duration-1000 ease-linear"
         />
       </svg>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-[#00FF9D]">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-[#95ff00]">
         {timeLeft}
       </div>
     </div>

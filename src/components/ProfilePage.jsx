@@ -32,6 +32,7 @@ import {
 } from "recharts";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { statisticsService, youtubeService } from "@/services/api";
+import { CountUp } from "@/components/ui/count-up";
 import {
   Trophy,
   Target,
@@ -213,7 +214,7 @@ const ProfilePage = () => {
 
           {/* Loading indicator */}
           <div className="flex items-center justify-center py-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00FF9D]"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95ff00]"></div>
             <span className="ml-3 text-gray-400">
               Loading your dashboard...
             </span>
@@ -272,7 +273,7 @@ const ProfilePage = () => {
     };
   });
 
-  const COLORS = ["#00FF9D", "#00E5FF", "#00BFFF", "#009BFF", "#0077FF"];
+  const COLORS = ["#95ff00", "#00E5FF", "#00BFFF", "#009BFF", "#0077FF"];
 
   // Get performance trends
   const recentScores = scoreHistory.slice(-2);
@@ -304,13 +305,13 @@ const ProfilePage = () => {
             <div className="hidden md:flex items-center space-x-6">
               <div className="text-center">
                 <p className="text-3xl font-bold text-emerald-400">
-                  {totalQuizzes}
+                  <CountUp key={totalQuizzes} to={totalQuizzes} duration={2} />
                 </p>
                 <p className="text-sm text-gray-400">Quizzes</p>
               </div>
               <div className="text-center">
                 <p className="text-3xl font-bold text-emerald-400">
-                  {averageScore}%
+                  <CountUp key={averageScore} to={averageScore} suffix="%" duration={2} />
                 </p>
                 <p className="text-sm text-gray-400">Avg. Score</p>
               </div>
@@ -328,7 +329,9 @@ const ProfilePage = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Best Score</p>
-                  <p className="text-2xl font-bold">{bestScore}%</p>
+                  <p className="text-2xl font-bold">
+                    <CountUp key={bestScore} to={bestScore} suffix="%" duration={2} />
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -344,7 +347,12 @@ const ProfilePage = () => {
                   <p className="text-sm text-gray-400">Recent Trend</p>
                   <div className="flex items-center">
                     <p className="text-2xl font-bold">
-                      {statistics.length > 1 ? Math.abs(scoreTrend) : 0}%
+                      <CountUp
+                        key={scoreTrend}
+                        to={statistics.length > 1 ? Math.abs(scoreTrend) : 0}
+                        suffix="%"
+                        duration={2}
+                      />
                     </p>
                     {statistics.length > 1 &&
                       scoreTrend !== 0 &&
@@ -368,10 +376,11 @@ const ProfilePage = () => {
                 <div>
                   <p className="text-sm text-gray-400">Topics Covered</p>
                   <p className="text-2xl font-bold">
-                    {
-                      Array.from(new Set(statistics.map((stat) => stat.topic)))
-                        .length
-                    }
+                    <CountUp
+                      key={Array.from(new Set(statistics.map((stat) => stat.topic))).length}
+                      to={Array.from(new Set(statistics.map((stat) => stat.topic))).length}
+                      duration={2}
+                    />
                   </p>
                 </div>
               </div>
@@ -386,7 +395,9 @@ const ProfilePage = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Study Sessions</p>
-                  <p className="text-2xl font-bold">{statistics.length}</p>
+                  <p className="text-2xl font-bold">
+                    <CountUp key={statistics.length} to={statistics.length} duration={2} />
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -398,19 +409,19 @@ const ProfilePage = () => {
           <TabsList className="w-full bg-black/40 border border-white/10 p-2 rounded-xl grid grid-cols-3 h-14">
             <TabsTrigger
               value="performance"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF9D]/20 data-[state=active]:to-[#00FF9D]/30 data-[state=active]:text-[#00FF9D] data-[state=active]:border data-[state=active]:border-[#00FF9D]/50 data-[state=active]:shadow-lg data-[state=active]:shadow-[#00FF9D]/25 rounded-lg transition-all duration-300 font-medium hover:bg-[#00FF9D]/10"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#95ff00]/20 data-[state=active]:to-[#95ff00]/30 data-[state=active]:text-[#95ff00] data-[state=active]:border data-[state=active]:border-[#95ff00]/50 data-[state=active]:shadow-lg data-[state=active]:shadow-[#95ff00]/25 rounded-lg transition-all duration-300 font-medium hover:bg-[#95ff00]/10"
             >
               Performance
             </TabsTrigger>
             <TabsTrigger
               value="topics"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF9D]/20 data-[state=active]:to-[#00FF9D]/30 data-[state=active]:text-[#00FF9D] data-[state=active]:border data-[state=active]:border-[#00FF9D]/50 data-[state=active]:shadow-lg data-[state=active]:shadow-[#00FF9D]/25 rounded-lg transition-all duration-300 font-medium hover:bg-[#00FF9D]/10"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#95ff00]/20 data-[state=active]:to-[#95ff00]/30 data-[state=active]:text-[#95ff00] data-[state=active]:border data-[state=active]:border-[#95ff00]/50 data-[state=active]:shadow-lg data-[state=active]:shadow-[#95ff00]/25 rounded-lg transition-all duration-300 font-medium hover:bg-[#95ff00]/10"
             >
               Topics
             </TabsTrigger>
             <TabsTrigger
               value="history"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF9D]/20 data-[state=active]:to-[#00FF9D]/30 data-[state=active]:text-[#00FF9D] data-[state=active]:border data-[state=active]:border-[#00FF9D]/50 data-[state=active]:shadow-lg data-[state=active]:shadow-[#00FF9D]/25 rounded-lg transition-all duration-300 font-medium hover:bg-[#00FF9D]/10"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#95ff00]/20 data-[state=active]:to-[#95ff00]/30 data-[state=active]:text-[#95ff00] data-[state=active]:border data-[state=active]:border-[#95ff00]/50 data-[state=active]:shadow-lg data-[state=active]:shadow-[#95ff00]/25 rounded-lg transition-all duration-300 font-medium hover:bg-[#95ff00]/10"
             >
               History
             </TabsTrigger>
@@ -466,10 +477,10 @@ const ProfilePage = () => {
                           <Line
                             type="monotone"
                             dataKey="score"
-                            stroke="#00FF9D"
+                            stroke="#95ff00"
                             strokeWidth={3}
-                            dot={{ fill: "#00FF9D", strokeWidth: 2, r: 4 }}
-                            activeDot={{ r: 6, fill: "#00FF9D" }}
+                            dot={{ fill: "#95ff00", strokeWidth: 2, r: 4 }}
+                            activeDot={{ r: 6, fill: "#95ff00" }}
                           />
                         </LineChart>
                       </ResponsiveContainer>
@@ -504,7 +515,7 @@ const ProfilePage = () => {
                               border: "1px solid #ffffff20",
                             }}
                           />
-                          <Bar dataKey="averageScore" fill="#00FF9D" />
+                          <Bar dataKey="averageScore" fill="#95ff00" />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
@@ -754,10 +765,10 @@ const ProfilePage = () => {
                                           e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
                                         }}
                                       />
-                                      <div className="absolute inset-0 bg-[#00FF9D]/10 group-hover:bg-transparent transition-colors duration-300" />
+                                      <div className="absolute inset-0 bg-[#95ff00]/10 group-hover:bg-transparent transition-colors duration-300" />
                                     </div>
                                     <div className="p-4">
-                                      <h4 className="text-lg font-medium text-gray-200 group-hover:text-[#00FF9D] transition-colors duration-300">
+                                      <h4 className="text-lg font-medium text-gray-200 group-hover:text-[#95ff00] transition-colors duration-300">
                                         {topicData.topic.replace(/[_-]/g, " ")}{" "}
                                         - Video {videoIndex + 1}
                                       </h4>

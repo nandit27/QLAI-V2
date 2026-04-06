@@ -49,8 +49,8 @@ const InteractiveQuickLearnText = () => {
   const getPathStyle = (letterGroup) => {
     const isHovered = hoveredPath === letterGroup
     return {
-      fill: isHovered ? '#00FF9D' : '#2D3A35',
-      stroke: isHovered ? '#00FF9D' : 'transparent',
+      fill: isHovered ? '#95ff00' : '#2D3A35',
+      stroke: isHovered ? '#95ff00' : 'transparent',
       strokeWidth: isHovered ? '1' : '0',
       filter: isHovered ? 'drop-shadow(0 0 20px rgba(0, 255, 157, 1)) drop-shadow(0 0 40px rgba(0, 255, 157, 0.6))' : 'none',
       transition: 'all 0.2s ease-out'

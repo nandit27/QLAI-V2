@@ -96,21 +96,21 @@ const MatchedTeachers = () => {
     <div className="min-h-screen bg-black text-white pt-24">
       <div className="container mx-auto px-4 py-8 max-w-3xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#00FF9D] to-[#00FF9D]/50 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#95ff00] to-[#95ff00]/50 bg-clip-text text-transparent">
             AI Detected Subject of Your Doubt
           </h2>
           <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="h-[1px] w-12 bg-[#00FF9D]/30"></div>
+            <div className="h-[1px] w-12 bg-[#95ff00]/30"></div>
             <p className="text-lg text-gray-400">
               {matchedData?.topics?.join(' > ')}
             </p>
-            <div className="h-[1px] w-12 bg-[#00FF9D]/30"></div>
+            <div className="h-[1px] w-12 bg-[#95ff00]/30"></div>
           </div>
         </div>
 
         {matchedData?.onlineteacher && matchedData.onlineteacher.length > 0 ? (
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-8 text-center text-[#00FF9D]">
+            <h3 className="text-2xl font-semibold mb-8 text-center text-[#95ff00]">
               Available Teachers For You!
             </h3>
             <div className="bg-black/40 backdrop-blur-md rounded-2xl border border-white/10 p-8">
@@ -118,10 +118,10 @@ const MatchedTeachers = () => {
                 {matchedData.onlineteacher.map((teacher) => (
                   <div 
                     key={teacher._id}
-                    className="flex items-center justify-between p-6 rounded-xl border border-white/10 bg-black/40 backdrop-blur-md hover:border-[#00FF9D]/30 transition-all duration-300"
+                    className="flex items-center justify-between p-6 rounded-xl border border-white/10 bg-black/40 backdrop-blur-md hover:border-[#95ff00]/30 transition-all duration-300"
                   >
                     <div className="flex items-center gap-6">
-                      <div className="w-14 h-14 rounded-full bg-[#00FF9D]/20 flex items-center justify-center text-lg font-medium text-[#00FF9D]">
+                      <div className="w-14 h-14 rounded-full bg-[#95ff00]/20 flex items-center justify-center text-lg font-medium text-[#95ff00]">
                         {teacher.username?.charAt(0).toUpperCase()}
                       </div>
                       <div>
@@ -129,7 +129,7 @@ const MatchedTeachers = () => {
                           {teacher.username}
                         </h4>
                         <div className="flex items-center gap-3 text-sm text-gray-400">
-                          <Star className="w-4 h-4 text-[#00FF9D]" />
+                          <Star className="w-4 h-4 text-[#95ff00]" />
                           <span>{teacher.rating}/5</span>
                           <span className="text-gray-600">•</span>
                           <span>{teacher.doubtsSolved} doubts solved</span>
@@ -139,7 +139,7 @@ const MatchedTeachers = () => {
                     
                     <button
                       onClick={() => navigate(`/doubt/${doubtId}/chat`)}
-                      className="flex items-center gap-2 px-6 py-3 bg-[#00FF9D]/10 text-[#00FF9D] rounded-lg border border-[#00FF9D]/30 hover:bg-[#00FF9D]/20 transition-all duration-300"
+                      className="flex items-center gap-2 px-6 py-3 bg-[#95ff00]/10 text-[#95ff00] rounded-lg border border-[#95ff00]/30 hover:bg-[#95ff00]/20 transition-all duration-300"
                     >
                       <Send className="w-4 h-4" />
                       <span>Chat</span>
@@ -157,7 +157,7 @@ const MatchedTeachers = () => {
             </p>
             {isLoading && (
               <div className="mt-6">
-                <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#00FF9D] border-t-transparent mx-auto"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#95ff00] border-t-transparent mx-auto"></div>
               </div>
             )}
           </div>

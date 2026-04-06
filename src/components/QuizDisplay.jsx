@@ -443,7 +443,7 @@ const QuizDisplay = ({ quizData, onFinish}) => {
  return (
  <div className="min-h-screen bg-black text-white flex items-center justify-center">
  <div className="w-full max-w-2xl bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-white">
- <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00FF9D] mx-auto"></div>
+ <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95ff00] mx-auto"></div>
  </div>
  </div>
  );

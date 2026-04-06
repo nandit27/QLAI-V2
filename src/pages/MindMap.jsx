@@ -256,7 +256,7 @@ const MindMapContent = () => {
         <div className="flex justify-between items-center mb-4">
           <motion.button
             onClick={() => navigate("/quiz")}
-            className="flex items-center gap-2 px-6 py-2 bg-[#00FF9D]/10 text-base font-medium rounded-full border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 transition-all duration-300 relative overflow-hidden group"
+            className="flex items-center gap-2 px-6 py-2 bg-[#95ff00]/10 text-base font-medium rounded-full border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 transition-all duration-300 relative overflow-hidden group"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 15px rgba(0, 255, 157, 0.3)",
@@ -265,7 +265,7 @@ const MindMapContent = () => {
             transition={{ duration: 0.2 }}
           >
             <motion.div
-              className="absolute inset-0 bg-[#00FF9D]/10"
+              className="absolute inset-0 bg-[#95ff00]/10"
               initial={{ scale: 0 }}
               whileHover={{ scale: 1 }}
               transition={{ duration: 0.3 }}
@@ -276,7 +276,7 @@ const MindMapContent = () => {
           <div className="flex gap-3">
             <motion.button
               onClick={toggleOrientation}
-              className="flex items-center gap-2 px-6 py-2 bg-[#00FF9D]/10 text-base font-medium rounded-full border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 transition-all duration-300 relative overflow-hidden group"
+              className="flex items-center gap-2 px-6 py-2 bg-[#95ff00]/10 text-base font-medium rounded-full border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 transition-all duration-300 relative overflow-hidden group"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 15px rgba(0, 255, 157, 0.3)",
@@ -285,7 +285,7 @@ const MindMapContent = () => {
               transition={{ duration: 0.2 }}
             >
               <motion.div
-                className="absolute inset-0 bg-[#00FF9D]/10"
+                className="absolute inset-0 bg-[#95ff00]/10"
                 initial={{ scale: 0 }}
                 whileHover={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
@@ -297,7 +297,7 @@ const MindMapContent = () => {
             </motion.button>
             <motion.button
               onClick={downloadImage}
-              className="flex items-center gap-2 px-6 py-2 bg-[#00FF9D]/10 text-base font-medium rounded-full border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 transition-all duration-300 relative overflow-hidden group"
+              className="flex items-center gap-2 px-6 py-2 bg-[#95ff00]/10 text-base font-medium rounded-full border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 transition-all duration-300 relative overflow-hidden group"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 15px rgba(0, 255, 157, 0.3)",
@@ -306,7 +306,7 @@ const MindMapContent = () => {
               transition={{ duration: 0.2 }}
             >
               <motion.div
-                className="absolute inset-0 bg-[#00FF9D]/10"
+                className="absolute inset-0 bg-[#95ff00]/10"
                 initial={{ scale: 0 }}
                 whileHover={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
@@ -318,7 +318,7 @@ const MindMapContent = () => {
             </motion.button>
             <motion.button
               onClick={() => fetchMindMap(isHorizontal ? "LR" : "TB")}
-              className="flex items-center gap-2 px-6 py-2 bg-[#00FF9D]/10 text-base font-medium rounded-full border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 transition-all duration-300 relative overflow-hidden group"
+              className="flex items-center gap-2 px-6 py-2 bg-[#95ff00]/10 text-base font-medium rounded-full border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 transition-all duration-300 relative overflow-hidden group"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 15px rgba(0, 255, 157, 0.3)",
@@ -327,7 +327,7 @@ const MindMapContent = () => {
               transition={{ duration: 0.2 }}
             >
               <motion.div
-                className="absolute inset-0 bg-[#00FF9D]/10"
+                className="absolute inset-0 bg-[#95ff00]/10"
                 initial={{ scale: 0 }}
                 whileHover={{ scale: 1 }}
                 transition={{ duration: 0.3 }}

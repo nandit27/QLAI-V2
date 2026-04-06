@@ -43,11 +43,11 @@ const formatBotResponse = (text) => {
           `}
         >
           {isBulletPoint && (
-            <span className="text-[#00FF9D] flex-shrink-0">→</span>
+            <span className="text-[#95ff00] flex-shrink-0">→</span>
           )}
           <span className={`
             ${isBulletPoint ? 'flex-1' : ''}
-            ${line.includes(':') ? 'text-[#00FF9D]' : ''}
+            ${line.includes(':') ? 'text-[#95ff00]' : ''}
           `}>
             {line.trim().replace(/^→\s*/, '')}
           </span>
@@ -67,11 +67,11 @@ const ChatMessage = ({ message }) => {
     >
       {/* Avatar/Icon */}
       <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center
-        ${isUser ? 'bg-[#00FF9D]/20' : 'bg-white/20'}
+        ${isUser ? 'bg-[#95ff00]/20' : 'bg-white/20'}
         transform transition-all duration-200 hover:scale-110`}
       >
         {isUser ? (
-          <User className="w-5 h-5 text-[#00FF9D]" />
+          <User className="w-5 h-5 text-[#95ff00]" />
         ) : (
           <Bot className="w-5 h-5 text-white animate-pulse" />
         )}
@@ -80,7 +80,7 @@ const ChatMessage = ({ message }) => {
       {/* Message Content */}
       <div className={`flex-1 p-4 rounded-2xl ${
         isUser 
-          ? 'bg-[#00FF9D]/10 border border-[#00FF9D]/30' 
+          ? 'bg-[#95ff00]/10 border border-[#95ff00]/30' 
           : 'bg-white/10 border border-white/10'
       } transition-all duration-200 hover:border-opacity-50`}>
         {isUser ? (
@@ -173,7 +173,7 @@ const YouTubeChat = () => {
             Back to Quiz
           </Button>
           <h1 className="text-3xl font-bold">
-            Chat with <span className="text-[#00FF9D]">{videoTitle}</span>
+            Chat with <span className="text-[#95ff00]">{videoTitle}</span>
           </h1>
         </div>
 
@@ -207,7 +207,7 @@ const YouTubeChat = () => {
         <div className="space-y-6 mt-8 mb-8">
           {chat.length === 0 && (
             <div className="text-center text-gray-500 py-8">
-              <Bot className="w-12 h-12 mx-auto mb-4 text-[#00FF9D]/50" />
+              <Bot className="w-12 h-12 mx-auto mb-4 text-[#95ff00]/50" />
               <p>Ask a question to start chatting about the video content</p>
             </div>
           )}
@@ -217,7 +217,7 @@ const YouTubeChat = () => {
           ))}
           
           {isLoading && (
-            <div className="flex items-center justify-center gap-2 text-[#00FF9D]">
+            <div className="flex items-center justify-center gap-2 text-[#95ff00]">
               <Loader2 className="w-5 h-5 animate-spin" />
               <span>AI is thinking...</span>
             </div>
@@ -233,14 +233,14 @@ const YouTubeChat = () => {
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="Ask a question about the video..."
               className="flex-1 bg-black/40 border border-white/10 rounded-xl px-4 py-3 
-                focus:outline-none focus:border-[#00FF9D]/50 transition-colors
+                focus:outline-none focus:border-[#95ff00]/50 transition-colors
                 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={isLoading}
             />
             <Button
               type="submit"
               disabled={!question.trim() || isLoading}
-              className="px-8 bg-[#00FF9D]/20 text-[#00FF9D] hover:bg-[#00FF9D]/30 
+              className="px-8 bg-[#95ff00]/20 text-[#95ff00] hover:bg-[#95ff00]/30 
                 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (

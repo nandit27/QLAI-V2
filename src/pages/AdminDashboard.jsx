@@ -20,6 +20,7 @@ import {
   Eye,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CountUp } from "@/components/ui/count-up";
 import { adminService } from "../services/api";
 import { maintenanceService } from "../services/maintenanceService";
 import { useNavigate } from "react-router-dom";
@@ -28,15 +29,21 @@ import TeacherEditModal from "../components/TeacherEditModal";
 import TeacherAddModal from "../components/TeacherAddModal";
 
 const StatCard = ({ title, value, icon: Icon }) => (
-  <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#00FF9D]/30 transition-all duration-300">
+  <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#95ff00]/30 transition-all duration-300">
     <CardContent className="p-6">
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm text-gray-400">{title}</p>
-          <h3 className="text-2xl font-bold text-white mt-2">{value}</h3>
+          <h3 className="text-2xl font-bold text-white mt-2">
+            {typeof value === "number" ? (
+              <CountUp key={value} to={value} duration={2} />
+            ) : (
+              value
+            )}
+          </h3>
         </div>
-        <div className="h-12 w-12 rounded-lg bg-[#00FF9D]/10 flex items-center justify-center">
-          <Icon className="h-6 w-6 text-[#00FF9D]" />
+        <div className="h-12 w-12 rounded-lg bg-[#95ff00]/10 flex items-center justify-center">
+          <Icon className="h-6 w-6 text-[#95ff00]" />
         </div>
       </div>
     </CardContent>
@@ -260,7 +267,7 @@ const AdminDashboard = () => {
           className="bg-gray-900 p-6 rounded-lg max-w-md w-full mx-4"
           onClick={(e) => e.stopPropagation()}
         >
-          <h3 className="text-xl font-semibold text-[#00FF9D] mb-4">
+          <h3 className="text-xl font-semibold text-[#95ff00] mb-4">
             Approve Teacher
           </h3>
           <textarea
@@ -268,7 +275,7 @@ const AdminDashboard = () => {
             value={approvalReason}
             onChange={(e) => setApprovalReason(e.target.value)}
             placeholder="Enter approval reason..."
-            className="w-full p-3 bg-black/50 border border-gray-700 rounded-lg text-white mb-4 focus:outline-none focus:border-[#00FF9D]"
+            className="w-full p-3 bg-black/50 border border-gray-700 rounded-lg text-white mb-4 focus:outline-none focus:border-[#95ff00]"
             rows="3"
             onClick={(e) => e.stopPropagation()}
             onFocus={(e) =>
@@ -298,7 +305,7 @@ const AdminDashboard = () => {
                   approvalReason,
                 )
               }
-              className="px-4 py-2 bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] rounded-lg hover:bg-[#00FF9D]/20"
+              className="px-4 py-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] rounded-lg hover:bg-[#95ff00]/20"
               disabled={isProcessing || !approvalReason.trim()}
             >
               {isProcessing ? "Processing..." : "Approve"}
@@ -312,7 +319,7 @@ const AdminDashboard = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-black text-white pt-24 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00FF9D]"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95ff00]"></div>
       </div>
     );
   }
@@ -326,7 +333,7 @@ const AdminDashboard = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8 text-center"
         >
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#00FF9D] via-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#95ff00] via-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
             Admin Control Center
           </h1>
           <p className="text-gray-400 text-lg">
@@ -377,42 +384,42 @@ const AdminDashboard = () => {
             <TabsList className="bg-black/40 border border-white/10 p-1 rounded-xl">
               <TabsTrigger
                 value="overview"
-                className="data-[state=active]:bg-[#00FF9D]/20 data-[state=active]:text-[#00FF9D]"
+                className="data-[state=active]:bg-[#95ff00]/20 data-[state=active]:text-[#95ff00]"
               >
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Overview
               </TabsTrigger>
               <TabsTrigger
                 value="students"
-                className="data-[state=active]:bg-[#00FF9D]/20 data-[state=active]:text-[#00FF9D]"
+                className="data-[state=active]:bg-[#95ff00]/20 data-[state=active]:text-[#95ff00]"
               >
                 <UserPlus className="w-4 h-4 mr-2" />
                 New Students
               </TabsTrigger>
               <TabsTrigger
                 value="teachers"
-                className="data-[state=active]:bg-[#00FF9D]/20 data-[state=active]:text-[#00FF9D]"
+                className="data-[state=active]:bg-[#95ff00]/20 data-[state=active]:text-[#95ff00]"
               >
                 <UserCheck className="w-4 h-4 mr-2" />
                 Teacher Requests
               </TabsTrigger>
               <TabsTrigger
                 value="allteachers"
-                className="data-[state=active]:bg-[#00FF9D]/20 data-[state=active]:text-[#00FF9D]"
+                className="data-[state=active]:bg-[#95ff00]/20 data-[state=active]:text-[#95ff00]"
               >
                 <UserCheck className="w-4 h-4 mr-2" />
                 All Teachers
               </TabsTrigger>
               <TabsTrigger
                 value="orders"
-                className="data-[state=active]:bg-[#00FF9D]/20 data-[state=active]:text-[#00FF9D]"
+                className="data-[state=active]:bg-[#95ff00]/20 data-[state=active]:text-[#95ff00]"
               >
                 <DollarSign className="w-4 h-4 mr-2" />
                 Orders
               </TabsTrigger>
               <TabsTrigger
                 value="maintenance"
-                className="data-[state=active]:bg-[#00FF9D]/20 data-[state=active]:text-[#00FF9D]"
+                className="data-[state=active]:bg-[#95ff00]/20 data-[state=active]:text-[#95ff00]"
               >
                 <Calendar className="w-4 h-4 mr-2" />
                 Maintenance
@@ -428,9 +435,9 @@ const AdminDashboard = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-6"
               >
                 {/* Recent Activity */}
-                <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#00FF9D]/30 transition-all duration-300">
+                <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#95ff00]/30 transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="text-xl text-[#00FF9D] flex items-center">
+                    <CardTitle className="text-xl text-[#95ff00] flex items-center">
                       <Calendar className="w-5 h-5 mr-2" />
                       Recent Activity
                     </CardTitle>
@@ -451,7 +458,7 @@ const AdminDashboard = () => {
                               ).toLocaleDateString()}
                             </p>
                           </div>
-                          <div className="text-sm text-[#00FF9D]">New User</div>
+                          <div className="text-sm text-[#95ff00]">New User</div>
                         </div>
                       ))}
                     </div>
@@ -459,9 +466,9 @@ const AdminDashboard = () => {
                 </Card>
 
                 {/* Quick Stats */}
-                <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#00FF9D]/30 transition-all duration-300">
+                <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#95ff00]/30 transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="text-xl text-[#00FF9D] flex items-center">
+                    <CardTitle className="text-xl text-[#95ff00] flex items-center">
                       <TrendingUp className="w-5 h-5 mr-2" />
                       Performance Metrics
                     </CardTitle>
@@ -471,23 +478,25 @@ const AdminDashboard = () => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-400">Completed Orders</span>
                         <span className="text-green-400 font-semibold">
-                          {orders.length > 0
-                            ? orders.filter(
-                                (order) => order.status === "completed",
-                              ).length
-                            : 0}
+                          <CountUp
+                            key={orders.length}
+                            to={orders.length > 0
+                              ? orders.filter((order) => order.status === "completed").length
+                              : 0}
+                            duration={2}
+                          />
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-400">Pending Approvals</span>
                         <span className="text-yellow-400 font-semibold">
-                          {pendingTeachers.length}
+                          <CountUp key={pendingTeachers.length} to={pendingTeachers.length} duration={2} />
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-400">Active Students</span>
                         <span className="text-blue-400 font-semibold">
-                          {newStudents.length}
+                          <CountUp key={newStudents.length} to={newStudents.length} duration={2} />
                         </span>
                       </div>
                     </div>
@@ -506,7 +515,7 @@ const AdminDashboard = () => {
               >
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-xl text-[#00FF9D] flex items-center">
+                    <CardTitle className="text-xl text-[#95ff00] flex items-center">
                       <UserPlus className="w-5 h-5 mr-2" />
                       New Student Registrations
                     </CardTitle>
@@ -516,19 +525,19 @@ const AdminDashboard = () => {
                       <Table>
                         <TableHeader>
                           <TableRow className="border-white/10">
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Student Name
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Email
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Registration Date
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Login Count
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Actions
                             </TableHead>
                           </TableRow>
@@ -558,7 +567,7 @@ const AdminDashboard = () => {
                               <TableCell>
                                 <Button
                                   size="sm"
-                                  className="bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20"
+                                  className="bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20"
                                 >
                                   <Eye className="w-4 h-4" />
                                 </Button>
@@ -588,7 +597,7 @@ const AdminDashboard = () => {
               >
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-xl text-[#00FF9D] flex items-center">
+                    <CardTitle className="text-xl text-[#95ff00] flex items-center">
                       <UserCheck className="w-5 h-5 mr-2" />
                       Teacher Approval Requests
                     </CardTitle>
@@ -598,22 +607,22 @@ const AdminDashboard = () => {
                       <Table>
                         <TableHeader>
                           <TableRow className="border-white/10">
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Name
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Email
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Qualification
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Experience
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Subjects
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Actions
                             </TableHead>
                           </TableRow>
@@ -672,7 +681,7 @@ const AdminDashboard = () => {
                                         "approve",
                                       )
                                     }
-                                    className="bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20"
+                                    className="bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20"
                                   >
                                     Approve
                                   </Button>
@@ -716,13 +725,13 @@ const AdminDashboard = () => {
               >
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader className="flex flex-row items-center justify-between">
-                    <CardTitle className="text-xl text-[#00FF9D] flex items-center">
+                    <CardTitle className="text-xl text-[#95ff00] flex items-center">
                       <UserCheck className="w-5 h-5 mr-2" />
                       All Teachers
                     </CardTitle>
                     <Button
                       onClick={() => setShowAddModal(true)}
-                      className="bg-gradient-to-r from-[#00FF9D] to-cyan-400 text-black font-semibold hover:opacity-90 transition-opacity"
+                      className="bg-gradient-to-r from-[#95ff00] to-cyan-400 text-black font-semibold hover:opacity-90 transition-opacity"
                     >
                       <UserPlus className="w-4 h-4 mr-2" />
                       Add New Teacher
@@ -733,15 +742,15 @@ const AdminDashboard = () => {
                       <Table>
                         <TableHeader>
                           <TableRow className="border-white/10">
-                            <TableHead className="text-[#00FF9D]">Name</TableHead>
-                            <TableHead className="text-[#00FF9D]">Email</TableHead>
-                            <TableHead className="text-[#00FF9D]">Phone</TableHead>
-                            <TableHead className="text-[#00FF9D]">Qualification</TableHead>
-                            <TableHead className="text-[#00FF9D]">Experience</TableHead>
-                            <TableHead className="text-[#00FF9D]">Subject Field</TableHead>
-                            <TableHead className="text-[#00FF9D]">Rating</TableHead>
-                            <TableHead className="text-[#00FF9D]">Status</TableHead>
-                            <TableHead className="text-[#00FF9D]">Actions</TableHead>
+                            <TableHead className="text-[#95ff00]">Name</TableHead>
+                            <TableHead className="text-[#95ff00]">Email</TableHead>
+                            <TableHead className="text-[#95ff00]">Phone</TableHead>
+                            <TableHead className="text-[#95ff00]">Qualification</TableHead>
+                            <TableHead className="text-[#95ff00]">Experience</TableHead>
+                            <TableHead className="text-[#95ff00]">Subject Field</TableHead>
+                            <TableHead className="text-[#95ff00]">Rating</TableHead>
+                            <TableHead className="text-[#95ff00]">Status</TableHead>
+                            <TableHead className="text-[#95ff00]">Actions</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -807,7 +816,7 @@ const AdminDashboard = () => {
                                   <Button
                                     size="sm"
                                     onClick={() => handleEditTeacher(teacher)}
-                                    className="bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20"
+                                    className="bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20"
                                   >
                                     Edit
                                   </Button>
@@ -842,7 +851,7 @@ const AdminDashboard = () => {
               >
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-xl text-[#00FF9D] flex items-center">
+                    <CardTitle className="text-xl text-[#95ff00] flex items-center">
                       <DollarSign className="w-5 h-5 mr-2" />
                       Order Management
                     </CardTitle>
@@ -852,19 +861,19 @@ const AdminDashboard = () => {
                       <Table>
                         <TableHeader>
                           <TableRow className="border-white/10">
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Order ID
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               User
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Amount
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Status
                             </TableHead>
-                            <TableHead className="text-[#00FF9D]">
+                            <TableHead className="text-[#95ff00]">
                               Date
                             </TableHead>
                           </TableRow>
@@ -937,7 +946,7 @@ const AdminDashboard = () => {
               >
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-[#00FF9D] flex items-center gap-2">
+                    <CardTitle className="text-[#95ff00] flex items-center gap-2">
                       <Calendar className="w-5 h-5" />
                       Server Maintenance Control
                     </CardTitle>
@@ -976,7 +985,7 @@ const AdminDashboard = () => {
                         value={maintenanceMessage}
                         onChange={(e) => setMaintenanceMessage(e.target.value)}
                         placeholder="Enter the message to show users during maintenance..."
-                        className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] resize-none"
+                        className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] resize-none"
                         rows="3"
                       />
                       <p className="text-gray-500 text-xs">

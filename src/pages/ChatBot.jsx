@@ -105,9 +105,9 @@ const ChatBot = () => {
           className="fixed inset-0 opacity-10 pointer-events-none"
           animate={{
             background: [
-              "radial-gradient(ellipse at 20% 30%, #00FF9D 0%, transparent 50%)",
-              "radial-gradient(ellipse at 80% 70%, #00FF9D 0%, transparent 50%)",
-              "radial-gradient(ellipse at 20% 30%, #00FF9D 0%, transparent 50%)",
+              "radial-gradient(ellipse at 20% 30%, #95ff00 0%, transparent 50%)",
+              "radial-gradient(ellipse at 80% 70%, #95ff00 0%, transparent 50%)",
+              "radial-gradient(ellipse at 20% 30%, #95ff00 0%, transparent 50%)",
             ],
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
@@ -120,10 +120,10 @@ const ChatBot = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#95ff00]/20 dark:bg-[#00FF9D]/20 rounded-full mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#95ff00]/20 dark:bg-[#95ff00]/20 rounded-full mb-8"
           >
-            <span className="material-symbols-outlined text-[#3b6a00] dark:text-[#00FF9D] text-sm font-variation-settings-fill-1">auto_awesome</span>
-            <span className="text-[#3b6a00] dark:text-[#00FF9D] font-bold text-xs tracking-wider uppercase">AI-Powered Analysis</span>
+            <span className="material-symbols-outlined text-[#3b6a00] dark:text-[#95ff00] text-sm font-variation-settings-fill-1">auto_awesome</span>
+            <span className="text-[#3b6a00] dark:text-[#95ff00] font-bold text-xs tracking-wider uppercase">AI-Powered Analysis</span>
           </motion.div>
           
           <motion.h1 
@@ -132,7 +132,7 @@ const ChatBot = () => {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tighter text-[#1a1c1f] dark:text-white max-w-4xl mb-6"
           >
-            Turn Your Documents into <span className="text-[#3b6a00] dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-[#00FF9D] dark:to-[#1BFFA8]">Interactive Conversations</span>
+            Turn Your Documents into <span className="text-[#3b6a00] dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-[#95ff00] dark:to-[#95ff00]">Interactive Conversations</span>
           </motion.h1>
           
           <motion.p 
@@ -162,15 +162,15 @@ const ChatBot = () => {
                     onDragOver={(e) => e.preventDefault()}
                     onDrop={handleFileDrop}
                     onClick={() => document.getElementById('file-upload').click()}
-                    className="bg-[#ffffff] dark:bg-black/40 dark:backdrop-blur-md rounded-xl p-12 border-2 border-dashed border-[#bfcbae] dark:border-white/20 hover:border-[#3b6a00] dark:hover:border-[#00FF9D]/50 transition-all duration-300 flex flex-col items-center justify-center shadow-xl dark:shadow-none overflow-hidden cursor-pointer relative"
+                    className="bg-[#ffffff] dark:bg-black/40 dark:backdrop-blur-md rounded-xl p-12 border-2 border-dashed border-[#bfcbae] dark:border-white/20 hover:border-[#3b6a00] dark:hover:border-[#95ff00]/50 transition-all duration-300 flex flex-col items-center justify-center shadow-xl dark:shadow-none overflow-hidden cursor-pointer relative"
                   >
                     {/* Background Glow Decoration */}
-                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#3b6a00]/10 dark:bg-[#00FF9D]/10 blur-3xl rounded-full opacity-50"></div>
+                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#3b6a00]/10 dark:bg-[#95ff00]/10 blur-3xl rounded-full opacity-50"></div>
                     <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#605b75]/10 dark:bg-primary/10 blur-3xl rounded-full opacity-50"></div>
                     
                     <div className="relative z-10 flex flex-col items-center">
-                      <div className="w-20 h-20 bg-[#95ff00] dark:bg-[#00FF9D]/20 flex items-center justify-center rounded-2xl mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                        <Upload className="w-8 h-8 text-[#0e2000] dark:text-[#00FF9D]" />
+                      <div className="w-20 h-20 bg-[#95ff00] dark:bg-[#95ff00]/20 flex items-center justify-center rounded-2xl mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                        <Upload className="w-8 h-8 text-[#0e2000] dark:text-[#95ff00]" />
                       </div>
                       <h3 className="text-2xl font-bold mb-2">Drop your files here</h3>
                       <p className="text-[#605b75] dark:text-gray-400 mb-8">Supports PDF, PPTX, and DOCX up to 50MB</p>
@@ -183,7 +183,7 @@ const ChatBot = () => {
                         id="file-upload"
                       />
                       
-                      <button className="bg-[#95ff00] dark:bg-[#00FF9D] text-[#0e2000] dark:text-black px-10 py-4 rounded-full font-bold text-lg hover:shadow-lg active:scale-95 transition-all duration-300 flex items-center gap-3">
+                      <button className="bg-[#95ff00] dark:bg-[#95ff00] text-[#0e2000] dark:text-black px-10 py-4 rounded-full font-bold text-lg hover:shadow-lg active:scale-95 transition-all duration-300 flex items-center gap-3">
                         <span className="material-symbols-outlined">add</span>
                         Select Files
                       </button>
@@ -198,7 +198,7 @@ const ChatBot = () => {
                     className="bg-[#ffffff] dark:bg-[#111111] border border-[#bfcbae] dark:border-white/10 rounded-xl p-8 flex flex-col items-center justify-center shadow-xl dark:shadow-none"
                   >
                     <div className="flex items-center gap-4 mb-8 bg-[#f3f3f7] dark:bg-white/5 px-6 py-4 rounded-full">
-                      <FileText className="w-8 h-8 text-[#3b6a00] dark:text-[#00FF9D]" />
+                      <FileText className="w-8 h-8 text-[#3b6a00] dark:text-[#95ff00]" />
                       <span className="font-bold text-lg dark:text-white">{file.name}</span>
                     </div>
 
@@ -206,7 +206,7 @@ const ChatBot = () => {
                       <div className="flex gap-4">
                         <Button
                           onClick={() => handleFileUpload(file)}
-                          className="bg-[#95ff00] hover:bg-[#81de00] dark:bg-[#00FF9D] dark:hover:bg-[#00CC7D] text-[#0e2000] dark:text-black font-bold px-8 py-6 rounded-full text-lg"
+                          className="bg-[#95ff00] hover:bg-[#81de00] dark:bg-[#95ff00] dark:hover:bg-[#00CC7D] text-[#0e2000] dark:text-black font-bold px-8 py-6 rounded-full text-lg"
                         >
                           Start Analysis
                         </Button>
@@ -220,8 +220,8 @@ const ChatBot = () => {
                       </div>
                     ) : (
                       <div className="flex flex-col items-center gap-4">
-                        <Loader2 className="w-10 h-10 animate-spin text-[#3b6a00] dark:text-[#00FF9D]" />
-                        <p className="font-bold text-lg text-[#3b6a00] dark:text-[#00FF9D]">Uploading and analyzing document...</p>
+                        <Loader2 className="w-10 h-10 animate-spin text-[#3b6a00] dark:text-[#95ff00]" />
+                        <p className="font-bold text-lg text-[#3b6a00] dark:text-[#95ff00]">Uploading and analyzing document...</p>
                         <p className="text-[#605b75] dark:text-gray-400">Please wait while we extract the knowledge.</p>
                       </div>
                     )}

@@ -1,72 +1,48 @@
-import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion"
-import { useRef, useEffect } from "react"
+import { motion } from "framer-motion"
+import { useRef, useEffect, useState } from "react"
 
-function AnimatedCounter({ value, duration = 2 }) {
+function useCountUp(to, { from = 0, duration = 2, separator = "", decimals = 0, prefix = "", suffix = "" } = {}) {
   const ref = useRef(null)
-  const motionValue = useMotionValue(0)
-  const springValue = useSpring(motionValue, { duration: duration * 1000 })
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [inView, setInView] = useState(false)
+  const animationRef = useRef(null)
+  const startTimeRef = useRef(null)
 
   useEffect(() => {
-    if (isInView) {
-      motionValue.set(value)
-    }
-  }, [motionValue, isInView, value])
-
-  const displayValue = useTransform(springValue, (latest) => Math.round(latest))
-
-  return <motion.span ref={ref}>{displayValue}</motion.span>
-}
-
-function PercentageCounter({ value, duration = 2 }) {
-  const ref = useRef(null)
-  const motionValue = useMotionValue(0)
-  const springValue = useSpring(motionValue, { duration: duration * 1000 })
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect() } },
+      { threshold: 0.1 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
-    if (isInView) {
-      motionValue.set(value)
+    if (!inView) return
+    const el = ref.current
+    if (!el) return
+    startTimeRef.current = null
+    const fmt = (val) => {
+      const fixed = val.toFixed(decimals)
+      if (!separator) return fixed
+      const [int, dec] = fixed.split(".")
+      const formatted = int.replace(/\B(?=(\d{3})+(?!\d))/g, separator)
+      return dec !== undefined ? `${formatted}.${dec}` : formatted
     }
-  }, [motionValue, isInView, value])
-
-  const displayValue = useTransform(springValue, (latest) => `${Math.round(latest)}%`)
-
-  return <motion.span ref={ref}>{displayValue}</motion.span>
-}
-
-function TimeCounter({ value, duration = 2 }) {
-  const ref = useRef(null)
-  const motionValue = useMotionValue(0)
-  const springValue = useSpring(motionValue, { duration: duration * 1000 })
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value)
+    const animate = (ts) => {
+      if (!startTimeRef.current) startTimeRef.current = ts
+      const progress = Math.min((ts - startTimeRef.current) / 1000 / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      el.textContent = `${prefix}${fmt(from + (to - from) * eased)}${suffix}`
+      if (progress < 1) animationRef.current = requestAnimationFrame(animate)
+      else el.textContent = `${prefix}${fmt(to)}${suffix}`
     }
-  }, [motionValue, isInView, value])
+    animationRef.current = requestAnimationFrame(animate)
+    return () => { if (animationRef.current) cancelAnimationFrame(animationRef.current) }
+  }, [inView, to, from, duration, separator, decimals, prefix, suffix])
 
-  const displayValue = useTransform(springValue, (latest) => `${Math.round(latest)}+`)
-
-  return <motion.span ref={ref}>{displayValue}</motion.span>
-}
-
-function MinutesCounter({ value, duration = 2 }) {
-  const ref = useRef(null)
-  const motionValue = useMotionValue(0)
-  const springValue = useSpring(motionValue, { duration: duration * 1000 })
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value)
-    }
-  }, [motionValue, isInView, value])
-
-  const displayValue = useTransform(springValue, (latest) => `${Math.round(latest)}+`)
-
-  return <motion.span ref={ref}>{displayValue}</motion.span>
+  return ref
 }
 
 export default function Statstics() {
@@ -135,9 +111,7 @@ export default function Statstics() {
             </div>
             
             {/* Counter */}
-            <h3 className="text-5xl md:text-6xl font-bold text-white mb-4 group-hover:text-[#00FF9D] transition-colors duration-300">
-              <TimeCounter value={100} duration={2.5} />
-            </h3>
+            <span ref={useCountUp(100, { suffix: "+", duration: 2.5 })} className="text-5xl md:text-6xl font-bold text-white mb-4 group-hover:text-[#00FF9D] transition-colors duration-300">100</span>
             
             {/* Label */}
             <p className="text-gray-400 text-lg font-medium group-hover:text-gray-300 transition-colors duration-300">
@@ -174,9 +148,7 @@ export default function Statstics() {
             </div>
             
             {/* Counter */}
-            <h3 className="text-5xl md:text-6xl font-bold text-white mb-4 group-hover:text-[#00FF9D] transition-colors duration-300">
-              <MinutesCounter value={400} duration={2.2} />
-            </h3>
+            <span ref={useCountUp(400, { suffix: "+", duration: 2.2 })} className="text-5xl md:text-6xl font-bold text-white mb-4 group-hover:text-[#00FF9D] transition-colors duration-300">400</span>
             
             {/* Label */}
             <p className="text-gray-400 text-lg font-medium group-hover:text-gray-300 transition-colors duration-300">
@@ -213,9 +185,7 @@ export default function Statstics() {
             </div>
             
             {/* Counter */}
-            <h3 className="text-5xl md:text-6xl font-bold text-white mb-4 group-hover:text-[#00FF9D] transition-colors duration-300">
-              <PercentageCounter value={94} duration={2.8} />
-            </h3>
+            <span ref={useCountUp(94, { suffix: "%", duration: 2.8 })} className="text-5xl md:text-6xl font-bold text-white mb-4 group-hover:text-[#00FF9D] transition-colors duration-300">94</span>
             
             {/* Label */}
             <p className="text-gray-400 text-lg font-medium group-hover:text-gray-300 transition-colors duration-300">

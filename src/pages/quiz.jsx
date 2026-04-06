@@ -437,12 +437,12 @@ const QuizGenerator = () => {
  <div className="mb-8">
  <motion.button
  onClick={() => setShowSummary(false)}
- className="group flex items-center gap-3 px-6 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-2xl hover:border-[#1BFFA8]/50 transition-all duration-300"
+ className="group flex items-center gap-3 px-6 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-2xl hover:border-[#95ff00]/50 transition-all duration-300"
  whileHover={{ scale: 1.02 }}
  whileTap={{ scale: 0.98 }}
  >
  <svg
- className="w-5 h-5 text-gray-400 group-hover:text-[#1BFFA8] transition-colors duration-300"
+ className="w-5 h-5 text-gray-400 group-hover:text-[#95ff00] transition-colors duration-300"
  fill="none"
  stroke="currentColor"
  viewBox="0 0 24 24"
@@ -462,7 +462,7 @@ const QuizGenerator = () => {
 
  <div className="text-center mb-12">
  <h1 className="text-4xl font-bold mb-4">
- Video <span className="text-[#1BFFA8]">Summary</span>
+ Video <span className="text-[#95ff00]">Summary</span>
  </h1>
  <p className="text-gray-400">
  Here&apos;s what we learned from the video
@@ -479,30 +479,30 @@ const QuizGenerator = () => {
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
  {/* Start Quiz Card */}
  <motion.div
- className="group relative bg-gradient-to-br from-[#1BFFA8]/20 via-[#1BFFA8]/10 to-transparent border border-[#1BFFA8]/30 rounded-2xl p-6 cursor-pointer overflow-hidden"
+ className="group relative bg-gradient-to-br from-[#95ff00]/20 via-[#95ff00]/10 to-transparent border border-[#95ff00]/30 rounded-2xl p-6 cursor-pointer overflow-hidden"
  whileHover={{ scale: 1.05, y: -5 }}
  whileTap={{ scale: 0.95 }}
  onClick={handleStartQuiz}
  >
- <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1BFFA8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+ <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#95ff00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
  <div className="relative z-10">
- <div className="w-12 h-12 bg-[#1BFFA8]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#1BFFA8]/30 transition-colors duration-300">
+ <div className="w-12 h-12 bg-[#95ff00]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#95ff00]/30 transition-colors duration-300">
  <svg
- className="w-6 h-6 text-[#1BFFA8]"
+ className="w-6 h-6 text-[#95ff00]"
  fill="currentColor"
  viewBox="0 0 24 24"
  >
  <path d="M8 5v14l11-7z" />
  </svg>
  </div>
- <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#1BFFA8] transition-colors duration-300">
+ <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#95ff00] transition-colors duration-300">
  Start Quiz
  </h3>
  <p className="text-sm text-gray-400">
  Begin your learning assessment
  </p>
  </div>
- <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#1BFFA8]/10 rounded-full blur-xl group-hover:bg-[#1BFFA8]/20 transition-colors duration-500"></div>
+ <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#95ff00]/10 rounded-full blur-xl group-hover:bg-[#95ff00]/20 transition-colors duration-500"></div>
  </motion.div>
 
  {/* Mind Map Card */}
@@ -621,7 +621,7 @@ const QuizGenerator = () => {
  <div className="flex items-center justify-between text-sm text-gray-400">
  <span>Ready to test your knowledge?</span>
  <div className="flex items-center gap-2">
- <span className="w-2 h-2 bg-[#1BFFA8] rounded-full animate-pulse"></span>
+ <span className="w-2 h-2 bg-[#95ff00] rounded-full animate-pulse"></span>
  <span>Summary generated successfully</span>
  </div>
  </div>
@@ -646,12 +646,12 @@ const QuizGenerator = () => {
  setSelectedDifficulty("");
  setQuestionCount(5);
  }}
- className="group flex items-center gap-3 px-6 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-2xl hover:border-[#1BFFA8]/50 transition-all duration-300"
+ className="group flex items-center gap-3 px-6 py-3 bg-black/60 backdrop-blur-lg border border-white/10 rounded-2xl hover:border-[#95ff00]/50 transition-all duration-300"
  whileHover={{ scale: 1.02 }}
  whileTap={{ scale: 0.98 }}
  >
  <svg
- className="w-5 h-5 text-gray-400 group-hover:text-[#1BFFA8] transition-colors duration-300"
+ className="w-5 h-5 text-gray-400 group-hover:text-[#95ff00] transition-colors duration-300"
  fill="none"
  stroke="currentColor"
  viewBox="0 0 24 24"
@@ -672,7 +672,7 @@ const QuizGenerator = () => {
  <div className="text-center mb-12">
  <h2 className="text-6xl font-bold mb-4">
  YOUR SCORE:{" "}
- <span className="text-[#1BFFA8]">
+ <span className="text-[#95ff00]">
  {quizStats.score}/{quizStats.totalQuestions}
  </span>
  </h2>

@@ -79,7 +79,7 @@ const MessageComponent = forwardRef(({ message }, ref) => {
       <Card
         className={`max-w-[80%] p-4 ${
           message.type === 'user'
-            ? 'bg-[#00FF9D]/10 border-[#00FF9D]/30 text-white'
+            ? 'bg-[#95ff00]/10 border-[#95ff00]/30 text-white'
             : 'bg-[#1E1E1E] border-white/10 text-white'
         } rounded-xl shadow-lg`}
       >
@@ -100,7 +100,7 @@ const MessageComponent = forwardRef(({ message }, ref) => {
               className={`mt-2 ${
                 isSpeaking 
                   ? 'bg-red-500/20 text-red-400 hover:bg-red-500/30' 
-                  : 'bg-[#00FF9D]/10 text-[#00FF9D] hover:bg-[#00FF9D]/20'
+                  : 'bg-[#95ff00]/10 text-[#95ff00] hover:bg-[#95ff00]/20'
               }`}
               size="sm"
             >
@@ -235,7 +235,7 @@ const AIChat = () => {
       <div className="max-w-4xl mx-auto p-4">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold mb-2">
-            AI <span className="text-[#00FF9D]">Assistant</span>
+            AI <span className="text-[#95ff00]">Assistant</span>
           </h1>
           <p className="text-gray-400">Ask me anything, I'm here to help!</p>
         </div>
@@ -280,7 +280,7 @@ const AIChat = () => {
               className={`px-6 ${
                 isLoading
                   ? 'bg-[#1E1E1E] cursor-not-allowed'
-                  : 'bg-[#00FF9D]/10 hover:bg-[#00FF9D]/20 text-[#00FF9D]'
+                  : 'bg-[#95ff00]/10 hover:bg-[#95ff00]/20 text-[#95ff00]'
               }`}
             >
               {isLoading ? (

@@ -406,8 +406,8 @@ const QuizSession = () => {
               </div>
               
               {quizCompleted && (
-                <div className="flex items-center gap-2 text-[#00FF9D]">
-                  <div className="w-3 h-3 bg-[#00FF9D] rounded-full animate-pulse"></div>
+                <div className="flex items-center gap-2 text-[#95ff00]">
+                  <div className="w-3 h-3 bg-[#95ff00] rounded-full animate-pulse"></div>
                   Ready to Declare
                 </div>
               )}
@@ -424,7 +424,7 @@ const QuizSession = () => {
                     <div key={studentId} className="flex justify-between items-center border-b border-white/10 pb-2">
                       <div className="flex items-center gap-3">
                         <div className={`w-2 h-2 rounded-full ${
-                          quizCompleted ? 'bg-[#00FF9D]' : 'bg-yellow-400 animate-pulse'
+                          quizCompleted ? 'bg-[#95ff00]' : 'bg-yellow-400 animate-pulse'
                         }`}></div>
                         <span>{currentStudentName}</span>
                       </div>
@@ -477,8 +477,8 @@ const QuizSession = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-4"
               >
-                <div className="bg-[#00FF9D]/10 rounded-lg p-4">
-                  <h3 className="text-[#00FF9D] font-semibold mb-2">Ready to Declare Results</h3>
+                <div className="bg-[#95ff00]/10 rounded-lg p-4">
+                  <h3 className="text-[#95ff00] font-semibold mb-2">Ready to Declare Results</h3>
                   <ul className="text-sm text-gray-400 space-y-2">
                     <li>• Quiz results will be generated as CSV</li>
                     <li>• Leaderboard will be published to all students</li>
@@ -491,9 +491,9 @@ const QuizSession = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handlePublishResults}
-                  className="w-full bg-[#00FF9D] text-black font-semibold
+                  className="w-full bg-[#95ff00] text-black font-semibold
                     h-12 rounded-lg transition-all duration-300 flex items-center justify-center gap-2
-                    hover:bg-[#00FF9D]/90"
+                    hover:bg-[#95ff00]/90"
                 >
                   <span>Declare Results Now</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -523,8 +523,8 @@ const QuizSession = () => {
             <p className="text-xl text-gray-400">Results are being finalized by your teacher...</p>
             
             <div className="relative w-32 h-32 mx-auto">
-              <div className="absolute inset-0 rounded-full border-4 border-[#00FF9D]/20"></div>
-              <div className="absolute inset-0 rounded-full border-4 border-[#00FF9D] border-t-transparent animate-spin"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-[#95ff00]/20"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-[#95ff00] border-t-transparent animate-spin"></div>
             </div>
 
             <motion.div
@@ -534,7 +534,7 @@ const QuizSession = () => {
               transition={{ delay: 0.5 }}
             >
               <div className="flex items-center gap-3 justify-center">
-                <span className="text-[#00FF9D]">✓</span>
+                <span className="text-[#95ff00]">✓</span>
                 <p>Your answers have been securely submitted</p>
               </div>
               <div className="flex items-center gap-3 justify-center">
@@ -556,7 +556,7 @@ const QuizSession = () => {
   if (!questionsList || questionsList.length === 0) {
     return (
       <div className="min-h-screen bg-black text-white pt-24 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00FF9D]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#95ff00]"></div>
       </div>
     );
   }
@@ -614,11 +614,11 @@ const QuizSession = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
-              className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-[#00FF9D]/20 border border-[#00FF9D] p-4 rounded-lg shadow-lg z-50"
+              className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-[#95ff00]/20 border border-[#95ff00] p-4 rounded-lg shadow-lg z-50"
             >
-              <h3 className="text-[#00FF9D] font-bold">{currentAchievement.title}</h3>
+              <h3 className="text-[#95ff00] font-bold">{currentAchievement.title}</h3>
               <p className="text-sm text-white/80">{currentAchievement.description}</p>
-              <p className="text-[#00FF9D] font-bold">+{currentAchievement.points} points!</p>
+              <p className="text-[#95ff00] font-bold">+{currentAchievement.points} points!</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -630,9 +630,9 @@ const QuizSession = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
-              className="fixed top-24 right-8 bg-[#00FF9D]/20 border border-[#00FF9D] p-4 rounded-lg"
+              className="fixed top-24 right-8 bg-[#95ff00]/20 border border-[#95ff00] p-4 rounded-lg"
             >
-              <p className="text-[#00FF9D] font-bold">🔥 {streak}x Streak!</p>
+              <p className="text-[#95ff00] font-bold">🔥 {streak}x Streak!</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -643,7 +643,7 @@ const QuizSession = () => {
           {/* <div className="flex justify-between items-center mb-6 p-4 bg-black/20 rounded-lg">
             <div>
               <p className="text-sm text-gray-400">Points</p>
-              <p className="text-2xl font-bold text-[#00FF9D]">{points}</p>
+              <p className="text-2xl font-bold text-[#95ff00]">{points}</p>
             </div>
             <div>
               <p className="text-sm text-gray-400">Time Bonus</p>
@@ -692,7 +692,7 @@ const QuizSession = () => {
                     onClick={() => setSelectedOption(optionValue)}
                     className={`w-full p-4 text-left rounded-lg border transition-all duration-300
                       ${selectedOption === optionValue 
-                        ? 'border-[#00FF9D] bg-[#00FF9D]/10 text-[#00FF9D]' 
+                        ? 'border-[#95ff00] bg-[#95ff00]/10 text-[#95ff00]' 
                         : 'border-white/10 hover:bg-white/5'}`}
                   >
                     {optionLabel}
@@ -705,8 +705,8 @@ const QuizSession = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleSubmitAnswer}
-              className="w-full bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] 
-                hover:bg-[#00FF9D]/20 h-12 rounded-lg transition-all duration-300"
+              className="w-full bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] 
+                hover:bg-[#95ff00]/20 h-12 rounded-lg transition-all duration-300"
             >
               {selectedOption ? 'Submit Answer' : 'Skip Question'}
             </motion.button>

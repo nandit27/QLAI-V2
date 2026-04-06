@@ -17,7 +17,7 @@ const BloomTaxonomyChart = ({ analysis }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-md rounded-2xl p-8 border border-[#1BFFA8]/20"
+        className="bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-md rounded-2xl p-8 border border-[#95ff00]/20"
       >
         <h3 className="text-2xl font-bold text-white mb-6 text-center">
           📊 Bloom's Taxonomy Performance
@@ -102,7 +102,7 @@ const BloomTaxonomyChart = ({ analysis }) => {
         >
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-[#1BFFA8]">
+              <div className="text-2xl font-bold text-[#95ff00]">
                 {Math.round(
                   Object.values(analysis).reduce((a, b) => a + b, 0) / 
                   Object.values(analysis).filter(v => v !== undefined).length

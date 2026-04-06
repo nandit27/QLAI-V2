@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
+import { CountUp } from "@/components/ui/count-up";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -63,7 +64,7 @@ const FloatingIcon = ({ icon: Icon, className = "", delay = 0 }) => (
     }}
     className={className}
   >
-    <Icon className="text-[#1BFFA8] opacity-20" size={24} />
+    <Icon className="text-[#95ff00] opacity-20" size={24} />
   </motion.div>
 );
 
@@ -76,7 +77,7 @@ export default function AboutUs() {
       description:
         "Bringing ideas to life, one pixel at a time. Nandit is the code wizard who turns static designs into responsive, sleek, and interactive user interfaces that keep users engaged and coming back for more.",
       avatar: nanditImg,
-      icon: <Monitor className="text-[#1BFFA8]" size={20} />,
+      icon: <Monitor className="text-[#95ff00]" size={20} />,
       socials: {
         linkedin: "https://www.linkedin.com/in/nandit-kalaria-06281631a/",
         github: "https://github.com/nandit27",
@@ -90,7 +91,7 @@ export default function AboutUs() {
       description:
         "Designs intuitive experiences and ensures everything looks polished and user-friendly. Jugal turns complex problems into beautiful, simple solutions that users love to interact with every day.",
       avatar: jugalImg,
-      icon: <Palette className="text-[#1BFFA8]" size={20} />,
+      icon: <Palette className="text-[#95ff00]" size={20} />,
       socials: {
         linkedin: "https://www.linkedin.com/in/jugal-salaskar-6622442a7",
         github: "#",
@@ -104,7 +105,7 @@ export default function AboutUs() {
       description:
         "Where logic meets learning. Raj is the brain behind QuickLearn AI's intelligent engine. From designing models to enhancing performance, he ensures the AI learns the way students do - efficiently and intuitively.",
       avatar: rajuImg,
-      icon: <Cpu className="text-[#1BFFA8]" size={20} />,
+      icon: <Cpu className="text-[#95ff00]" size={20} />,
       socials: {
         linkedin: "https://www.linkedin.com/in/raj-shah-r2237/",
         github: "https://github.com/raj2237",
@@ -118,7 +119,7 @@ export default function AboutUs() {
       description:
         "Building the logic behind the magic. Bhavya builds and maintains the core foundation of QuickLearn AI - APIs, databases, server handling - he ensures everything works seamlessly behind the scenes.",
       avatar: bhavyaImg,
-      icon: <Server className="text-[#1BFFA8]" size={20} />,
+      icon: <Server className="text-[#95ff00]" size={20} />,
       socials: {
         linkedin: "https://www.linkedin.com/in/bhavya-prajapati1/",
         github: "https://github.com/bhavyagp",
@@ -135,10 +136,10 @@ export default function AboutUs() {
   ];
 
   const stats = [
-    { value: "1000+", label: "Happy Students" },
-    { value: "50+", label: "Features Built" },
-    { value: "∞", label: "Ideas Generated" },
-    { value: "100%", label: "Passion Driven" },
+    { numericValue: 1000, suffix: "+", label: "Happy Students" },
+    { numericValue: 50, suffix: "+", label: "Features Built" },
+    { numericValue: null, suffix: "∞", label: "Ideas Generated" },
+    { numericValue: 100, suffix: "%", label: "Passion Driven" },
   ];
 
   return (
@@ -188,12 +189,12 @@ export default function AboutUs() {
           >
             <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight">
               Know{" "}
-              <span className="text-[#1BFFA8] relative">
+              <span className="text-[#95ff00] relative">
                 About Us
                 <motion.div
                   animate={{ width: ["0%", "100%"] }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="absolute bottom-0 left-0 h-1 bg-[#1BFFA8] rounded-full"
+                  className="absolute bottom-0 left-0 h-1 bg-[#95ff00] rounded-full"
                 />
               </span>
             </h1>
@@ -212,35 +213,35 @@ export default function AboutUs() {
         {/* Company Description */}
         <AnimatedSection delay={0.2} className="mb-20">
           <div className="max-w-5xl mx-auto">
-            <Card className="bg-[#000A06] border-2 border-[#1BFFA8] rounded-3xl overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1BFFA8]/5 to-transparent" />
+            <Card className="bg-[#000A06] border-2 border-[#95ff00] rounded-3xl overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#95ff00]/5 to-transparent" />
               <CardContent className="p-8 md:p-12 relative z-10">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-[#002014] rounded-full border border-[#1BFFA8]">
-                    <Sparkles className="text-[#1BFFA8]" size={24} />
+                  <div className="p-3 bg-[#002014] rounded-full border border-[#95ff00]">
+                    <Sparkles className="text-[#95ff00]" size={24} />
                   </div>
-                  <h2 className="text-3xl font-bold text-[#1BFFA8]">
+                  <h2 className="text-3xl font-bold text-[#95ff00]">
                     Our Mission
                   </h2>
                 </div>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  <span className="text-[#1BFFA8] font-semibold">
+                  <span className="text-[#95ff00] font-semibold">
                     QuickLearn AI
                   </span>{" "}
                   is an intelligent learning assistant that transforms
                   educational content into{" "}
-                  <span className="text-[#1BFFA8]">
+                  <span className="text-[#95ff00]">
                     interactive summaries and quizzes
                   </span>
                   . It helps students learn faster, smarter, and more
                   effectively by{" "}
-                  <span className="text-[#1BFFA8]">
+                  <span className="text-[#95ff00]">
                     Simplifying Complex Videos into Digestible Insights
                   </span>
                   . Powered by AI, it personalizes the learning journey and
                   makes revision effortless. Whether it's YouTube lectures or
                   lengthy tutorials, QuickLearn AI is your{" "}
-                  <span className="text-[#1BFFA8] font-semibold">
+                  <span className="text-[#95ff00] font-semibold">
                     shortcut to smart studying
                   </span>
                   .
@@ -257,10 +258,19 @@ export default function AboutUs() {
               <motion.div
                 key={stat.label}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center p-6 bg-[#000A06] border border-[#1BFFA8]/30 rounded-2xl hover:border-[#1BFFA8] transition-all duration-300"
+                className="text-center p-6 bg-[#000A06] border border-[#95ff00]/30 rounded-2xl hover:border-[#95ff00] transition-all duration-300"
               >
-                <div className="text-3xl font-bold text-[#1BFFA8] mb-2">
-                  {stat.value}
+                <div className="text-3xl font-bold text-[#95ff00] mb-2">
+                  {stat.numericValue !== null ? (
+                    <CountUp
+                      to={stat.numericValue}
+                      suffix={stat.suffix}
+                      duration={stat.numericValue > 999 ? 2.5 : 2}
+                      separator={stat.numericValue > 999 ? "," : ""}
+                    />
+                  ) : (
+                    <span>{stat.suffix}</span>
+                  )}
                 </div>
                 <div className="text-sm text-gray-400">{stat.label}</div>
               </motion.div>
@@ -272,7 +282,7 @@ export default function AboutUs() {
         <AnimatedSection delay={0.4} className="mb-20">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-4">
-              Meet <span className="text-[#1BFFA8]">Our Team</span>
+              Meet <span className="text-[#95ff00]">Our Team</span>
             </h2>
             <p className="text-xl text-gray-400">
               The amazing humans behind the magic ✨
@@ -290,17 +300,17 @@ export default function AboutUs() {
                 whileHover={{ y: -5 }}
                 className="group"
               >
-                <Card className="bg-[#000A06] border-2 border-[#1BFFA8] rounded-2xl overflow-hidden h-full relative transition-all duration-300 hover:shadow-lg hover:shadow-[#1BFFA8]/20">
+                <Card className="bg-[#000A06] border-2 border-[#95ff00] rounded-2xl overflow-hidden h-full relative transition-all duration-300 hover:shadow-lg hover:shadow-[#95ff00]/20">
                   <CardContent className="p-6 relative">
                     {/* Header with Avatar and Icon */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-4">
-                        <Avatar className="w-16 h-16 border-2 border-[#1BFFA8] bg-[#002014]">
+                        <Avatar className="w-16 h-16 border-2 border-[#95ff00] bg-[#002014]">
                           <AvatarImage
                             src={member.avatar}
                             alt={`${member.name} ${member.surname}`}
                           />
-                          <AvatarFallback className="bg-[#002014] text-[#1BFFA8] text-lg font-bold">
+                          <AvatarFallback className="bg-[#002014] text-[#95ff00] text-lg font-bold">
                             {member.name[0]}
                             {member.surname[0]}
                           </AvatarFallback>
@@ -310,13 +320,13 @@ export default function AboutUs() {
                           <h3 className="text-xl font-bold text-white mb-1">
                             {member.name} {member.surname}
                           </h3>
-                          <p className="text-[#1BFFA8] text-sm font-medium">
+                          <p className="text-[#95ff00] text-sm font-medium">
                             "{member.role}"
                           </p>
                         </div>
                       </div>
 
-                      <div className="p-2 bg-[#002014] rounded-lg border border-[#1BFFA8]">
+                      <div className="p-2 bg-[#002014] rounded-lg border border-[#95ff00]">
                         {member.icon}
                       </div>
                     </div>
@@ -343,7 +353,7 @@ export default function AboutUs() {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 0.9 }}
-                            className="p-2 bg-[#002014] text-[#1BFFA8] rounded-lg border border-[#1BFFA8]/30 hover:border-[#1BFFA8] transition-colors"
+                            className="p-2 bg-[#002014] text-[#95ff00] rounded-lg border border-[#95ff00]/30 hover:border-[#95ff00] transition-colors"
                           >
                             <IconComponent size={14} />
                           </motion.a>
@@ -360,7 +370,7 @@ export default function AboutUs() {
         {/* Contributors Section */}
         <AnimatedSection delay={0.5} className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#1BFFA8] mb-4">
+            <h2 className="text-4xl font-bold text-[#95ff00] mb-4">
               Contributors
             </h2>
             <p className="text-gray-400">
@@ -378,7 +388,7 @@ export default function AboutUs() {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 viewport={{ once: true }}
-                className="px-6 py-3 bg-[#002014] border border-[#1BFFA8] rounded-full text-[#1BFFA8] font-medium hover:bg-[#0C3D2A] transition-colors"
+                className="px-6 py-3 bg-[#002014] border border-[#95ff00] rounded-full text-[#95ff00] font-medium hover:bg-[#0C3D2A] transition-colors"
               >
                 {contributor}
               </motion.div>
@@ -389,9 +399,9 @@ export default function AboutUs() {
         {/* Connect Section */}
         <AnimatedSection delay={0.6} className="text-center">
           <motion.div whileHover={{ scale: 1.02 }} className="inline-block">
-            <Card className="bg-[#000A06] border-2 border-[#1BFFA8] rounded-3xl overflow-hidden">
+            <Card className="bg-[#000A06] border-2 border-[#95ff00] rounded-3xl overflow-hidden">
               <CardContent className="p-8">
-                <h3 className="text-3xl font-bold text-[#1BFFA8] mb-4">
+                <h3 className="text-3xl font-bold text-[#95ff00] mb-4">
                   Connect with Us
                 </h3>
                 <p className="text-gray-300 mb-6 max-w-md mx-auto">
@@ -404,15 +414,15 @@ export default function AboutUs() {
                     <motion.div
                       key={`${member.name}-${member.surname}`}
                       whileHover={{ y: -5 }}
-                      className="p-4 bg-[#002014] border border-[#1BFFA8]/30 rounded-2xl hover:border-[#1BFFA8] transition-colors group"
+                      className="p-4 bg-[#002014] border border-[#95ff00]/30 rounded-2xl hover:border-[#95ff00] transition-colors group"
                     >
                       <div className="text-center">
-                        <Avatar className="w-12 h-12 mx-auto mb-2 border-2 border-[#1BFFA8] group-hover:scale-110 transition-transform">
+                        <Avatar className="w-12 h-12 mx-auto mb-2 border-2 border-[#95ff00] group-hover:scale-110 transition-transform">
                           <AvatarImage
                             src={member.avatar}
                             alt={`${member.name} ${member.surname}`}
                           />
-                          <AvatarFallback className="bg-[#002014] text-[#1BFFA8] text-sm">
+                          <AvatarFallback className="bg-[#002014] text-[#95ff00] text-sm">
                             {member.name[0]}
                             {member.surname[0]}
                           </AvatarFallback>

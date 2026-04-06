@@ -112,7 +112,7 @@ const QuizResults = () => {
             </div>
             <Button
               onClick={handleExportResults}
-              className="bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D]"
+              className="bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00]"
             >
               <Download className="w-4 h-4 mr-2" />
               Export Results
@@ -138,7 +138,7 @@ const QuizResults = () => {
                     <div className="text-sm text-gray-400">{student.score} points</div>
                   </div>
                   <motion.div
-                    className={`w-24 ${podiumHeight} rounded-t-lg bg-[#00FF9D]/20 border-t-2 border-[#00FF9D]`}
+                    className={`w-24 ${podiumHeight} rounded-t-lg bg-[#95ff00]/20 border-t-2 border-[#95ff00]`}
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: 1 }}
                     transition={{ delay: index * 0.2 + 0.3, duration: 0.5 }}
@@ -209,8 +209,8 @@ const QuizResults = () => {
             </table>
           </div>
 
-          <div className="mt-8 p-4 bg-[#00FF9D]/10 rounded-lg">
-            <h3 className="text-[#00FF9D] font-bold mb-2">Achievement Guide</h3>
+          <div className="mt-8 p-4 bg-[#95ff00]/10 rounded-lg">
+            <h3 className="text-[#95ff00] font-bold mb-2">Achievement Guide</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-3 bg-black/20 rounded-lg">
                 <h4 className="text-yellow-400 font-bold flex items-center gap-2">
@@ -231,7 +231,7 @@ const QuizResults = () => {
                 <p className="text-sm text-gray-400">Third-best performance</p>
               </div>
               <div className="p-3 bg-black/20 rounded-lg">
-                <h4 className="text-[#00FF9D] font-bold">Speed Demon</h4>
+                <h4 className="text-[#95ff00] font-bold">Speed Demon</h4>
                 <p className="text-sm text-gray-400">Answer correctly with {'>'}20s left (+150 points)</p>
               </div>
             </div>
@@ -239,7 +239,7 @@ const QuizResults = () => {
 
           <Button
             onClick={() => navigate('/teacher-dashboard')}
-            className="mt-8 flex items-center gap-2 bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D]"
+            className="mt-8 flex items-center gap-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00]"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Dashboard

@@ -4,7 +4,7 @@ const TermsOfService = () => {
   return (
     <div className="min-h-screen bg-black text-white pt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-[#00FF9D] to-[#00FF9D]/50 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-[#95ff00] to-[#95ff00]/50 bg-clip-text text-transparent">
           Terms of Service
         </h1>
         <div className="prose prose-invert prose-green max-w-none">
@@ -42,8 +42,8 @@ const TermsOfService = () => {
           </div>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">5. Refund Policy</h2>
-          <div className="bg-[#0C1F17] border border-[#00FF9D]/30 rounded-lg p-6 space-y-4">
-            <h3 className="text-xl font-semibold text-[#00FF9D] mb-4">5.1 Subscription Refunds</h3>
+          <div className="bg-[#0C1F17] border border-[#95ff00]/30 rounded-lg p-6 space-y-4">
+            <h3 className="text-xl font-semibold text-[#95ff00] mb-4">5.1 Subscription Refunds</h3>
             <div className="text-gray-400 space-y-2">
               <p><strong>Cooling-off Period:</strong> We offer a 7-day cooling-off period from the date of subscription purchase. During this period, you can request a full refund if you're not satisfied with our services.</p>
               
@@ -70,7 +70,7 @@ const TermsOfService = () => {
               </ul>
             </div>
 
-            <h3 className="text-xl font-semibold text-[#00FF9D] mt-6 mb-4">5.2 Refund Process</h3>
+            <h3 className="text-xl font-semibold text-[#95ff00] mt-6 mb-4">5.2 Refund Process</h3>
             <div className="text-gray-400 space-y-2">
               <p><strong>How to Request a Refund:</strong></p>
               <ol className="list-decimal pl-6 space-y-2">
@@ -117,7 +117,7 @@ const TermsOfService = () => {
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">10. Contact Information</h2>
-          <div className="bg-[#0C1F17] border border-[#00FF9D]/30 rounded-lg p-6 mt-4">
+          <div className="bg-[#0C1F17] border border-[#95ff00]/30 rounded-lg p-6 mt-4">
             <p className="text-gray-400">For any questions about these Terms of Service, please contact us at:</p>
             <p className="text-gray-400 mt-2">Email: support@quicklearnai.com</p>
             <p className="text-gray-400">Phone: +1 (555) 123-4567</p>

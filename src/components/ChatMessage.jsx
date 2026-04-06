@@ -15,10 +15,10 @@ const ChatMessage = ({ message }) => {
       >
         {/* Avatar/Icon */}
         <div className={`w-8 h-8 rounded-full flex items-center justify-center
-          ${isAI ? 'bg-[#00FF9D]/10' : 'bg-gray-700'}`}
+          ${isAI ? 'bg-[#95ff00]/10' : 'bg-gray-700'}`}
         >
           {isAI ? (
-            <Bot className="w-5 h-5 text-[#00FF9D]" />
+            <Bot className="w-5 h-5 text-[#95ff00]" />
           ) : (
             <User className="w-5 h-5 text-gray-300" />
           )}
@@ -28,7 +28,7 @@ const ChatMessage = ({ message }) => {
         <div
           className={`p-3 rounded-xl ${
             isCurrentUser
-              ? 'bg-[#00FF9D]/10 border border-[#00FF9D]/30'
+              ? 'bg-[#95ff00]/10 border border-[#95ff00]/30'
               : 'bg-gray-800/50 border border-gray-700'
           }`}
         >

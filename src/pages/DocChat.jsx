@@ -80,7 +80,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
         onClick={() => handleThumbClick("up")}
         className={`group relative p-2 rounded-lg transition-all duration-200 ${
           thumbsState === "up" 
-            ? "bg-primary/20 text-[#00AA55] dark:text-[#00FF9D]" 
+            ? "bg-primary/20 text-[#00AA55] dark:text-[#95ff00]" 
             : "hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 hover:text-slate-600 dark:hover:text-white"
         }`}
         title="Helpful"
@@ -114,7 +114,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
         whileHover={{ scale: 1.1, rotate: 180 }}
         whileTap={{ scale: 0.95 }}
         onClick={onRegenerate}
-        className="group relative p-2 rounded-lg hover:bg-primary/10 text-slate-400 hover:text-[#00AA55] dark:hover:text-[#00FF9D] transition-all duration-200"
+        className="group relative p-2 rounded-lg hover:bg-primary/10 text-slate-400 hover:text-[#00AA55] dark:hover:text-[#95ff00] transition-all duration-200"
         title="Regenerate"
       >
         <Repeat className="w-4 h-4" />
@@ -130,7 +130,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
         onClick={handleCopy}
         className={`group relative p-2 rounded-lg transition-all duration-200 ${
           copied
-            ? "bg-primary/20 text-[#00AA55] dark:text-[#00FF9D]"
+            ? "bg-primary/20 text-[#00AA55] dark:text-[#95ff00]"
             : "hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 hover:text-slate-600 dark:hover:text-white"
         }`}
         title="Copy to clipboard"
@@ -150,7 +150,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
           disabled={isSpeaking}
           className={`group relative p-2 rounded-lg transition-all duration-200 ${
             isSpeaking
-              ? "bg-primary/20 text-[#00AA55] dark:text-[#00FF9D] cursor-wait"
+              ? "bg-primary/20 text-[#00AA55] dark:text-[#95ff00] cursor-wait"
               : "hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 hover:text-slate-600 dark:hover:text-white"
           }`}
           title="Read aloud"
@@ -329,7 +329,7 @@ const DocChat = () => {
           className="mb-6 flex justify-between items-center"
         >
           <div>
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-transparent dark:bg-gradient-to-r dark:from-[#00FF9D] dark:to-[#00CC7D] dark:bg-clip-text">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-transparent dark:bg-gradient-to-r dark:from-[#95ff00] dark:to-[#00CC7D] dark:bg-clip-text">
               Document Chat
             </h1>
             <p className="text-sm text-slate-500 dark:text-gray-400 mt-0.5">
@@ -383,7 +383,7 @@ const DocChat = () => {
             aria-hidden="true"
             onMouseDown={startResize}
           >
-            <div className="w-2 h-20 mx-auto bg-slate-200 dark:bg-white/5 hover:bg-primary dark:hover:bg-[#00FF9D]/40 transition-colors cursor-col-resize rounded-full" />
+            <div className="w-2 h-20 mx-auto bg-slate-200 dark:bg-white/5 hover:bg-primary dark:hover:bg-[#95ff00]/40 transition-colors cursor-col-resize rounded-full" />
           </div>
           )}
 
@@ -402,7 +402,7 @@ const DocChat = () => {
                   </span>
                 </button>
                 <div className="w-8 h-8 bg-primary dark:bg-white/10 rounded-full flex items-center justify-center hidden sm:flex">
-                  <span className="material-symbols-outlined text-black dark:text-[#00FF9D] text-lg font-variation-settings-fill-1">auto_awesome</span>
+                  <span className="material-symbols-outlined text-black dark:text-[#95ff00] text-lg font-variation-settings-fill-1">auto_awesome</span>
                 </div>
                 <h2 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight">QuickLearn Assistant</h2>
               </div>
@@ -436,26 +436,26 @@ const DocChat = () => {
                       /* User Message */
                       <div className="flex items-start gap-4 justify-end">
                         <div className="flex-1 flex flex-col items-end space-y-2">
-                          <div className="bg-primary dark:bg-primary/20 text-black dark:text-[#00FF9D] p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[90%]">
+                          <div className="bg-primary dark:bg-primary/20 text-black dark:text-[#95ff00] p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[90%]">
                             <p className="text-[14px] leading-relaxed whitespace-pre-wrap">{m.content}</p>
                           </div>
                         </div>
                         <div className="w-8 h-8 bg-primary dark:bg-primary/20 rounded-lg flex-shrink-0 flex items-center justify-center shadow-sm">
-                          <span className="material-symbols-outlined text-black dark:text-[#00FF9D] text-sm font-variation-settings-fill-1">person</span>
+                          <span className="material-symbols-outlined text-black dark:text-[#95ff00] text-sm font-variation-settings-fill-1">person</span>
                         </div>
                       </div>
                     ) : (
                       /* Bot Message */
                       <div className="flex items-start gap-4">
                         <div className="w-8 h-8 bg-slate-200 dark:bg-white/10 rounded-lg flex-shrink-0 flex items-center justify-center shadow-sm">
-                          <span className="material-symbols-outlined text-slate-500 dark:text-[#00FF9D] text-sm">smart_toy</span>
+                          <span className="material-symbols-outlined text-slate-500 dark:text-[#95ff00] text-sm">smart_toy</span>
                         </div>
                         <div className="flex-1 space-y-2">
                           <div className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 p-5 rounded-2xl rounded-tl-none shadow-sm">
                             <div className="prose prose-slate dark:prose-invert max-w-none 
                                 prose-headings:text-slate-900 dark:prose-headings:text-white prose-headings:font-bold prose-headings:mt-4 prose-headings:mb-2 
                                 prose-p:text-slate-600 dark:prose-p:text-gray-300 prose-p:my-2 prose-p:leading-relaxed prose-p:text-[14px]
-                                prose-strong:text-slate-900 dark:prose-strong:text-[#00FF9D] prose-strong:font-semibold 
+                                prose-strong:text-slate-900 dark:prose-strong:text-[#95ff00] prose-strong:font-semibold 
                                 prose-li:text-slate-600 dark:prose-li:text-gray-300 prose-li:my-1 prose-li:text-[14px]
                                 prose-ul:list-none prose-ul:pl-0 prose-ul:my-3 prose-ul:space-y-2 
                                 prose-ol:list-decimal prose-ol:ml-6 prose-ol:my-3 prose-ol:space-y-2">
@@ -463,7 +463,7 @@ const DocChat = () => {
                                 components={{
                                   h2: ({node, ...props}) => (
                                     <h2 className="text-lg font-bold mt-4 mb-2 flex items-center gap-2" {...props}>
-                                      <span className="w-1.5 h-6 bg-primary dark:bg-[#00FF9D] rounded-full"></span>
+                                      <span className="w-1.5 h-6 bg-primary dark:bg-[#95ff00] rounded-full"></span>
                                       {props.children}
                                     </h2>
                                   ),
@@ -472,7 +472,7 @@ const DocChat = () => {
                                   ol: ({node, ...props}) => <ol {...props} />,
                                   li: ({node, children, ...props}) => (
                                     <li className="flex items-start gap-2" {...props}>
-                                      <span className="material-symbols-outlined text-green-600 dark:text-[#00FF9D] text-base mt-0.5 font-variation-settings-fill-1">check_circle</span>
+                                      <span className="material-symbols-outlined text-green-600 dark:text-[#95ff00] text-base mt-0.5 font-variation-settings-fill-1">check_circle</span>
                                       <span className="flex-1">{children}</span>
                                     </li>
                                   ),
@@ -500,9 +500,9 @@ const DocChat = () => {
               {loading && (
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-slate-200 dark:bg-white/10 rounded-lg flex-shrink-0 flex items-center justify-center">
-                    <span className="material-symbols-outlined text-slate-500 dark:text-[#00FF9D] text-sm">smart_toy</span>
+                    <span className="material-symbols-outlined text-slate-500 dark:text-[#95ff00] text-sm">smart_toy</span>
                   </div>
-                  <div className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 p-4 rounded-2xl rounded-tl-none flex items-center gap-3 text-slate-500 dark:text-[#00FF9D]">
+                  <div className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 p-4 rounded-2xl rounded-tl-none flex items-center gap-3 text-slate-500 dark:text-[#95ff00]">
                     <Loader2 className="w-4 h-4 animate-spin" />
                     <span className="text-sm font-medium">Analyzing document...</span>
                   </div>
@@ -512,7 +512,7 @@ const DocChat = () => {
 
             {/* Chat Input Area */}
             <div className="p-6 border-t border-slate-100 dark:border-white/10 bg-white dark:bg-black/40">
-              <div className="relative bg-slate-100 dark:bg-[#1E1E1E] rounded-2xl p-2 flex items-center gap-3 border border-transparent focus-within:border-primary/30 dark:focus-within:border-[#00FF9D]/30 transition-colors pl-4">
+              <div className="relative bg-slate-100 dark:bg-[#1E1E1E] rounded-2xl p-2 flex items-center gap-3 border border-transparent focus-within:border-primary/30 dark:focus-within:border-[#95ff00]/30 transition-colors pl-4">
                 <TextareaAutosize
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
@@ -543,7 +543,7 @@ const DocChat = () => {
                   className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-sm transition-all ${
                     loading || !input.trim()
                       ? "bg-slate-200 dark:bg-white/10 text-slate-400 dark:text-gray-500 cursor-not-allowed"
-                      : "bg-primary dark:bg-primary/20 text-black dark:text-[#00FF9D] hover:scale-105"
+                      : "bg-primary dark:bg-primary/20 text-black dark:text-[#95ff00] hover:scale-105"
                   }`}
                 >
                   {loading ? (

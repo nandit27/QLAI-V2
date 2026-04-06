@@ -96,7 +96,7 @@ const QuizRecordDetail = () => {
     return (
       <div className="min-h-screen bg-black text-white pt-24 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#00FF9D] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#95ff00] mx-auto mb-4"></div>
           <p className="text-gray-400">Loading quiz record...</p>
         </div>
       </div>
@@ -112,7 +112,7 @@ const QuizRecordDetail = () => {
               <p className="text-red-400 mb-4">{error || 'Quiz record not found'}</p>
               <Button
                 onClick={() => navigate('/teacher-dashboard')}
-                className="bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D]"
+                className="bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00]"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Dashboard
@@ -155,7 +155,7 @@ const QuizRecordDetail = () => {
             </div>
             <Button
               onClick={handleExportResults}
-              className="bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D]"
+              className="bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00]"
             >
               <Download className="w-4 h-4 mr-2" />
               Export Results
@@ -181,7 +181,7 @@ const QuizRecordDetail = () => {
                     <div className="text-sm text-gray-400">{student.score} points</div>
                   </div>
                   <motion.div
-                    className={`w-24 ${podiumHeight} rounded-t-lg bg-[#00FF9D]/20 border-t-2 border-[#00FF9D]`}
+                    className={`w-24 ${podiumHeight} rounded-t-lg bg-[#95ff00]/20 border-t-2 border-[#95ff00]`}
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: 1 }}
                     transition={{ delay: index * 0.2 + 0.3, duration: 0.5 }}
@@ -272,7 +272,7 @@ const QuizRecordDetail = () => {
                     <Card key={index} className="bg-black/20 border border-white/5 p-6">
                       <div className="mb-3">
                         <div className="flex justify-between items-start mb-2">
-                          <h3 className="text-lg font-semibold text-[#00FF9D]">
+                          <h3 className="text-lg font-semibold text-[#95ff00]">
                             Question {index + 1}
                           </h3>
                           <div className="flex gap-2">
@@ -318,7 +318,7 @@ const QuizRecordDetail = () => {
           {/* Back Button */}
           <Button
             onClick={() => navigate('/teacher-dashboard')}
-            className="mt-8 flex items-center gap-2 bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D]"
+            className="mt-8 flex items-center gap-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00]"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Dashboard

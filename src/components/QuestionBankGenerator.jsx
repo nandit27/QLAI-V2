@@ -96,7 +96,7 @@ const QuestionBankGenerator = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <motion.div
-          className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-[#00FF9D]/20 to-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-[#95ff00]/20 to-purple-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
@@ -107,7 +107,7 @@ const QuestionBankGenerator = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-l from-[#00FF9D]/20 to-blue-500/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-l from-[#95ff00]/20 to-blue-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             rotate: [0, -90, 0],
@@ -126,7 +126,7 @@ const QuestionBankGenerator = () => {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center space-x-2 bg-white/10 rounded-full px-4 py-1 mb-8 mx-auto"
         >
-          <span className="h-2 w-2 bg-[#00FF9D] rounded-full"></span>
+          <span className="h-2 w-2 bg-[#95ff00] rounded-full"></span>
           <span className="text-sm">AI-Powered Question Generation</span>
         </motion.div>
 
@@ -141,7 +141,7 @@ const QuestionBankGenerator = () => {
             onClick={() => setActiveTab("manual")}
             className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
               activeTab === "manual"
-                ? "bg-[#00FF9D] text-black"
+                ? "bg-[#95ff00] text-black"
                 : "text-white hover:bg-white/10"
             }`}
           >
@@ -151,7 +151,7 @@ const QuestionBankGenerator = () => {
             onClick={() => setActiveTab("improvement")}
             className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
               activeTab === "improvement"
-                ? "bg-[#00FF9D] text-black"
+                ? "bg-[#95ff00] text-black"
                 : "text-white hover:bg-white/10"
             }`}
           >
@@ -170,7 +170,7 @@ const QuestionBankGenerator = () => {
             <h1 className="text-4xl font-bold text-center mb-2">
               Question Bank Generator
               <motion.div
-                className="h-1 w-24 bg-[#00FF9D] mx-auto mt-2"
+                className="h-1 w-24 bg-[#95ff00] mx-auto mt-2"
                 initial={{ width: 0 }}
                 animate={{ width: "6rem" }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -200,7 +200,7 @@ const QuestionBankGenerator = () => {
                     value={topic}
                     onChange={(e) => setTopic(e.target.value)}
                     className="w-full p-4 bg-white/10 text-white rounded-lg border border-gray-700
-                             focus:ring-2 focus:ring-[#00FF9D] focus:border-transparent transition-all duration-300
+                             focus:ring-2 focus:ring-[#95ff00] focus:border-transparent transition-all duration-300
                              placeholder-gray-500"
                     placeholder="e.g., Python Programming, Data Structures, Machine Learning"
                     required
@@ -215,7 +215,7 @@ const QuestionBankGenerator = () => {
                   ${
                     loading
                       ? "bg-gray-700 cursor-not-allowed"
-                      : "bg-[#00FF9D] hover:bg-[#00FF9D]/80 text-black"
+                      : "bg-[#95ff00] hover:bg-[#95ff00]/80 text-black"
                   }`}
                 whileHover={{ scale: loading ? 1 : 1.02 }}
                 whileTap={{ scale: loading ? 1 : 0.98 }}
@@ -239,17 +239,17 @@ const QuestionBankGenerator = () => {
               className="grid grid-cols-3 gap-8 mt-12"
             >
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#00FF9D]">10+</h3>
+                <h3 className="text-2xl font-bold text-[#95ff00]">10+</h3>
                 <p className="text-gray-400 mt-1 text-sm">
                   Questions per Topic
                 </p>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#00FF9D]">3</h3>
+                <h3 className="text-2xl font-bold text-[#95ff00]">3</h3>
                 <p className="text-gray-400 mt-1 text-sm">Difficulty Levels</p>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#00FF9D]">PDF</h3>
+                <h3 className="text-2xl font-bold text-[#95ff00]">PDF</h3>
                 <p className="text-gray-400 mt-1 text-sm">Export Format</p>
               </div>
             </motion.div>
@@ -277,7 +277,7 @@ const QuestionBankGenerator = () => {
 
             {loadingTopics ? (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00FF9D] mr-3"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95ff00] mr-3"></div>
                 <span className="text-gray-400">
                   Loading your quiz statistics...
                 </span>

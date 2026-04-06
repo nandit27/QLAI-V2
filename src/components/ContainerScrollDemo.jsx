@@ -32,12 +32,12 @@ export default function ContainerScrollDemo() {
       <ContainerScroll
         titleComponent={
           <div className="space-y-4">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#00FF9D] font-semibold">
+            <p className="text-sm uppercase tracking-[0.3em] text-[#95ff00] font-semibold">
               Platform Overview
             </p>
             <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
               Everything you need to{" "}
-              <span className="bg-gradient-to-r from-[#00FF9D] to-[#1BFFA8] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#95ff00] to-[#95ff00] bg-clip-text text-transparent">
                 learn smarter
               </span>
             </h2>
@@ -53,7 +53,7 @@ export default function ContainerScrollDemo() {
           Keep overflow-hidden here so the rounded corners clip children correctly
           during the 3-D rotation.
         */}
-        <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#00FF9D]/10 bg-gradient-to-br from-gray-900 via-black to-gray-950">
+        <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#95ff00]/10 bg-gradient-to-br from-gray-900 via-black to-gray-950">
           {/* Fake browser chrome */}
           <div className="flex items-center gap-2 px-4 py-3 bg-gray-900/80 border-b border-white/5">
             <span className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -75,7 +75,7 @@ export default function ContainerScrollDemo() {
                 </h3>
               </div>
               <div className="flex gap-2">
-                <div className="px-3 py-1.5 rounded-lg bg-[#00FF9D]/10 border border-[#00FF9D]/20 text-[#00FF9D] text-xs font-medium">
+                <div className="px-3 py-1.5 rounded-lg bg-[#95ff00]/10 border border-[#95ff00]/20 text-[#95ff00] text-xs font-medium">
                   Pro Plan
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function ContainerScrollDemo() {
                 <div
                   key={label}
                   className="group rounded-xl p-4 bg-white/[0.03] border border-white/[0.07]
-                             hover:border-[#00FF9D]/30 hover:bg-[#00FF9D]/5
+                             hover:border-[#95ff00]/30 hover:bg-[#95ff00]/5
                              transition-all duration-300 cursor-pointer"
                 >
                   <div className="text-2xl mb-2">{icon}</div>
@@ -106,10 +106,10 @@ export default function ContainerScrollDemo() {
               ].map(({ label, value }) => (
                 <div
                   key={label}
-                  className="rounded-xl p-4 bg-gradient-to-br from-[#00FF9D]/5 to-transparent
-                             border border-[#00FF9D]/10 text-center"
+                  className="rounded-xl p-4 bg-gradient-to-br from-[#95ff00]/5 to-transparent
+                             border border-[#95ff00]/10 text-center"
                 >
-                  <p className="text-2xl font-bold text-[#00FF9D]">{value}</p>
+                  <p className="text-2xl font-bold text-[#95ff00]">{value}</p>
                   <p className="text-xs text-gray-500 mt-1">{label}</p>
                 </div>
               ))}

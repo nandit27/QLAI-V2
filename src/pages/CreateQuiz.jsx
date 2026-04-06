@@ -398,11 +398,11 @@ const CreateQuiz = () => {
     <Button 
       onClick={handleGenerateQuiz}
       disabled={loading}
-      className="w-full bg-transparent border-2 border-[#1BFFA8] text-[#1BFFA8] hover:bg-[#0C3D2A] hover:border-[#1BFFA8] hover:shadow-lg hover:shadow-[#1BFFA8]/30 h-14 rounded-xl font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2"
+      className="w-full bg-transparent border-2 border-[#95ff00] text-[#95ff00] hover:bg-[#0C3D2A] hover:border-[#95ff00] hover:shadow-lg hover:shadow-[#95ff00]/30 h-14 rounded-xl font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2"
     >
       {loading ? (
         <>
-          <div className="animate-spin rounded-full h-5 w-5 border-2 border-[#1BFFA8]/20 border-t-[#1BFFA8]"></div>
+          <div className="animate-spin rounded-full h-5 w-5 border-2 border-[#95ff00]/20 border-t-[#95ff00]"></div>
           Generating Quiz...
         </>
       ) : (
@@ -416,12 +416,12 @@ const CreateQuiz = () => {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 flex-1">
         {/* Left Column - Topic Input (Takes more space) */}
         <div className="lg:col-span-3 flex flex-col">
-          <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 flex-1 hover:border-[#1BFFA8]/50 transition-all duration-300">
-            <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+          <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 flex-1 hover:border-[#95ff00]/50 transition-all duration-300">
+            <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
               Topic Description
             </label>
             <div className="relative mb-6">
-              <div className="relative w-full bg-[#000805] border-[#00784A] border-2 rounded-xl hover:border-[#1BFFA8] focus-within:border-[#1BFFA8] transition-all duration-300">
+              <div className="relative w-full bg-[#000805] border-[#00784A] border-2 rounded-xl hover:border-[#95ff00] focus-within:border-[#95ff00] transition-all duration-300">
                 <input
                   ref={topicInputRef}
                   type="text"
@@ -444,9 +444,9 @@ const CreateQuiz = () => {
                         key={index}
                         type="button"
                         onClick={() => handleAddTopic(topic)}
-                        className="w-full px-5 py-3.5 text-left text-white hover:bg-[#0C3D2A] hover:text-[#1BFFA8] transition-all duration-200 flex items-center gap-3 text-base"
+                        className="w-full px-5 py-3.5 text-left text-white hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-200 flex items-center gap-3 text-base"
                       >
-                        <span className="text-[#1BFFA8] text-lg">+</span>
+                        <span className="text-[#95ff00] text-lg">+</span>
                         {topic}
                       </button>
                     ))
@@ -454,9 +454,9 @@ const CreateQuiz = () => {
                     <button
                       type="button"
                       onClick={() => handleAddTopic(topicInput.trim())}
-                      className="w-full px-5 py-3.5 text-left text-white hover:bg-[#0C3D2A] hover:text-[#1BFFA8] transition-all duration-200 flex items-center gap-3 text-base"
+                      className="w-full px-5 py-3.5 text-left text-white hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-200 flex items-center gap-3 text-base"
                     >
-                      <span className="text-[#1BFFA8] text-lg">+</span>
+                      <span className="text-[#95ff00] text-lg">+</span>
                       Add "{topicInput.trim()}" as custom topic
                     </button>
                   )}
@@ -472,13 +472,13 @@ const CreateQuiz = () => {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
-                    className="inline-flex items-center gap-2 bg-[#1BFFA8]/15 border border-[#1BFFA8]/60 text-[#1BFFA8] px-4 py-2.5 rounded-xl text-sm font-semibold backdrop-blur-sm"
+                    className="inline-flex items-center gap-2 bg-[#95ff00]/15 border border-[#95ff00]/60 text-[#95ff00] px-4 py-2.5 rounded-xl text-sm font-semibold backdrop-blur-sm"
                   >
                     <span>{topic}</span>
                     <button
                       type="button"
                       onClick={() => handleRemoveTopic(topic)}
-                      className="hover:bg-[#1BFFA8]/30 rounded-full p-1 transition-colors"
+                      className="hover:bg-[#95ff00]/30 rounded-full p-1 transition-colors"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -488,7 +488,7 @@ const CreateQuiz = () => {
             )}
             
             <p className="text-xs text-gray-500 leading-relaxed">
-              Press <kbd className="px-2 py-1 bg-[#00784A]/30 rounded text-[#1BFFA8] font-mono">Enter</kbd> to add custom topics • Click suggestions to add • Click X to remove
+              Press <kbd className="px-2 py-1 bg-[#00784A]/30 rounded text-[#95ff00] font-mono">Enter</kbd> to add custom topics • Click suggestions to add • Click X to remove
             </p>
           </div>
         </div>
@@ -497,8 +497,8 @@ const CreateQuiz = () => {
         <div className="lg:col-span-2 flex flex-col gap-6">
           {quizMode === 'auto' ? (
             <>
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
-                <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
+                <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
                   Number of Questions
                 </label>
                 <Input 
@@ -507,22 +507,22 @@ const CreateQuiz = () => {
                   max="20"
                   value={numQuestions}
                   onChange={(e) => setNumQuestions(parseInt(e.target.value))}
-                  className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 h-14 font-semibold text-lg"
+                  className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
                 />
               </div>
               
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
-                <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
+                <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
                   Difficulty Level
                 </label>
                 <div className="relative">
                   <button
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#1BFFA8] transition-all duration-300 h-14 font-semibold text-lg"
+                    className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
                   >
                     <span className={selectedDifficulty ? 'text-white' : 'text-gray-500'}>{selectedDifficulty || 'Select difficulty'}</span>
-                    <svg className="w-5 h-5 text-[#1BFFA8]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    <svg className="w-5 h-5 text-[#95ff00]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   
                   {isDropdownOpen && (
@@ -534,7 +534,7 @@ const CreateQuiz = () => {
                           key={difficulty}
                           type="button"
                           onClick={() => handleDifficultySelect(difficulty)}
-                          className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#1BFFA8] transition-all duration-300 text-white font-semibold text-base"
+                          className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-300 text-white font-semibold text-base"
                         >
                           {difficulty}
                         </button>
@@ -546,9 +546,9 @@ const CreateQuiz = () => {
             </>
           ) : (
             <>
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
                 <div className="flex items-center justify-between mb-5">
-                  <label className="text-sm font-semibold text-[#1BFFA8] block uppercase tracking-wider">
+                  <label className="text-sm font-semibold text-[#95ff00] block uppercase tracking-wider">
                     Number of Questions
                   </label>
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
@@ -560,9 +560,9 @@ const CreateQuiz = () => {
                 </div>
               </div>
 
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
                 <div className="flex items-center justify-between mb-5">
-                  <label className="text-sm font-semibold text-[#1BFFA8] block uppercase tracking-wider">
+                  <label className="text-sm font-semibold text-[#95ff00] block uppercase tracking-wider">
                     Custom Breakdown
                   </label>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
@@ -578,7 +578,7 @@ const CreateQuiz = () => {
                       max="20"
                       value={customBreakdown.easy}
                       onChange={(e) => handleCustomBreakdownChange('easy', e.target.value)}
-                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -589,7 +589,7 @@ const CreateQuiz = () => {
                       max="20"
                       value={customBreakdown.medium}
                       onChange={(e) => handleCustomBreakdownChange('medium', e.target.value)}
-                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -600,7 +600,7 @@ const CreateQuiz = () => {
                       max="20"
                       value={customBreakdown.hard}
                       onChange={(e) => handleCustomBreakdownChange('hard', e.target.value)}
-                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                     />
                   </div>
                 </div>
@@ -631,8 +631,8 @@ const CreateQuiz = () => {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 flex-1">
         {/* Left Column - YouTube URL (Takes more space) */}
         <div className="lg:col-span-3 flex flex-col">
-          <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 flex-1 hover:border-[#1BFFA8]/50 transition-all duration-300">
-            <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+          <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 flex-1 hover:border-[#95ff00]/50 transition-all duration-300">
+            <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
               YouTube URL
             </label>
             <div className="relative">
@@ -641,7 +641,7 @@ const CreateQuiz = () => {
                 value={youtubeUrl}
                 onChange={(e) => setYoutubeUrl(e.target.value)}
                 placeholder="https://youtube.com/watch?v=..."
-                className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 h-14 font-semibold text-base"
+                className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-base"
               />
             </div>
             <p className="text-xs text-gray-500 mt-4 leading-relaxed">
@@ -654,8 +654,8 @@ const CreateQuiz = () => {
         <div className="lg:col-span-2 flex flex-col gap-6">
           {quizMode === 'auto' ? (
             <>
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
-                <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
+                <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
                   Number of Questions
                 </label>
                 <Input 
@@ -664,22 +664,22 @@ const CreateQuiz = () => {
                   max="20"
                   value={numQuestions}
                   onChange={(e) => setNumQuestions(Number(e.target.value))}
-                  className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 h-14 font-semibold text-lg"
+                  className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
                 />
               </div>
               
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
-                <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
+                <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
                   Difficulty Level
                 </label>
                 <div className="relative">
                   <button
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#1BFFA8] transition-all duration-300 h-14 font-semibold text-lg"
+                    className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
                   >
                     <span className={selectedDifficulty ? 'text-white' : 'text-gray-500'}>{selectedDifficulty || 'Select difficulty'}</span>
-                    <svg className="w-5 h-5 text-[#1BFFA8]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    <svg className="w-5 h-5 text-[#95ff00]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   
                   {isDropdownOpen && (
@@ -691,7 +691,7 @@ const CreateQuiz = () => {
                           key={difficulty}
                           type="button"
                           onClick={() => handleDifficultySelect(difficulty)}
-                          className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#1BFFA8] transition-all duration-300 text-white font-semibold text-base"
+                          className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-300 text-white font-semibold text-base"
                         >
                           {difficulty}
                         </button>
@@ -703,9 +703,9 @@ const CreateQuiz = () => {
             </>
           ) : (
             <>
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
                 <div className="flex items-center justify-between mb-5">
-                  <label className="text-sm font-semibold text-[#1BFFA8] block uppercase tracking-wider">
+                  <label className="text-sm font-semibold text-[#95ff00] block uppercase tracking-wider">
                     Number of Questions
                   </label>
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
@@ -717,9 +717,9 @@ const CreateQuiz = () => {
                 </div>
               </div>
 
-              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
+              <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
                 <div className="flex items-center justify-between mb-5">
-                  <label className="text-sm font-semibold text-[#1BFFA8] block uppercase tracking-wider">
+                  <label className="text-sm font-semibold text-[#95ff00] block uppercase tracking-wider">
                     Custom Breakdown
                   </label>
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
@@ -735,7 +735,7 @@ const CreateQuiz = () => {
                       max="20"
                       value={customBreakdown.easy}
                       onChange={(e) => handleCustomBreakdownChange('easy', e.target.value)}
-                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -746,7 +746,7 @@ const CreateQuiz = () => {
                       max="20"
                       value={customBreakdown.medium}
                       onChange={(e) => handleCustomBreakdownChange('medium', e.target.value)}
-                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -757,7 +757,7 @@ const CreateQuiz = () => {
                       max="20"
                       value={customBreakdown.hard}
                       onChange={(e) => handleCustomBreakdownChange('hard', e.target.value)}
-                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                      className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                     />
                   </div>
                 </div>
@@ -793,7 +793,7 @@ const CreateQuiz = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl font-bold mb-5"
           >
-            Create <span className="text-[#1BFFA8]">Quiz</span>
+            Create <span className="text-[#95ff00]">Quiz</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: -20 }}
@@ -815,7 +815,7 @@ const CreateQuiz = () => {
               onClick={() => setQuizMode('auto')}
               className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
                 quizMode === 'auto'
-                  ? 'bg-[#1BFFA8] text-[#000805] shadow-lg shadow-[#1BFFA8]/30'
+                  ? 'bg-[#95ff00] text-[#000805] shadow-lg shadow-[#95ff00]/30'
                   : 'bg-transparent text-gray-400 hover:text-gray-300'
               }`}
             >
@@ -825,7 +825,7 @@ const CreateQuiz = () => {
               onClick={() => setQuizMode('custom')}
               className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
                 quizMode === 'custom'
-                  ? 'bg-[#1BFFA8] text-[#000805] shadow-lg shadow-[#1BFFA8]/30'
+                  ? 'bg-[#95ff00] text-[#000805] shadow-lg shadow-[#95ff00]/30'
                   : 'bg-transparent text-gray-400 hover:text-gray-300'
               }`}
             >
@@ -848,8 +848,8 @@ const CreateQuiz = () => {
                   value="llm"
                   className={`py-3.5 px-4 rounded-xl transition-all duration-300 text-base font-medium ${
                     activeTab === "llm" 
-                      ? 'bg-[#0C3D2A] text-[#1BFFA8] border border-[#1BFFA8] shadow-lg shadow-[#1BFFA8]/20'
-                      : 'bg-[#002014] text-gray-300 hover:bg-[#0C3D2A] hover:text-[#1BFFA8] border border-[#00784A] hover:border-[#1BFFA8]'
+                      ? 'bg-[#0C3D2A] text-[#95ff00] border border-[#95ff00] shadow-lg shadow-[#95ff00]/20'
+                      : 'bg-[#002014] text-gray-300 hover:bg-[#0C3D2A] hover:text-[#95ff00] border border-[#00784A] hover:border-[#95ff00]'
                   }`}
                 >
                   LLM
@@ -858,8 +858,8 @@ const CreateQuiz = () => {
                   value="youtube"
                   className={`py-3.5 px-4 rounded-xl transition-all duration-300 text-base font-medium ${
                     activeTab === "youtube" 
-                      ? 'bg-[#0C3D2A] text-[#1BFFA8] border border-[#1BFFA8] shadow-lg shadow-[#1BFFA8]/20'
-                      : 'bg-[#002014] text-gray-300 hover:bg-[#0C3D2A] hover:text-[#1BFFA8] border border-[#00784A] hover:border-[#1BFFA8]'
+                      ? 'bg-[#0C3D2A] text-[#95ff00] border border-[#95ff00] shadow-lg shadow-[#95ff00]/20'
+                      : 'bg-[#002014] text-gray-300 hover:bg-[#0C3D2A] hover:text-[#95ff00] border border-[#00784A] hover:border-[#95ff00]'
                   }`}
                 >
                   YouTube
@@ -868,8 +868,8 @@ const CreateQuiz = () => {
                   value="document"
                   className={`py-3.5 px-4 rounded-xl transition-all duration-300 text-base font-medium ${
                     activeTab === "document" 
-                      ? 'bg-[#0C3D2A] text-[#1BFFA8] border border-[#1BFFA8] shadow-lg shadow-[#1BFFA8]/20'
-                      : 'bg-[#002014] text-gray-300 hover:bg-[#0C3D2A] hover:text-[#1BFFA8] border border-[#00784A] hover:border-[#1BFFA8]'
+                      ? 'bg-[#0C3D2A] text-[#95ff00] border border-[#95ff00] shadow-lg shadow-[#95ff00]/20'
+                      : 'bg-[#002014] text-gray-300 hover:bg-[#0C3D2A] hover:text-[#95ff00] border border-[#00784A] hover:border-[#95ff00]'
                   }`}
                 >
                   Document
@@ -888,8 +888,8 @@ const CreateQuiz = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 flex-1">
                   {/* Left Column - Document Upload (Takes more space) */}
                   <div className="lg:col-span-3 flex flex-col">
-                    <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 flex-1 hover:border-[#1BFFA8]/50 transition-all duration-300">
-                      <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+                    <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 flex-1 hover:border-[#95ff00]/50 transition-all duration-300">
+                      <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
                         Upload Document
                       </label>
                       <div
@@ -898,8 +898,8 @@ const CreateQuiz = () => {
                         onDragLeave={handleDragLeave}
                         className={`relative border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all duration-300 ${
                           isDragging
-                            ? 'border-[#1BFFA8] bg-[#1BFFA8]/5'
-                            : 'border-[#00784A] hover:border-[#1BFFA8] bg-[#000805]'
+                            ? 'border-[#95ff00] bg-[#95ff00]/5'
+                            : 'border-[#00784A] hover:border-[#95ff00] bg-[#000805]'
                         }`}
                         onClick={() => document.getElementById('file-upload-input').click()}
                       >
@@ -912,8 +912,8 @@ const CreateQuiz = () => {
                           onChange={(e) => handleFileUpload(e.target.files)}
                         />
                         <div className="flex flex-col items-center gap-5">
-                          <div className="w-20 h-20 rounded-2xl bg-[#1BFFA8]/10 flex items-center justify-center hover:bg-[#1BFFA8]/20 transition-all duration-300 border border-[#1BFFA8]/30">
-                            <Upload className="w-10 h-10 text-[#1BFFA8]" />
+                          <div className="w-20 h-20 rounded-2xl bg-[#95ff00]/10 flex items-center justify-center hover:bg-[#95ff00]/20 transition-all duration-300 border border-[#95ff00]/30">
+                            <Upload className="w-10 h-10 text-[#95ff00]" />
                           </div>
                           <div>
                             <p className="text-gray-300 font-semibold mb-2 text-base">
@@ -921,7 +921,7 @@ const CreateQuiz = () => {
                             </p>
                             <p className="text-gray-500 text-sm">
                               or{" "}
-                              <span className="text-[#1BFFA8] font-semibold">click to browse</span>
+                              <span className="text-[#95ff00] font-semibold">click to browse</span>
                             </p>
                             <p className="text-gray-600 text-xs mt-3">
                               Supports PDF, PPT, PPTX, DOC, DOCX
@@ -939,15 +939,15 @@ const CreateQuiz = () => {
                           {uploadedFiles.map((file, index) => (
                             <div
                               key={index}
-                              className="flex items-center justify-between bg-[#000805] border-2 border-[#00784A] rounded-xl p-4 hover:border-[#1BFFA8]/50 transition-all"
+                              className="flex items-center justify-between bg-[#000805] border-2 border-[#00784A] rounded-xl p-4 hover:border-[#95ff00]/50 transition-all"
                             >
                               <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-xl bg-[#1BFFA8]/10 flex items-center justify-center border border-[#1BFFA8]/30">
+                                <div className="w-12 h-12 rounded-xl bg-[#95ff00]/10 flex items-center justify-center border border-[#95ff00]/30">
                                   {uploadingDocument ? (
-                                    <div className="animate-spin rounded-full h-6 w-6 border-2 border-[#1BFFA8]/20 border-t-[#1BFFA8]"></div>
+                                    <div className="animate-spin rounded-full h-6 w-6 border-2 border-[#95ff00]/20 border-t-[#95ff00]"></div>
                                   ) : uploadedDocumentId ? (
                                     <svg
-                                      className="w-6 h-6 text-[#1BFFA8]"
+                                      className="w-6 h-6 text-[#95ff00]"
                                       fill="none"
                                       stroke="currentColor"
                                       viewBox="0 0 24 24"
@@ -960,7 +960,7 @@ const CreateQuiz = () => {
                                       />
                                     </svg>
                                   ) : (
-                                    <FileText className="w-6 h-6 text-[#1BFFA8]" />
+                                    <FileText className="w-6 h-6 text-[#95ff00]" />
                                   )}
                                 </div>
                                 <div>
@@ -989,8 +989,8 @@ const CreateQuiz = () => {
                   <div className="lg:col-span-2 flex flex-col gap-6">
                     {quizMode === 'auto' ? (
                       <>
-                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
-                          <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
+                          <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
                             Number of Questions
                           </label>
                           <Input 
@@ -999,22 +999,22 @@ const CreateQuiz = () => {
                             max="20"
                             value={numQuestions}
                             onChange={(e) => setNumQuestions(Number(e.target.value))}
-                            className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 h-14 font-semibold text-lg"
+                            className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
                           />
                         </div>
                         
-                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
-                          <label className="text-sm font-semibold text-[#1BFFA8] mb-4 block uppercase tracking-wider">
+                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
+                          <label className="text-sm font-semibold text-[#95ff00] mb-4 block uppercase tracking-wider">
                             Difficulty Level
                           </label>
                           <div className="relative">
                             <button
                               type="button"
                               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                              className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#1BFFA8] transition-all duration-300 h-14 font-semibold text-lg"
+                              className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
                             >
                               <span className={selectedDifficulty ? 'text-white' : 'text-gray-500'}>{selectedDifficulty || 'Select difficulty'}</span>
-                              <svg className="w-5 h-5 text-[#1BFFA8]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                              <svg className="w-5 h-5 text-[#95ff00]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                             </button>
                             
                             {isDropdownOpen && (
@@ -1026,7 +1026,7 @@ const CreateQuiz = () => {
                                     key={difficulty}
                                     type="button"
                                     onClick={() => handleDifficultySelect(difficulty)}
-                                    className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#1BFFA8] transition-all duration-300 text-white font-semibold text-base"
+                                    className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-300 text-white font-semibold text-base"
                                   >
                                     {difficulty}
                                   </button>
@@ -1038,9 +1038,9 @@ const CreateQuiz = () => {
                       </>
                     ) : (
                       <>
-                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
+                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
                           <div className="flex items-center justify-between mb-5">
-                            <label className="text-sm font-semibold text-[#1BFFA8] block uppercase tracking-wider">
+                            <label className="text-sm font-semibold text-[#95ff00] block uppercase tracking-wider">
                               Number of Questions
                             </label>
                             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
@@ -1052,9 +1052,9 @@ const CreateQuiz = () => {
                           </div>
                         </div>
 
-                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#1BFFA8]/50 transition-all duration-300">
+                        <div className="bg-[#051911]/50 border border-[#00784A] rounded-2xl p-6 hover:border-[#95ff00]/50 transition-all duration-300">
                           <div className="flex items-center justify-between mb-5">
-                            <label className="text-sm font-semibold text-[#1BFFA8] block uppercase tracking-wider">
+                            <label className="text-sm font-semibold text-[#95ff00] block uppercase tracking-wider">
                               Custom Breakdown
                             </label>
                             <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
@@ -1070,7 +1070,7 @@ const CreateQuiz = () => {
                                 max="20"
                                 value={customBreakdown.easy}
                                 onChange={(e) => handleCustomBreakdownChange('easy', e.target.value)}
-                                className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                                className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                               />
                             </div>
                             <div className="flex items-center justify-between">
@@ -1081,7 +1081,7 @@ const CreateQuiz = () => {
                                 max="20"
                                 value={customBreakdown.medium}
                                 onChange={(e) => handleCustomBreakdownChange('medium', e.target.value)}
-                                className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                                className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                               />
                             </div>
                             <div className="flex items-center justify-between">
@@ -1092,7 +1092,7 @@ const CreateQuiz = () => {
                                 max="20"
                                 value={customBreakdown.hard}
                                 onChange={(e) => handleCustomBreakdownChange('hard', e.target.value)}
-                                className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#1BFFA8] focus:ring-0 hover:border-[#1BFFA8] transition-all duration-300 font-semibold"
+                                className="w-20 bg-[#000805] border-[#00784A] border-2 rounded-lg py-2 px-3 text-white text-center focus:outline-none focus:border-[#95ff00] focus:ring-0 hover:border-[#95ff00] transition-all duration-300 font-semibold"
                               />
                             </div>
                           </div>

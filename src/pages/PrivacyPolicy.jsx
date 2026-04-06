@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-black text-white pt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-[#00FF9D] to-[#00FF9D]/50 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-[#95ff00] to-[#95ff00]/50 bg-clip-text text-transparent">
           Privacy Policy
         </h1>
         <div className="prose prose-invert prose-green max-w-none">
@@ -53,14 +53,14 @@ const PrivacyPolicy = () => {
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Contact Information</h2>
-          <div className="bg-[#0C1F17] border border-[#00FF9D]/30 rounded-lg p-6 mt-4">
-            <h3 className="text-xl font-semibold mb-4 text-[#00FF9D]">DPO</h3>
+          <div className="bg-[#0C1F17] border border-[#95ff00]/30 rounded-lg p-6 mt-4">
+            <h3 className="text-xl font-semibold mb-4 text-[#95ff00]">DPO</h3>
             <p className="text-gray-400">Mr. SHASHANK KARINCHETI</p>
             <p className="text-gray-400">Razorpay Software Private Limited</p>
             <p className="text-gray-400">Address: No. 22, 1st Floor, SJR Cyber, Laskar - Hosur Road, Adugodi, Bangalore - 560030</p>
             <p className="text-gray-400">Ph: 080-46669555</p>
             <p className="text-gray-400">E-mail: dpo@razorpay.com</p>
-            <p className="text-gray-400">Grievances portal: <a href="https://razorpay.com/grievances/" className="text-[#00FF9D] hover:underline">https://razorpay.com/grievances/</a></p>
+            <p className="text-gray-400">Grievances portal: <a href="https://razorpay.com/grievances/" className="text-[#95ff00] hover:underline">https://razorpay.com/grievances/</a></p>
           </div>
         </div>
       </div>

@@ -161,7 +161,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
         >
           {/* Header */}
           <div className="sticky top-0 bg-black/80 backdrop-blur-md border-b border-white/10 p-6 flex items-center justify-between z-10">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#00FF9D] to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#95ff00] to-cyan-400 bg-clip-text text-transparent">
               Add New Teacher
             </h2>
             <button
@@ -185,7 +185,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   name="username"
                   value={formData.username}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                   placeholder="Enter username"
                 />
                 {errors.username && (
@@ -203,7 +203,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                   placeholder="Enter email"
                 />
                 {errors.email && (
@@ -221,7 +221,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                   placeholder="Enter password"
                 />
                 {errors.password && (
@@ -239,7 +239,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                   placeholder="Enter phone number"
                 />
                 {errors.phone && (
@@ -257,7 +257,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   name="highestQualification"
                   value={formData.highestQualification}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                   placeholder="e.g., PhD, Masters, Bachelor's"
                 />
                 {errors.highestQualification && (
@@ -278,7 +278,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   value={formData.experience}
                   onChange={handleChange}
                   min="0"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                   placeholder="Enter years"
                 />
                 {errors.experience && (
@@ -296,7 +296,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   name="specialization"
                   value={formData.specialization}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                   placeholder="e.g., Advanced Mathematics, Physics"
                 />
               </div>
@@ -310,7 +310,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                   name="approvalStatus"
                   value={formData.approvalStatus}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                 >
                   <option value="pending">Pending</option>
                   <option value="approved">Approved</option>
@@ -329,7 +329,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                 value={formData.bio}
                 onChange={handleChange}
                 rows="3"
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors resize-none"
+                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors resize-none"
                 placeholder="Brief description about the teacher..."
               />
             </div>
@@ -344,7 +344,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                 name="subjectField"
                 value={formData.subjectField}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                 placeholder="e.g., Mathematics, Science, English"
               />
               {errors.subjectField && (
@@ -371,7 +371,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                       onChange={(e) =>
                         handleArrayChange(index, e.target.value, "subjectSubcategories")
                       }
-                      className="flex-1 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00FF9D] transition-colors"
+                      className="flex-1 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                       placeholder="e.g., Algebra, Calculus"
                     />
                     {formData.subjectSubcategories.length > 1 && (
@@ -388,7 +388,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
                 <button
                   type="button"
                   onClick={() => addArrayItem("subjectSubcategories")}
-                  className="flex items-center gap-2 px-4 py-2 bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] rounded-lg hover:bg-[#00FF9D]/20 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] rounded-lg hover:bg-[#95ff00]/20 transition-colors"
                 >
                   <Plus className="w-4 h-4" />
                   Add Subcategory
@@ -420,7 +420,7 @@ const TeacherAddModal = ({ onClose, onAdd }) => {
               </Button>
               <Button
                 type="submit"
-                className="flex-1 bg-gradient-to-r from-[#00FF9D] to-cyan-400 text-black font-semibold hover:opacity-90"
+                className="flex-1 bg-gradient-to-r from-[#95ff00] to-cyan-400 text-black font-semibold hover:opacity-90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Adding..." : "Add Teacher"}

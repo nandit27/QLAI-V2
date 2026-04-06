@@ -23,32 +23,32 @@ const SubscriptionCard = ({ plan, price, features, isPopular }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={`group relative overflow-hidden rounded-2xl border ${
-        isPopular ? 'border-[#00FF9D]/30' : 'border-white/10'
-      } bg-black/40 backdrop-blur-md hover:border-[#00FF9D]/30 transition-all duration-500`}
+        isPopular ? 'border-[#95ff00]/30' : 'border-white/10'
+      } bg-black/40 backdrop-blur-md hover:border-[#95ff00]/30 transition-all duration-500`}
     >
       {/* Gradient Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00FF9D]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#95ff00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
       {isPopular && (
-        <div className="absolute top-0 right-0 bg-[#00FF9D] text-black text-sm font-medium px-4 py-1 rounded-bl-lg">
+        <div className="absolute top-0 right-0 bg-[#95ff00] text-black text-sm font-medium px-4 py-1 rounded-bl-lg">
           Popular
         </div>
       )}
       
       <div className="relative p-8 space-y-6">
-        <h3 className="text-2xl font-bold text-white group-hover:text-[#00FF9D] transition-colors duration-300">
+        <h3 className="text-2xl font-bold text-white group-hover:text-[#95ff00] transition-colors duration-300">
           {plan}
         </h3>
         
         <div className="text-3xl font-bold">
-          <span className="text-[#00FF9D]">₹{price}</span>
+          <span className="text-[#95ff00]">₹{price}</span>
           <span className="text-gray-400 text-lg">/month</span>
         </div>
         
         <div className="space-y-4">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start space-x-3">
-              <Check className="w-5 h-5 text-[#00FF9D] mt-0.5" />
+              <Check className="w-5 h-5 text-[#95ff00] mt-0.5" />
               <span className="text-gray-400">{feature}</span>
             </div>
           ))}
@@ -125,7 +125,7 @@ const Subscription = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#00FF9D] to-[#00FF9D]/50 bg-clip-text text-transparent"
+            className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#95ff00] to-[#95ff00]/50 bg-clip-text text-transparent"
           >
             Choose Your Learning Journey
           </motion.h2>

@@ -48,11 +48,11 @@ function SearchBar() {
       />
       
       <div 
-        className="relative flex items-center bg-black/50 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-[#00FF9D]/50 transition-all duration-300"
+        className="relative flex items-center bg-black/50 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-[#95ff00]/50 transition-all duration-300"
         onMouseMove={handleMouseMove}
       >
         <div className="flex items-center space-x-3 flex-1">
-          <span className={`text-[#00FF9D] transition-transform duration-300 ${isTyping ? 'scale-110' : ''}`}>
+          <span className={`text-[#95ff00] transition-transform duration-300 ${isTyping ? 'scale-110' : ''}`}>
             <svg className="w-5 h-5 animate-pulse" viewBox="0 0 24 24" fill="currentColor">
               <path d="M9.417 0L12 4.5l2.583-4.5L19.5 2.583 15 5.167l4.5 2.583L17.417 12 15 9.5l-3 5-3-5-2.417 2.5L4.5 7.75 9 5.167 4.5 2.583 9.417 0z"/>
             </svg>
@@ -75,8 +75,8 @@ function SearchBar() {
             onClick={() => setIsListening(!isListening)}
             className={`p-2 rounded-xl transition-all duration-300 ${
               isListening 
-                ? 'bg-[#00FF9D]/20 text-[#00FF9D] scale-110' 
-                : 'hover:bg-white/10 text-gray-400 hover:text-[#00FF9D]'
+                ? 'bg-[#95ff00]/20 text-[#95ff00] scale-110' 
+                : 'hover:bg-white/10 text-gray-400 hover:text-[#95ff00]'
             }`}
           >
             <MicrophoneIcon className={`w-5 h-5 ${isListening ? 'animate-pulse' : ''}`} />
@@ -85,7 +85,7 @@ function SearchBar() {
             onClick={handleClick}
             className="p-2 hover:bg-white/10 rounded-xl transition-all duration-300 group hover:scale-110"
           >
-            <PaperAirplaneIcon className="w-5 h-5 text-gray-400 group-hover:text-[#00FF9D] transition-colors" />
+            <PaperAirplaneIcon className="w-5 h-5 text-gray-400 group-hover:text-[#95ff00] transition-colors" />
           </button>
         </div>
       </div>

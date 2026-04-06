@@ -114,15 +114,15 @@ function Navbar({ onSignUpClick, onLoginClick }) {
         <motion.div
           animate={{
             backgroundColor: isScrolled
-              ? "rgba(0, 0, 0, 0.8)"
-              : "rgba(0, 0, 0, 0.4)",
+              ? "rgba(17, 19, 23, 0.85)"
+              : "rgba(17, 19, 23, 0.5)",
             borderColor: isScrolled
-              ? "rgba(0, 255, 157, 0.3)"
-              : "rgba(255, 255, 255, 0.05)",
+              ? "rgba(255, 255, 255, 0.12)"
+              : "rgba(255, 255, 255, 0.08)",
             scale: isScrolled ? 0.98 : 1,
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="backdrop-blur-md rounded-full px-6 border shadow-lg shadow-[#00FF9D]/10"
+          className="backdrop-blur-xl rounded-full px-6 border shadow-lg shadow-black/30"
         >
           <div className="flex items-center justify-between h-14">
             {/* Logo */}
@@ -153,7 +153,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                 >
                   <Link
                     to={link.to}
-                    className="relative text-l font-medium text-white/90 hover:text-[#00FF9D] transition-colors duration-300 group"
+                    className="relative text-l font-medium text-white/70 hover:text-primary transition-colors duration-300 group"
                   >
                     <motion.span
                       whileHover={{ scale: 1.05 }}
@@ -162,7 +162,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                       {link.label}
                     </motion.span>
                     <motion.span
-                      className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-[#00FF9D] to-[#1BFFA8] rounded-full"
+                      className="absolute inset-x-0 bottom-0 h-0.5 bg-primary rounded-full"
                       initial={{ scaleX: 0 }}
                       whileHover={{ scaleX: 1 }}
                       transition={{ duration: 0.3 }}
@@ -179,7 +179,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
               <div className="md:hidden">
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="p-2 rounded-lg bg-[#00FF9D]/10 text-[#00FF9D] hover:bg-[#00FF9D]/20 transition-colors duration-300"
+                  className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2 }}
@@ -193,7 +193,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                   {!isLoggedIn ? (
                     <motion.div
                       key="auth-buttons"
-                      className="flex items-center space-x-4"
+                      className="flex items-center space-x-3"
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
@@ -201,40 +201,25 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                     >
                       <motion.button
                         onClick={onSignUpClick}
-                        className="px-6 py-1 bg-gradient-to-r from-[#01311F] to-[#039760] text-l font-medium rounded-full border-2 border-[#1BFFA8] text-white hover:bg-gradient-to-l hover:from-[#01311F] hover:to-[#039760] transition-all duration-300 relative overflow-hidden group"
-                        whileHover={{
-                          scale: 1.05,
-                          boxShadow: "0 0 20px rgba(0, 255, 157, 0.4)",
-                        }}
+                        className="px-6 py-2 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-full hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-[#00FF9D]/20 to-[#1BFFA8]/20"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: "100%" }}
-                          transition={{ duration: 0.6 }}
-                        />
-                        <span className="relative z-10">Sign Up</span>
+                        Sign Up
                       </motion.button>
 
                       <motion.button
                         onClick={onLoginClick}
-                        className="px-6 py-1 bg-gradient-to-r from-[#01311F] to-[#039760] text-l font-medium rounded-full border-2 border-[#1BFFA8] text-white hover:bg-gradient-to-l hover:from-[#01311F] hover:to-[#039760] transition-all duration-300 relative overflow-hidden group"
+                        className="px-6 py-2 bg-primary text-black text-sm font-semibold rounded-full hover:bg-primary/90 transition-all duration-300"
                         whileHover={{
                           scale: 1.05,
-                          boxShadow: "0 0 20px rgba(0, 255, 157, 0.4)",
+                          boxShadow: "0 0 20px rgba(149, 255, 0, 0.35)",
                         }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-[#00FF9D]/20 to-[#1BFFA8]/20"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: "100%" }}
-                          transition={{ duration: 0.6 }}
-                        />
-                        <span className="relative z-10">Sign In</span>
+                        Sign In
                       </motion.button>
                     </motion.div>
                   ) : (
@@ -248,21 +233,12 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                     >
                       <motion.button
                         onClick={handleLogout}
-                        className="px-4 py-2 bg-[#00FF9D]/10 text-l font-medium rounded-full border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 transition-all duration-300 relative overflow-hidden group"
-                        whileHover={{
-                          scale: 1.05,
-                          boxShadow: "0 0 15px rgba(0, 255, 157, 0.3)",
-                        }}
+                        className="px-4 py-2 bg-white/5 text-sm font-medium rounded-full border border-white/10 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <motion.div
-                          className="absolute inset-0 bg-[#00FF9D]/10"
-                          initial={{ scale: 0 }}
-                          whileHover={{ scale: 1 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                        <span className="relative z-10">Logout</span>
+                        Logout
                       </motion.button>
 
                       <Link
@@ -281,7 +257,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                           transition={{ duration: 0.2 }}
                         >
                           <motion.div
-                            className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00FF9D]/30 to-[#1BFFA8]/30 blur-md"
+                            className="absolute inset-0 rounded-full bg-primary/20 blur-md"
                             animate={{
                               scale: [1, 1.2, 1],
                               opacity: [0.5, 0.8, 0.5],
@@ -292,13 +268,13 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                               ease: "easeInOut",
                             }}
                           />
-                          <Avatar className="ring-2 ring-[#00FF9D]/30 hover:ring-[#00FF9D] ring-offset-2 ring-offset-black/50 transition-all duration-300 relative z-10">
+                          <Avatar className="ring-2 ring-primary/30 hover:ring-primary ring-offset-2 ring-offset-black/50 transition-all duration-300 relative z-10">
                             <AvatarImage
                               src={avatar}
                               alt="Profile"
                               className="hover:brightness-110 transition-all duration-300"
                             />
-                            <AvatarFallback className="bg-gradient-to-br from-gray-600 to-gray-700">
+                            <AvatarFallback className="bg-[#1a1d22] text-white">
                               {userType === "admin"
                                 ? "A"
                                 : userType === "teacher"
@@ -327,14 +303,14 @@ function Navbar({ onSignUpClick, onLoginClick }) {
               className="md:hidden mt-2 overflow-hidden"
             >
               <motion.div
-                className="bg-black/90 backdrop-blur-md rounded-2xl border border-[#00FF9D]/30 mx-4 p-4 shadow-lg shadow-[#00FF9D]/10"
+                className="bg-[#111317]/95 backdrop-blur-xl rounded-2xl border border-white/10 mx-4 p-4 shadow-lg shadow-black/40"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
                 {/* Mobile Navigation Links */}
-                <div className="space-y-3 mb-4">
+                <div className="space-y-1 mb-4">
                   {isLoggedIn &&
                     navigationLinks.map((link, index) => (
                       <motion.div
@@ -346,7 +322,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                         <Link
                           to={link.to}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block px-4 py-3 text-white/90 hover:text-[#00FF9D] hover:bg-[#00FF9D]/10 rounded-lg transition-all duration-300 font-medium"
+                          className="block px-4 py-3 text-white/70 hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-300 font-medium text-sm"
                         >
                           {link.label}
                         </Link>
@@ -358,7 +334,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                 <div className="border-t border-white/10 pt-4">
                   {!isLoggedIn ? (
                     <motion.div
-                      className="space-y-3"
+                      className="space-y-2"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.2 }}
@@ -368,7 +344,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                           onSignUpClick();
                           setIsMobileMenuOpen(false);
                         }}
-                        className="w-full px-6 py-3 bg-gradient-to-r from-[#01311F] to-[#039760] text-white font-medium rounded-lg border-2 border-[#1BFFA8] hover:bg-gradient-to-l hover:from-[#01311F] hover:to-[#039760] transition-all duration-300"
+                        className="w-full px-6 py-3 bg-white/5 text-white font-medium rounded-full border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-sm"
                       >
                         Sign Up
                       </button>
@@ -377,14 +353,14 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                           onLoginClick();
                           setIsMobileMenuOpen(false);
                         }}
-                        className="w-full px-6 py-3 bg-gradient-to-r from-[#01311F] to-[#039760] text-white font-medium rounded-lg border-2 border-[#1BFFA8] hover:bg-gradient-to-l hover:from-[#01311F] hover:to-[#039760] transition-all duration-300"
+                        className="w-full px-6 py-3 bg-primary text-black font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 text-sm"
                       >
                         Sign In
                       </button>
                     </motion.div>
                   ) : (
                     <motion.div
-                      className="space-y-3"
+                      className="space-y-2"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.2 }}
@@ -398,11 +374,11 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                               : "/dashboard"
                         }
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center space-x-3 p-3 bg-[#00FF9D]/10 rounded-lg border border-[#00FF9D]/30"
+                        className="flex items-center space-x-3 p-3 bg-primary/5 rounded-xl border border-primary/20"
                       >
                         <Avatar className="w-8 h-8">
                           <AvatarImage src={avatar} alt="Profile" />
-                          <AvatarFallback className="bg-gradient-to-br from-gray-600 to-gray-700 text-xs">
+                          <AvatarFallback className="bg-[#1a1d22] text-white text-xs">
                             {userType === "admin"
                               ? "A"
                               : userType === "teacher"
@@ -410,7 +386,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                                 : "S"}
                           </AvatarFallback>
                         </Avatar>
-                        <span className="text-[#00FF9D] font-medium">
+                        <span className="text-primary font-medium text-sm">
                           Dashboard
                         </span>
                       </Link>
@@ -419,7 +395,7 @@ function Navbar({ onSignUpClick, onLoginClick }) {
                           handleLogout();
                           setIsMobileMenuOpen(false);
                         }}
-                        className="w-full px-6 py-3 bg-red-500/10 text-red-400 font-medium rounded-lg border border-red-500/30 hover:bg-red-500/20 transition-all duration-300"
+                        className="w-full px-6 py-3 bg-red-500/10 text-red-400 font-medium rounded-full border border-red-500/20 hover:bg-red-500/15 transition-all duration-300 text-sm"
                       >
                         Logout
                       </button>

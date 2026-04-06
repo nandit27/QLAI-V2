@@ -117,7 +117,7 @@ const PaymentButton = ({ membershipType, price, name, email, contact }) => {
           contact
         },
         theme: {
-          color: '#00FF9D'
+          color: '#95ff00'
         },
         modal: {
           ondismiss: function() {
@@ -142,8 +142,8 @@ const PaymentButton = ({ membershipType, price, name, email, contact }) => {
     <button
       onClick={handlePayment}
       disabled={isLoading}
-      className={`w-full px-6 py-2 bg-[#00FF9D] text-black font-semibold rounded-md transition-colors ${
-        isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#00FF9D]/90'
+      className={`w-full px-6 py-2 bg-[#95ff00] text-black font-semibold rounded-md transition-colors ${
+        isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#95ff00]/90'
       }`}
     >
       {isLoading ? 'Processing...' : 'Buy Now'}

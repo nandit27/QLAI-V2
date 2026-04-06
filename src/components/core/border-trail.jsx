@@ -18,11 +18,11 @@ export function BorderTrail({
   return (
     <div className='pointer-events-none absolute inset-0 rounded-[inherit] border border-transparent [mask-clip:padding-box,border-box] [mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]'>
       <motion.div
-        className={cn('absolute aspect-square bg-[#00FF9D]', className)}
+        className={cn('absolute aspect-square bg-[#95ff00]', className)}
         style={{
           width: size,
           offsetPath: `rect(0 auto auto 0 round ${size}px)`,
-          filter: 'drop-shadow(0 0 8px #00FF9D) drop-shadow(0 0 12px #00FF9D)',
+          filter: 'drop-shadow(0 0 8px #95ff00) drop-shadow(0 0 12px #95ff00)',
           ...style,
         }}
         animate={{

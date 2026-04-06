@@ -125,7 +125,7 @@ const DoubtCreation = () => {
       <div className="max-w-2xl mx-auto p-6">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">
-            Create <span className="text-[#00FF9D]">Doubt</span>
+            Create <span className="text-[#95ff00]">Doubt</span>
           </h1>
           <p className="text-xl text-gray-400">
             Share your questions with expert teachers
@@ -137,8 +137,8 @@ const DoubtCreation = () => {
             onClick={() => setActiveTab('text')}
             className={`flex-1 py-4 px-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 ${
               activeTab === 'text'
-                ? 'bg-gradient-to-r from-[#00FF9D]/10 to-[#00FF9D]/20 border border-[#00FF9D]/30 text-[#00FF9D] shadow-lg shadow-[#00FF9D]/5'
-                : 'bg-black/40 border border-white/10 text-white/70 hover:border-[#00FF9D]/20 hover:text-[#00FF9D]/70'
+                ? 'bg-gradient-to-r from-[#95ff00]/10 to-[#95ff00]/20 border border-[#95ff00]/30 text-[#95ff00] shadow-lg shadow-[#95ff00]/5'
+                : 'bg-black/40 border border-white/10 text-white/70 hover:border-[#95ff00]/20 hover:text-[#95ff00]/70'
             }`}
           >
             <Type className="w-5 h-5" />
@@ -148,8 +148,8 @@ const DoubtCreation = () => {
             onClick={() => setActiveTab('image')}
             className={`flex-1 py-4 px-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 ${
               activeTab === 'image'
-                ? 'bg-gradient-to-r from-[#00FF9D]/10 to-[#00FF9D]/20 border border-[#00FF9D]/30 text-[#00FF9D] shadow-lg shadow-[#00FF9D]/5'
-                : 'bg-black/40 border border-white/10 text-white/70 hover:border-[#00FF9D]/20 hover:text-[#00FF9D]/70'
+                ? 'bg-gradient-to-r from-[#95ff00]/10 to-[#95ff00]/20 border border-[#95ff00]/30 text-[#95ff00] shadow-lg shadow-[#95ff00]/5'
+                : 'bg-black/40 border border-white/10 text-white/70 hover:border-[#95ff00]/20 hover:text-[#95ff00]/70'
             }`}
           >
             <ImageIcon className="w-5 h-5" />
@@ -165,12 +165,12 @@ const DoubtCreation = () => {
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Type your doubt here..."
-                  className="flex-1 min-h-[300px] bg-black/40 backdrop-blur-md border border-white/10 focus:border-[#00FF9D]/50 focus:ring-[#00FF9D]/20 rounded-xl p-6 text-white/90 placeholder:text-gray-500 resize-none"
+                  className="flex-1 min-h-[300px] bg-black/40 backdrop-blur-md border border-white/10 focus:border-[#95ff00]/50 focus:ring-[#95ff00]/20 rounded-xl p-6 text-white/90 placeholder:text-gray-500 resize-none"
                 />
               </div>
             ) : (
               <div className="relative group min-h-[300px]">
-                <div className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center group-hover:border-[#00FF9D]/30 transition-all duration-300 h-full flex items-center justify-center">
+                <div className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center group-hover:border-[#95ff00]/30 transition-all duration-300 h-full flex items-center justify-center">
                   <input
                     type="file"
                     onChange={handleFileChange}
@@ -195,11 +195,11 @@ const DoubtCreation = () => {
                       </div>
                     ) : (
                       <>
-                        <div className="w-16 h-16 rounded-full bg-[#00FF9D]/10 flex items-center justify-center mb-2">
-                          <Upload className="w-8 h-8 text-[#00FF9D]" />
+                        <div className="w-16 h-16 rounded-full bg-[#95ff00]/10 flex items-center justify-center mb-2">
+                          <Upload className="w-8 h-8 text-[#95ff00]" />
                         </div>
                         <div>
-                          <p className="text-[#00FF9D] font-medium mb-1">Click to upload or drag and drop</p>
+                          <p className="text-[#95ff00] font-medium mb-1">Click to upload or drag and drop</p>
                           <p className="text-sm text-gray-400">Supported formats: JPG, PNG, GIF</p>
                         </div>
                       </>
@@ -212,11 +212,11 @@ const DoubtCreation = () => {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-[#00FF9D]/10 to-[#00FF9D]/20 border border-[#00FF9D]/30 text-[#00FF9D] hover:from-[#00FF9D]/20 hover:to-[#00FF9D]/30 h-12 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-[#00FF9D]/5"
+              className="w-full bg-gradient-to-r from-[#95ff00]/10 to-[#95ff00]/20 border border-[#95ff00]/30 text-[#95ff00] hover:from-[#95ff00]/20 hover:to-[#95ff00]/30 h-12 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-[#95ff00]/5"
             >
               {loading ? (
                 <div className="flex items-center gap-2">
-                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-[#00FF9D] border-t-transparent"></div>
+                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-[#95ff00] border-t-transparent"></div>
                   <span>Creating...</span>
                 </div>
               ) : (

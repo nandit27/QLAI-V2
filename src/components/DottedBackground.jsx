@@ -46,7 +46,7 @@ export default function DottedBackground({ children, className = "" }) {
         const brightness = Math.max(1 - dist / brightnessRadius, fadeFactor);
 
         ctx.globalAlpha = brightness;
-        ctx.fillStyle = "#00FF9D";
+        ctx.fillStyle = "#95ff00";
         ctx.beginPath();
         ctx.arc(x, y, dotRadius, 0, 1.5 * Math.PI);
         ctx.fill();

@@ -90,7 +90,7 @@ const QuestionPaperGenerator = () => {
       <div className="max-w-4xl mx-auto p-6">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">
-            Question Paper <span className="text-[#00FF9D]">Generator</span>
+            Question Paper <span className="text-[#95ff00]">Generator</span>
           </h1>
           <p className="text-xl text-gray-400">
             Upload your question set and generate multiple variants
@@ -107,7 +107,7 @@ const QuestionPaperGenerator = () => {
           {currentStep === 1 && (
             <div className="space-y-6">
               <div 
-                className="relative group border-2 border-dashed border-[#00FF9D]/30 rounded-2xl p-12 text-center hover:border-[#00FF9D]/50 transition-all duration-500 bg-gradient-to-b from-black/40 to-[#00FF9D]/5"
+                className="relative group border-2 border-dashed border-[#95ff00]/30 rounded-2xl p-12 text-center hover:border-[#95ff00]/50 transition-all duration-500 bg-gradient-to-b from-black/40 to-[#95ff00]/5"
               >
                 <input
                   type="file"
@@ -123,15 +123,15 @@ const QuestionPaperGenerator = () => {
                   <div className="transform-gpu group-hover:scale-105 transition-all duration-500">
                     {/* Animated Upload Icon Container */}
                     <div className="w-24 h-24 mx-auto mb-6 relative">
-                      <div className="absolute inset-0 bg-[#00FF9D]/20 rounded-full animate-pulse"></div>
+                      <div className="absolute inset-0 bg-[#95ff00]/20 rounded-full animate-pulse"></div>
                       <div className="absolute inset-2 bg-black rounded-full flex items-center justify-center">
-                        <Upload className="w-10 h-10 text-[#00FF9D] transform group-hover:translate-y-[-8px] transition-transform duration-500" />
+                        <Upload className="w-10 h-10 text-[#95ff00] transform group-hover:translate-y-[-8px] transition-transform duration-500" />
                       </div>
                     </div>
 
                     {/* File Name or Default Text */}
                     <div className="space-y-4">
-                      <div className="text-2xl font-medium text-[#00FF9D] group-hover:scale-105 transition-transform duration-500">
+                      <div className="text-2xl font-medium text-[#95ff00] group-hover:scale-105 transition-transform duration-500">
                         {fileName || 'Click to upload question set'}
                       </div>
                       
@@ -141,13 +141,13 @@ const QuestionPaperGenerator = () => {
                             Drag and drop your file here or click to browse
                           </p>
                           <div className="flex items-center gap-3 text-sm text-gray-500">
-                            <span className="px-3 py-1 rounded-full bg-[#00FF9D]/10 border border-[#00FF9D]/20">
+                            <span className="px-3 py-1 rounded-full bg-[#95ff00]/10 border border-[#95ff00]/20">
                               PDF
                             </span>
-                            <span className="px-3 py-1 rounded-full bg-[#00FF9D]/10 border border-[#00FF9D]/20">
+                            <span className="px-3 py-1 rounded-full bg-[#95ff00]/10 border border-[#95ff00]/20">
                               DOC
                             </span>
-                            <span className="px-3 py-1 rounded-full bg-[#00FF9D]/10 border border-[#00FF9D]/20">
+                            <span className="px-3 py-1 rounded-full bg-[#95ff00]/10 border border-[#95ff00]/20">
                               DOCX
                             </span>
                           </div>
@@ -158,7 +158,7 @@ const QuestionPaperGenerator = () => {
 
                   {/* Animated Border Effect */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00FF9D]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#95ff00]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500"></div>
                   </div>
                 </label>
               </div>
@@ -170,7 +170,7 @@ const QuestionPaperGenerator = () => {
                 className={`relative w-full h-14 rounded-xl font-medium transition-all duration-500 overflow-hidden
                   ${!file 
                     ? 'bg-gray-800/50 text-gray-500 cursor-not-allowed' 
-                    : 'bg-gradient-to-r from-[#00FF9D]/10 via-[#00FF9D]/20 to-[#00FF9D]/10 text-[#00FF9D] hover:from-[#00FF9D]/20 hover:via-[#00FF9D]/30 hover:to-[#00FF9D]/20 border border-[#00FF9D]/30 hover:border-[#00FF9D]/50 shadow-lg shadow-[#00FF9D]/5'
+                    : 'bg-gradient-to-r from-[#95ff00]/10 via-[#95ff00]/20 to-[#95ff00]/10 text-[#95ff00] hover:from-[#95ff00]/20 hover:via-[#95ff00]/30 hover:to-[#95ff00]/20 border border-[#95ff00]/30 hover:border-[#95ff00]/50 shadow-lg shadow-[#95ff00]/5'
                   }`}
               >
                 <div className="relative flex items-center justify-center gap-2">
@@ -217,22 +217,22 @@ const QuestionPaperGenerator = () => {
                       onChange={(e) => setNumQuestions(Number(e.target.value))}
                       min="1"
                       max="100"
-                      className="w-full bg-black/40 border-2 border-[#00FF9D]/20 rounded-xl px-6 py-4 text-lg text-white 
-                        focus:outline-none focus:border-[#00FF9D]/50 focus:ring-2 focus:ring-[#00FF9D]/20 
+                      className="w-full bg-black/40 border-2 border-[#95ff00]/20 rounded-xl px-6 py-4 text-lg text-white 
+                        focus:outline-none focus:border-[#95ff00]/50 focus:ring-2 focus:ring-[#95ff00]/20 
                         transition-all duration-300 appearance-none"
                     />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
                       <button
                         onClick={() => setNumQuestions(prev => Math.max(1, prev - 1))}
-                        className="w-8 h-8 rounded-lg bg-[#00FF9D]/10 hover:bg-[#00FF9D]/20 
-                          text-[#00FF9D] flex items-center justify-center transition-all duration-300"
+                        className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
+                          text-[#95ff00] flex items-center justify-center transition-all duration-300"
                       >
                         -
                       </button>
                       <button
                         onClick={() => setNumQuestions(prev => Math.min(100, prev + 1))}
-                        className="w-8 h-8 rounded-lg bg-[#00FF9D]/10 hover:bg-[#00FF9D]/20 
-                          text-[#00FF9D] flex items-center justify-center transition-all duration-300"
+                        className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
+                          text-[#95ff00] flex items-center justify-center transition-all duration-300"
                       >
                         +
                       </button>
@@ -255,22 +255,22 @@ const QuestionPaperGenerator = () => {
                       onChange={(e) => setNumPapers(Number(e.target.value))}
                       min="1"
                       max="10"
-                      className="w-full bg-black/40 border-2 border-[#00FF9D]/20 rounded-xl px-6 py-4 text-lg text-white 
-                        focus:outline-none focus:border-[#00FF9D]/50 focus:ring-2 focus:ring-[#00FF9D]/20 
+                      className="w-full bg-black/40 border-2 border-[#95ff00]/20 rounded-xl px-6 py-4 text-lg text-white 
+                        focus:outline-none focus:border-[#95ff00]/50 focus:ring-2 focus:ring-[#95ff00]/20 
                         transition-all duration-300 appearance-none"
                     />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
                       <button
                         onClick={() => setNumPapers(prev => Math.max(1, prev - 1))}
-                        className="w-8 h-8 rounded-lg bg-[#00FF9D]/10 hover:bg-[#00FF9D]/20 
-                          text-[#00FF9D] flex items-center justify-center transition-all duration-300"
+                        className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
+                          text-[#95ff00] flex items-center justify-center transition-all duration-300"
                       >
                         -
                       </button>
                       <button
                         onClick={() => setNumPapers(prev => Math.min(10, prev + 1))}
-                        className="w-8 h-8 rounded-lg bg-[#00FF9D]/10 hover:bg-[#00FF9D]/20 
-                          text-[#00FF9D] flex items-center justify-center transition-all duration-300"
+                        className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
+                          text-[#95ff00] flex items-center justify-center transition-all duration-300"
                       >
                         +
                       </button>
@@ -288,10 +288,10 @@ const QuestionPaperGenerator = () => {
                   onClick={handleGenerate}
                   disabled={isLoading}
                   className="relative w-full h-14 rounded-xl font-medium transition-all duration-500 overflow-hidden
-                    bg-gradient-to-r from-[#00FF9D]/10 via-[#00FF9D]/20 to-[#00FF9D]/10 
-                    hover:from-[#00FF9D]/20 hover:via-[#00FF9D]/30 hover:to-[#00FF9D]/20 
-                    border border-[#00FF9D]/30 hover:border-[#00FF9D]/50 
-                    text-[#00FF9D] shadow-lg shadow-[#00FF9D]/5"
+                    bg-gradient-to-r from-[#95ff00]/10 via-[#95ff00]/20 to-[#95ff00]/10 
+                    hover:from-[#95ff00]/20 hover:via-[#95ff00]/30 hover:to-[#95ff00]/20 
+                    border border-[#95ff00]/30 hover:border-[#95ff00]/50 
+                    text-[#95ff00] shadow-lg shadow-[#95ff00]/5"
                 >
                   <div className="relative flex items-center justify-center gap-3">
                     {isLoading ? (
@@ -302,7 +302,7 @@ const QuestionPaperGenerator = () => {
                     ) : (
                       <>
                         <span className="text-lg">Generate Papers</span>
-                        <div className="w-6 h-6 rounded-full bg-[#00FF9D]/20 flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-full bg-[#95ff00]/20 flex items-center justify-center">
                           <ArrowRight className="w-4 h-4" />
                         </div>
                       </>
@@ -312,7 +312,7 @@ const QuestionPaperGenerator = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </Button>
 
-                <div className="mt-4 p-4 rounded-lg bg-[#00FF9D]/5 border border-[#00FF9D]/20">
+                <div className="mt-4 p-4 rounded-lg bg-[#95ff00]/5 border border-[#95ff00]/20">
                   <p className="text-sm text-center text-gray-400">
                     The generated papers will maintain the same difficulty level while ensuring unique question combinations
                   </p>
@@ -324,8 +324,8 @@ const QuestionPaperGenerator = () => {
           {currentStep === 3 && (
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-8">
-                <div className="h-10 w-10 rounded-lg bg-[#00FF9D]/10 flex items-center justify-center">
-                  <FileText className="w-6 h-6 text-[#00FF9D]" />
+                <div className="h-10 w-10 rounded-lg bg-[#95ff00]/10 flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-[#95ff00]" />
                 </div>
                 <h3 className="text-2xl font-medium text-white">Generated Papers</h3>
               </div>
@@ -334,14 +334,14 @@ const QuestionPaperGenerator = () => {
                 {generatedPapers.map((paper, index) => (
                   <div
                     key={index}
-                    className="group flex items-center justify-between p-6 rounded-xl border border-white/10 bg-black/20 hover:bg-[#00FF9D]/5 hover:border-[#00FF9D]/30 transition-all duration-300"
+                    className="group flex items-center justify-between p-6 rounded-xl border border-white/10 bg-black/20 hover:bg-[#95ff00]/5 hover:border-[#95ff00]/30 transition-all duration-300"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="h-10 w-10 rounded-full bg-[#00FF9D]/10 flex items-center justify-center">
-                        <span className="text-[#00FF9D] font-medium">{paper.set_number}</span>
+                      <div className="h-10 w-10 rounded-full bg-[#95ff00]/10 flex items-center justify-center">
+                        <span className="text-[#95ff00] font-medium">{paper.set_number}</span>
                       </div>
                       <div>
-                        <h4 className="text-lg font-medium text-white group-hover:text-[#00FF9D] transition-colors duration-300">
+                        <h4 className="text-lg font-medium text-white group-hover:text-[#95ff00] transition-colors duration-300">
                           Question Paper Set {paper.set_number}
                         </h4>
                         <p className="text-sm text-gray-400">Ready for download</p>
@@ -350,19 +350,19 @@ const QuestionPaperGenerator = () => {
                     
                     <Button
                       onClick={() => handleDownload(paper)}
-                      className="relative overflow-hidden px-6 py-2 bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 transition-all duration-300 group"
+                      className="relative overflow-hidden px-6 py-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 transition-all duration-300 group"
                     >
                       <span className="flex items-center gap-2">
                         <Download className="w-4 h-4 transition-transform group-hover:translate-y-1" />
                         <span className="font-medium">Download PDF</span>
                       </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00FF9D]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#95ff00]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     </Button>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-8 p-4 rounded-lg bg-[#00FF9D]/5 border border-[#00FF9D]/20">
+              <div className="mt-8 p-4 rounded-lg bg-[#95ff00]/5 border border-[#95ff00]/20">
                 <p className="text-sm text-center text-gray-400">
                   All papers are generated in PDF format and are ready for immediate use
                 </p>

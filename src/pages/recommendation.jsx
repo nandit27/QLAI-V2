@@ -143,7 +143,7 @@ const RecommendationPage = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-black text-white p-8 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00FF9D]"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95ff00]"></div>
       </div>
     );
   }
@@ -161,7 +161,7 @@ const RecommendationPage = () => {
       <div className="max-w-6xl mx-auto space-y-16">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-bold text-[#00FF9D] mb-4">Learning Hub</h1>
+          <h1 className="text-5xl font-bold text-[#95ff00] mb-4">Learning Hub</h1>
           <p className="text-xl text-gray-400">Personalized recommendations based on your performance</p>
         </div>
 
@@ -174,7 +174,7 @@ const RecommendationPage = () => {
         {/* Video Recommendations Section - Show all videos at bottom */}
         {Object.keys(videos).length > 0 && (
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-[#00FF9D] mb-6">YouTube Video Recommendations</h2>
+            <h2 className="text-3xl font-bold text-[#95ff00] mb-6">YouTube Video Recommendations</h2>
             {Object.entries(videos).map(([topic, topicVideos]) => {
               console.log('Rendering topic videos:', topic, topicVideos);
               
@@ -205,10 +205,10 @@ const RecommendationPage = () => {
                                       e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
                                     }}
                                   />
-                                  <div className="absolute inset-0 bg-[#00FF9D]/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute inset-0 bg-[#95ff00]/10 group-hover:bg-transparent transition-colors duration-300" />
                                 </div>
                                 <div className="p-4">
-                                  <h4 className="text-lg font-medium text-gray-200 group-hover:text-[#00FF9D] transition-colors duration-300">
+                                  <h4 className="text-lg font-medium text-gray-200 group-hover:text-[#95ff00] transition-colors duration-300">
                                     {topic} - Video {index + 1}
                                   </h4>
                                 </div>
@@ -230,7 +230,7 @@ const RecommendationPage = () => {
         {/* Practice Topics */}
         {practiceTopics.length > 0 && (
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-[#00FF9D] mb-6">Topics for Practice</h2>
+            <h2 className="text-3xl font-bold text-[#95ff00] mb-6">Topics for Practice</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {practiceTopics.map(({ topic, avgScore, attempts }) => (
                 <button
@@ -238,19 +238,19 @@ const RecommendationPage = () => {
                   onClick={() => handlePracticeClick(topic)}
                   disabled={generatingQuestions === topic}
                   className={`bg-black/50 rounded-xl p-6 border border-zinc-800/50 
-                    hover:border-[#00FF9D]/30 transition-all duration-300 text-left
+                    hover:border-[#95ff00]/30 transition-all duration-300 text-left
                     ${generatingQuestions === topic ? 'opacity-75 cursor-wait' : ''}`}
                 >
                   <h3 className="text-xl font-semibold text-white mb-2">{topic}</h3>
                   <div className="space-y-2">
                     <p className="text-gray-400">
-                      Average Score: <span className="text-[#00FF9D]">{Math.round(avgScore)}%</span>
+                      Average Score: <span className="text-[#95ff00]">{Math.round(avgScore)}%</span>
                     </p>
                     <p className="text-gray-400">
-                      Attempts: <span className="text-[#00FF9D]">{attempts}</span>
+                      Attempts: <span className="text-[#95ff00]">{attempts}</span>
                     </p>
                     {generatingQuestions === topic && (
-                      <div className="flex items-center space-x-2 text-[#00FF9D]">
+                      <div className="flex items-center space-x-2 text-[#95ff00]">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current"></div>
                         <span>Downloading...</span>
                       </div>

@@ -119,7 +119,7 @@ const ChatRoom = () => {
         {/* Extracted Text Section */}
         {extractedText && (
           <div className="mb-8 p-4 bg-black/40 backdrop-blur-md rounded-xl border border-white/10">
-            <h3 className="text-[#00FF9D] mb-2">Question Text</h3>
+            <h3 className="text-[#95ff00] mb-2">Question Text</h3>
             <p className="text-gray-300 whitespace-pre-wrap">{extractedText}</p>
           </div>
         )}
@@ -151,12 +151,12 @@ const ChatRoom = () => {
               onChange={(e) => setNewMessage(e.target.value)}
               placeholder="Type your message..."
               className="flex-1 bg-black/40 border border-white/10 rounded-xl px-4 py-3 
-                focus:outline-none focus:border-[#00FF9D]/50 transition-colors"
+                focus:outline-none focus:border-[#95ff00]/50 transition-colors"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] 
-                font-medium rounded-xl hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 
+              className="px-6 py-3 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] 
+                font-medium rounded-xl hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 
                 transition-all duration-300 flex items-center gap-2"
             >
               <Send className="w-5 h-5" />

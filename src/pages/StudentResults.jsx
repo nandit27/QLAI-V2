@@ -194,7 +194,7 @@ const StudentResults = () => {
           <p className="text-red-400 text-center mb-4">No results data available</p>
           <button
             onClick={() => navigate('/')}
-            className="w-full bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] font-medium py-3 px-4 rounded-xl hover:bg-[#00FF9D]/20 transition-all duration-300"
+            className="w-full bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] font-medium py-3 px-4 rounded-xl hover:bg-[#95ff00]/20 transition-all duration-300"
           >
             Back to Home
           </button>
@@ -285,7 +285,7 @@ const StudentResults = () => {
                 <p className="text-sm font-normal text-slate-400">{totalQuestions} Questions</p>
               </div>
               <div className="h-2 w-full rounded-full bg-slate-700">
-                <div className="h-2 rounded-full bg-[#00ff9d]" style={{ width: `${percentage}%` }}></div>
+                <div className="h-2 rounded-full bg-[#95ff00]" style={{ width: `${percentage}%` }}></div>
               </div>
             </div>
           </section>
@@ -309,9 +309,9 @@ const StudentResults = () => {
                         <h3 className="font-semibold text-white capitalize">{level}</h3>
                         <span className={`text-sm font-medium ${
                           !hasQuestions ? 'text-slate-500' : 
-                          levelPercentage === 100 ? 'text-[#00ff9d]' : 
+                          levelPercentage === 100 ? 'text-[#95ff00]' : 
                           levelPercentage === 0 ? 'text-red-500' : 
-                          'text-[#00ff9d]'
+                          'text-[#95ff00]'
                         }`}>
                           {hasQuestions ? `${levelPercentage}%` : 'N/A'}
                         </span>
@@ -323,7 +323,7 @@ const StudentResults = () => {
                         <div 
                           className={`h-1.5 rounded-full ${
                             !hasQuestions ? 'bg-slate-400' :
-                            levelPercentage === 0 ? 'bg-red-500' : 'bg-[#00ff9d]'
+                            levelPercentage === 0 ? 'bg-red-500' : 'bg-[#95ff00]'
                           }`} 
                           style={{ width: `${levelPercentage}%` }}
                         ></div>
@@ -368,7 +368,7 @@ const StudentResults = () => {
 
                 return (
                   <div key={index} className="flex gap-4 overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-lg shadow-black/5">
-                    <div className={`w-1.5 shrink-0 ${isCorrect ? 'bg-[#00ff9d]' : 'bg-red-500'}`}></div>
+                    <div className={`w-1.5 shrink-0 ${isCorrect ? 'bg-[#95ff00]' : 'bg-red-500'}`}></div>
                     <div className="flex-1 py-4 pr-4">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-start justify-between">
@@ -416,14 +416,14 @@ const StudentResults = () => {
                                   key={key}
                                   className={`flex items-center gap-3 rounded-lg border p-3 text-white ${
                                     isCorrectAnswer
-                                      ? 'border-[#00ff9d]/50 bg-[#00ff9d]/20'
+                                      ? 'border-[#95ff00]/50 bg-[#95ff00]/20'
                                       : isUserAnswer
                                       ? 'border-red-500/50 bg-red-500/20'
                                       : 'border-white/10 bg-white/5'
                                   }`}
                                 >
                                   {(isUserAnswer || isCorrectAnswer) && (
-                                    <span className={`text-xl ${isCorrectAnswer ? 'text-[#00ff9d]' : 'text-red-500'}`}>
+                                    <span className={`text-xl ${isCorrectAnswer ? 'text-[#95ff00]' : 'text-red-500'}`}>
                                       {isCorrectAnswer ? '✓' : '✗'}
                                     </span>
                                   )}
@@ -432,7 +432,7 @@ const StudentResults = () => {
                                     <span>{value}</span>
                                   </div>
                                   {isCorrectAnswer && (
-                                    <span className="text-[#00ff9d] text-sm font-medium">Correct</span>
+                                    <span className="text-[#95ff00] text-sm font-medium">Correct</span>
                                   )}
                                   {isUserAnswer && !isCorrectAnswer && (
                                     <span className="text-red-400 text-sm font-medium">Your Answer</span>
@@ -446,10 +446,10 @@ const StudentResults = () => {
                               {wasAnswered && (
                                 <div className={`flex items-center gap-3 rounded-lg border p-3 text-white ${
                                   isCorrect 
-                                    ? 'border-[#00ff9d]/50 bg-[#00ff9d]/20'
+                                    ? 'border-[#95ff00]/50 bg-[#95ff00]/20'
                                     : 'border-red-500/50 bg-red-500/20'
                                 }`}>
-                                  <span className={`text-xl ${isCorrect ? 'text-[#00ff9d]' : 'text-red-500'}`}>
+                                  <span className={`text-xl ${isCorrect ? 'text-[#95ff00]' : 'text-red-500'}`}>
                                     {isCorrect ? '✓' : '✗'}
                                   </span>
                                   <div className="flex-1">
@@ -459,8 +459,8 @@ const StudentResults = () => {
                                 </div>
                               )}
                               {!isCorrect && (
-                                <div className="flex items-center gap-3 rounded-lg border border-[#00ff9d]/50 bg-[#00ff9d]/20 p-3 text-white">
-                                  <span className="text-xl text-[#00ff9d]">✓</span>
+                                <div className="flex items-center gap-3 rounded-lg border border-[#95ff00]/50 bg-[#95ff00]/20 p-3 text-white">
+                                  <span className="text-xl text-[#95ff00]">✓</span>
                                   <div className="flex-1">
                                     <span className="font-medium">Correct answer: </span>
                                     <span>{correctAnswerValue}</span>
@@ -505,7 +505,7 @@ const StudentResults = () => {
                     key={student.id}
                     className={`flex items-center justify-between gap-4 rounded-xl border p-4 ${
                       isCurrentUser
-                        ? "border-[#00ff9d]/50 bg-[#00ff9d]/10"
+                        ? "border-[#95ff00]/50 bg-[#95ff00]/10"
                         : "border-white/10 bg-white/5"
                     }`}
                   >
@@ -513,7 +513,7 @@ const StudentResults = () => {
                       <span className="text-lg font-bold text-slate-400 min-w-[2rem]">#{index + 1}</span>
                       {badge && <span className="text-2xl">{badge}</span>}
                       <div>
-                        <p className={`font-semibold ${isCurrentUser ? "text-[#00ff9d]" : "text-white"}`}>
+                        <p className={`font-semibold ${isCurrentUser ? "text-[#95ff00]" : "text-white"}`}>
                           {student.name} {isCurrentUser && "(You)"}
                         </p>
                         <p className="text-sm text-slate-400">
@@ -536,7 +536,7 @@ const StudentResults = () => {
           <section className="flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 sm:flex-row sm:justify-end md:pt-12">
             <motion.button
               onClick={() => navigate('/')}
-              className="w-full sm:w-auto flex items-center gap-2 px-6 py-3 bg-[#00FF9D]/10 text-base font-semibold rounded-full border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 hover:border-[#00FF9D]/50 transition-all duration-300 relative overflow-hidden group"
+              className="w-full sm:w-auto flex items-center gap-2 px-6 py-3 bg-[#95ff00]/10 text-base font-semibold rounded-full border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 transition-all duration-300 relative overflow-hidden group"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 15px rgba(0, 255, 157, 0.3)",
@@ -545,7 +545,7 @@ const StudentResults = () => {
               transition={{ duration: 0.2 }}
             >
               <motion.div
-                className="absolute inset-0 bg-[#00FF9D]/10"
+                className="absolute inset-0 bg-[#95ff00]/10"
                 initial={{ scale: 0 }}
                 whileHover={{ scale: 1 }}
                 transition={{ duration: 0.3 }}

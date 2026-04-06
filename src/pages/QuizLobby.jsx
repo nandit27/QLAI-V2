@@ -117,14 +117,14 @@ const QuizLobby = () => {
           <div className="text-center space-y-4">
             <h2 className="text-2xl font-semibold text-gray-400">UNIQUE CODE</h2>
             <div className="flex items-center justify-center gap-4">
-              <span className="text-5xl font-bold text-[#00FF9D] tracking-wider">
+              <span className="text-5xl font-bold text-[#95ff00] tracking-wider">
                 {roomId}
               </span>
               <button
                 onClick={copyToClipboard}
                 className={`p-2 rounded-lg transition-all duration-300 ${
                   isCopied 
-                    ? 'bg-[#00FF9D]/20 text-[#00FF9D]' 
+                    ? 'bg-[#95ff00]/20 text-[#95ff00]' 
                     : 'bg-white/5 text-gray-400 hover:bg-white/10'
                 }`}
               >
@@ -138,10 +138,10 @@ const QuizLobby = () => {
         <Card className="bg-black/40 backdrop-blur-md border border-white/10 p-6 mb-8">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <Users className="w-5 h-5 text-[#00FF9D]" />
+              <Users className="w-5 h-5 text-[#95ff00]" />
               <h2 className="text-xl font-semibold">STUDENTS JOINED</h2>
             </div>
-            <span className="px-4 py-1 bg-[#00FF9D]/10 text-[#00FF9D] rounded-full text-sm">
+            <span className="px-4 py-1 bg-[#95ff00]/10 text-[#95ff00] rounded-full text-sm">
               {students.length} Students
             </span>
           </div>
@@ -184,7 +184,7 @@ const QuizLobby = () => {
             <Button
               onClick={handleStartQuiz}
               disabled={students.length === 0}
-              className="w-full bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] hover:bg-[#00FF9D]/20 h-12 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] hover:bg-[#95ff00]/20 h-12 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               START QUIZ
             </Button>

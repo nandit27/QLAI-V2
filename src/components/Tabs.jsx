@@ -18,8 +18,8 @@ const TabTrigger = ({ value, selected, onClick, children }) => {
       onClick={() => onClick(value)}
       className={`flex-1 px-4 py-2 rounded-md transition-all ${
         selected 
-          ? 'bg-[#00FF9D]/20 border border-[#00FF9D]/50 text-[#00FF9D]' 
-          : 'text-gray-400 hover:text-[#00FF9D]'
+          ? 'bg-[#95ff00]/20 border border-[#95ff00]/50 text-[#95ff00]' 
+          : 'text-gray-400 hover:text-[#95ff00]'
       }`}
     >
       {children}

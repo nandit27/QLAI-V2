@@ -40,7 +40,7 @@ function Security() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#00FF9D] to-[#00FF9D]/50 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#95ff00] to-[#95ff00]/50 bg-clip-text text-transparent">
             Security You Can Trust
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -54,19 +54,19 @@ function Security() {
           {securityFeatures.map((feature, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md hover:border-[#00FF9D]/30 transition-all duration-500"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md hover:border-[#95ff00]/30 transition-all duration-500"
             >
               {/* Gradient Background Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00FF9D]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#95ff00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative p-8">
                 {/* Icon Container */}
-                <div className="mb-6 w-12 h-12 rounded-lg bg-[#00FF9D]/10 flex items-center justify-center text-[#00FF9D] group-hover:scale-110 transition-transform duration-300">
+                <div className="mb-6 w-12 h-12 rounded-lg bg-[#95ff00]/10 flex items-center justify-center text-[#95ff00] group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-[#00FF9D] transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-[#95ff00] transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
@@ -81,7 +81,7 @@ function Security() {
         <div className="mt-20 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md p-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-semibold mb-4 text-[#00FF9D]">
+              <h3 className="text-2xl font-semibold mb-4 text-[#95ff00]">
                 Industry Standard Certifications
               </h3>
               <p className="text-gray-400">
@@ -89,13 +89,13 @@ function Security() {
               </p>
             </div>
             <div className="flex items-center gap-8">
-              <div className="px-6 py-3 rounded-xl bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] font-medium">
+              <div className="px-6 py-3 rounded-xl bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] font-medium">
                 ISO 27001
               </div>
-              <div className="px-6 py-3 rounded-xl bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] font-medium">
+              <div className="px-6 py-3 rounded-xl bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] font-medium">
                 GDPR
               </div>
-              <div className="px-6 py-3 rounded-xl bg-[#00FF9D]/10 border border-[#00FF9D]/30 text-[#00FF9D] font-medium">
+              <div className="px-6 py-3 rounded-xl bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] font-medium">
                 SOC 2
               </div>
             </div>

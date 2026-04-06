@@ -29,7 +29,7 @@ const ImageCarousel = () => {
       <div style={{ position: "absolute", bottom: "16px", left: 0, right: 0, display: "flex", justifyContent: "center", gap: "8px" }}>
         {CAROUSEL_IMAGES.map((_, i) => (
           <button key={i} onClick={() => setCurrent(i)}
-            style={{ width: i === current ? "20px" : "8px", height: "8px", borderRadius: "4px", backgroundColor: i === current ? "#1BFFA8" : "rgba(255,255,255,0.4)", border: "none", transition: "all 0.3s", cursor: "pointer", padding: 0 }}
+            style={{ width: i === current ? "20px" : "8px", height: "8px", borderRadius: "4px", backgroundColor: i === current ? "#95ff00" : "rgba(255,255,255,0.4)", border: "none", transition: "all 0.3s", cursor: "pointer", padding: 0 }}
           />
         ))}
       </div>
@@ -103,8 +103,8 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
   //single helper — keeps button style logic clean
   const getTabStyle = (tab) =>
     activeTab === tab
-      ? { backgroundColor: "#0C3D2A", border: "1px solid #1BFFA8", color: "#1BFFA8" }
-      : { backgroundColor: "transparent", border: "1px solid #1BFFA8", color: hoveredTab === tab ? "#1BFFA8" : "white" };
+      ? { backgroundColor: "#0C3D2A", border: "1px solid #95ff00", color: "#95ff00" }
+      : { backgroundColor: "transparent", border: "1px solid #95ff00", color: hoveredTab === tab ? "#95ff00" : "white" };
 
   return (
     <Dialog open={isOpen} onClose={onClose}>
@@ -114,7 +114,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
         width: "min(80vw, 900px)",
         maxHeight: "90vh",
         backgroundColor: "#000A06",
-        border: "2px solid #1BFFA8",
+        border: "2px solid #95ff00",
         borderRadius: "16px",
         overflow: "hidden",
         alignItems: "stretch",
@@ -155,9 +155,9 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
           onClick={onClose}
           style={{
             position: "absolute", top: "12px", right: "12px", zIndex: 1001,
-            background: "transparent", border: "1px solid #1BFFA8",
+            background: "transparent", border: "1px solid #95ff00",
             borderRadius: "50%", width: "22px", height: "22px",
-            cursor: "pointer", color: "#1BFFA8", fontSize: "12px",
+            cursor: "pointer", color: "#95ff00", fontSize: "12px",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}
           aria-label="Close"
@@ -167,9 +167,9 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
       {showEmailSent ? (
         <div className="text-center flex flex-col justify-center" style={{ minHeight: "400px" }}>
           <div className="mb-6">
-            <div className="w-16 h-16 bg-[#1BFFA8]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#95ff00]/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
-                className="w-8 h-8 text-[#1BFFA8]"
+                className="w-8 h-8 text-[#95ff00]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -182,7 +182,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                 />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-[#1BFFA8] mb-3">
+            <h2 className="text-2xl font-bold text-[#95ff00] mb-3">
               Check Your Email
             </h2>
             <p className="text-gray-400 mb-6 text-sm">
@@ -195,7 +195,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                 setShowEmailSent(false);
                 onClose();
               }}
-              className="w-full px-6 py-2 bg-[#1BFFA8]/10 border border-[#1BFFA8] text-[#1BFFA8] hover:bg-[#1BFFA8]/20 rounded-lg transition-all duration-200 font-medium"
+              className="w-full px-6 py-2 bg-[#95ff00]/10 border border-[#95ff00] text-[#95ff00] hover:bg-[#95ff00]/20 rounded-lg transition-all duration-200 font-medium"
             >
               Got it
             </button>
@@ -221,7 +221,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold">
               <span className="text-white">Join </span>
-              <span className="text-[#1BFFA8]">QuickLearnAI</span>
+              <span className="text-[#95ff00]">QuickLearnAI</span>
             </h2>
             <p className="text-white mt-2">Start your learning journey today</p>
           </div>
@@ -259,7 +259,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                     type="text"
                     name="username"
                     placeholder="John Doe"
-                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#1BFFA8] focus:ring-1 focus:ring-[#1BFFA8] transition-all text-white placeholder-[#3B6756]"
+                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#95ff00] focus:ring-1 focus:ring-[#95ff00] transition-all text-white placeholder-[#3B6756]"
                     required
                   />
                 </div>
@@ -274,7 +274,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                     name="phone"
                     placeholder="1234567890"
                     pattern="[0-9]{10}"
-                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#1BFFA8] focus:ring-1 focus:ring-[#1BFFA8] transition-all text-white placeholder-[#3B6756]"
+                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#95ff00] focus:ring-1 focus:ring-[#95ff00] transition-all text-white placeholder-[#3B6756]"
                     required
                   />
                 </div>
@@ -288,7 +288,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                     type="email"
                     name="email"
                     placeholder="student@example.com"
-                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#1BFFA8] focus:ring-1 focus:ring-[#1BFFA8] transition-all text-white placeholder-[#3B6756]"
+                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#95ff00] focus:ring-1 focus:ring-[#95ff00] transition-all text-white placeholder-[#3B6756]"
                     required
                   />
                 </div>
@@ -302,7 +302,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                     type="password"
                     name="password"
                     placeholder="Enter your password"
-                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#1BFFA8] focus:ring-1 focus:ring-[#1BFFA8] transition-all text-white placeholder-[#3B6756]"
+                    className="w-full px-4 py-2 bg-[#0A1F15] border border-[#1B3A2A] rounded-lg focus:outline-none focus:border-[#95ff00] focus:ring-1 focus:ring-[#95ff00] transition-all text-white placeholder-[#3B6756]"
                     required
                   />
                 </div>
@@ -310,11 +310,11 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full py-2.5 px-4 bg-[#1BFFA8]/10 border border-[#1BFFA8] text-[#1BFFA8] hover:bg-[#1BFFA8]/20 rounded-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-2.5 px-4 bg-[#95ff00]/10 border border-[#95ff00] text-[#95ff00] hover:bg-[#95ff00]/20 rounded-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
                     <div className="flex items-center justify-center space-x-2">
-                      <div className="w-4 h-4 border-2 border-[#1BFFA8] border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-4 h-4 border-2 border-[#95ff00] border-t-transparent rounded-full animate-spin"></div>
                       <span>Signing Up...</span>
                     </div>
                   ) : (
@@ -327,7 +327,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
             <TabContent value="teacher" selected={activeTab === "teacher"}>
               <div className="flex flex-col items-center justify-center" style={{ minHeight: "340px" }}>
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-[#1BFFA8] mb-4">
+                  <h3 className="text-xl font-bold text-[#95ff00] mb-4">
                     Teacher Registration
                   </h3>
                   <p className="text-white text-base mb-6">
@@ -335,7 +335,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                   </p>
                   <a
                     href="mailto:iamquicklearn.ai@gmail.com"
-                    className="text-[#1BFFA8] hover:underline text-lg font-semibold inline-block"
+                    className="text-[#95ff00] hover:underline text-lg font-semibold inline-block"
                   >
                     iamquicklearn.ai@gmail.com
                   </a>
@@ -348,7 +348,7 @@ export const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
             Already have an account?{" "}
             <button
               onClick={onSwitchToLogin}
-              className="text-[#1BFFA8] hover:text-[#1BFFA8]/80 font-medium transition-colors"
+              className="text-[#95ff00] hover:text-[#95ff00]/80 font-medium transition-colors"
             >
               Log in
             </button>

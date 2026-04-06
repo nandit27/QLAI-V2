@@ -70,7 +70,7 @@ const StudentLobby = () => {
           <div className="text-center space-y-4">
             <h2 className="text-2xl font-semibold text-gray-400">QUIZ CODE</h2>
             <div className="flex items-center justify-center gap-4">
-              <span className="text-5xl font-bold text-[#00FF9D] tracking-wider">
+              <span className="text-5xl font-bold text-[#95ff00] tracking-wider">
                 {roomId}
               </span>
             </div>
@@ -80,7 +80,7 @@ const StudentLobby = () => {
         {/* Students List */}
         <Card className="bg-black/40 backdrop-blur-md border border-white/10 p-8">
           <div className="flex items-center gap-3 mb-6">
-            <Users className="w-6 h-6 text-[#00FF9D]" />
+            <Users className="w-6 h-6 text-[#95ff00]" />
             <h2 className="text-2xl font-semibold">Waiting Room</h2>
           </div>
           
@@ -89,7 +89,7 @@ const StudentLobby = () => {
             <div>
               <h3 className="text-lg font-medium text-gray-400 mb-3">Host</h3>
               <div className="flex items-center gap-3 p-3 bg-black/20 rounded-lg border border-white/5">
-                <div className="w-10 h-10 rounded-full bg-[#00FF9D]/20 flex items-center justify-center text-[#00FF9D] font-bold">
+                <div className="w-10 h-10 rounded-full bg-[#95ff00]/20 flex items-center justify-center text-[#95ff00] font-bold">
                   {hostName ? hostName.charAt(0).toUpperCase() : 'T'}
                 </div>
                 <span>{hostName || 'Teacher'}</span>
@@ -103,7 +103,7 @@ const StudentLobby = () => {
                 {students.length > 0 ? (
                   students.map((student, index) => (
                     <div key={index} className="flex items-center gap-3 p-3 bg-black/20 rounded-lg border border-white/5">
-                      <div className="w-10 h-10 rounded-full bg-[#00FF9D]/20 flex items-center justify-center text-[#00FF9D] font-bold">
+                      <div className="w-10 h-10 rounded-full bg-[#95ff00]/20 flex items-center justify-center text-[#95ff00] font-bold">
                         {student.name ? student.name.charAt(0).toUpperCase() : `S${index + 1}`}
                       </div>
                       <span>{student.name || `Student ${index + 1}`}</span>
