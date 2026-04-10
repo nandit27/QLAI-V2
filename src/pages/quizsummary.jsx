@@ -9,8 +9,6 @@ import { ArtifactRenderer } from "../components/ArtifactRenderer";
 import { parseArtifactString } from "../utils/artifactParser";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
-import { Button } from "../components/ui/Button";
-
 const QuizSummary = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
