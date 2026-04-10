@@ -1,1 +1,0 @@
-import{j as n,h as e}from"./index-IO1tYKuh.js";function s({className:r,...t}){return n.jsx("input",{className:e("flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm",r),...t})}export{s as I};
