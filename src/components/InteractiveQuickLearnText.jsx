@@ -1,11 +1,13 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 const InteractiveQuickLearnText = () => {
   const [hoveredPath, setHoveredPath] = useState(null)
   const svgRef = useRef(null)
+  const [isHoveredState, setIsHoveredState] = useState(false);
 
   const handleMouseMove = (e) => {
     if (!svgRef.current) return
+    setIsHoveredState(true);
     
     const rect = svgRef.current.getBoundingClientRect()
     const x = e.clientX - rect.left
@@ -44,16 +46,18 @@ const InteractiveQuickLearnText = () => {
 
   const handleMouseLeave = () => {
     setHoveredPath(null)
+    setIsHoveredState(false)
   }
 
   const getPathStyle = (letterGroup) => {
-    const isHovered = hoveredPath === letterGroup
+    const isHovered = hoveredPath === letterGroup;
     return {
-      fill: isHovered ? '#95ff00' : '#2D3A35',
-      stroke: isHovered ? '#95ff00' : 'transparent',
-      strokeWidth: isHovered ? '1' : '0',
-      filter: isHovered ? 'drop-shadow(0 0 20px rgba(0, 255, 157, 1)) drop-shadow(0 0 40px rgba(0, 255, 157, 0.6))' : 'none',
-      transition: 'all 0.2s ease-out'
+      fill: isHovered ? 'var(--foreground)' : 'transparent',
+      stroke: isHovered ? 'var(--foreground)' : 'var(--border)',
+      strokeWidth: isHovered ? '2' : '1',
+      filter: 'none',
+      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+      opacity: isHovered || !isHoveredState ? 1 : 0.4
     }
   }
 
@@ -67,7 +71,7 @@ const InteractiveQuickLearnText = () => {
           viewBox="0 0 1051 178" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
+          className="w-full h-full cursor-crosshair"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >

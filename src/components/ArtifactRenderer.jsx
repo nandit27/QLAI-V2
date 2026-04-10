@@ -5,10 +5,10 @@ import MathRenderer from "./MathRenderer";
 
 function ArtifactSection({ eyebrow, title, description, children }) {
   return (
-    <section className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-cyan-950/25 p-5 md:p-6 shadow-[0_24px_80px_rgba(6,182,212,0.12)]">
+    <section className="rounded-3xl border border-[#95ff00]/20 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-cyan-950/25 p-5 md:p-6 shadow-[0_24px_80px_rgba(6,182,212,0.12)]">
       <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-400/80">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#95ff00]/80">
             {eyebrow}
           </p>
           <h3 className="mt-1 text-xl font-semibold text-white">{title}</h3>
@@ -93,7 +93,7 @@ function MermaidBlock({ code, title, index }) {
       title={title || "Diagram"}
       description="A structured visual generated from the summary. If rendering fails, the raw Mermaid source is shown below."
     >
-      <div className="overflow-x-auto rounded-2xl border border-cyan-500/15 bg-slate-950/70 p-4">
+      <div className="overflow-x-auto rounded-2xl border border-[#95ff00]/15 bg-slate-950/70 p-4">
         <div ref={containerRef} className="mermaid-container flex min-w-[540px] justify-center">
           {error && (
             <div className="w-full space-y-3">
@@ -125,13 +125,13 @@ function TimelineArtifact({ data }) {
     >
       <div className="space-y-4">
         {events.map((evt, i) => (
-          <div key={i} className="grid grid-cols-[72px_1fr] gap-4 rounded-2xl border border-cyan-500/15 bg-black/25 p-4">
-            <div className="flex items-center justify-center rounded-xl bg-cyan-500/10 font-mono text-sm font-semibold text-cyan-300">
+          <div key={i} className="grid grid-cols-[72px_1fr] gap-4 rounded-2xl border border-[#95ff00]/15 bg-black/25 p-4">
+            <div className="flex items-center justify-center rounded-xl bg-[#95ff00]/10 font-mono text-sm font-semibold text-cyan-300">
               {evt.time}
             </div>
             <div className="relative">
               {i < events.length - 1 && (
-                <span className="absolute -bottom-5 left-0 top-10 w-px bg-gradient-to-b from-cyan-400/70 to-transparent" />
+                <span className="absolute -bottom-5 left-0 top-10 w-px bg-gradient-to-b from-[#95ff00]/70 to-transparent" />
               )}
               <p className="text-sm font-medium text-white">{evt.title}</p>
             </div>
@@ -154,20 +154,20 @@ function LearningJourneyArtifact({ data }) {
         {stages.map((stage, i) => (
           <motion.div
             key={i}
-            className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-r from-slate-950/95 via-slate-900/90 to-emerald-950/30 p-5"
+            className="relative overflow-hidden rounded-3xl border border-[#95ff00]/20 bg-gradient-to-r from-slate-950/95 via-slate-900/90 to-emerald-950/30 p-5"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.05 }}
           >
             {i < stages.length - 1 && (
-              <span className="absolute bottom-[-18px] left-10 top-[92px] w-px bg-gradient-to-b from-cyan-400/60 to-transparent" />
+              <span className="absolute bottom-[-18px] left-10 top-[92px] w-px bg-gradient-to-b from-[#95ff00]/60 to-transparent" />
             )}
             <div className="grid gap-4 lg:grid-cols-[88px_minmax(0,1fr)_280px]">
               <div className="flex flex-col items-center gap-2">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/10 text-lg font-bold text-cyan-200">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#95ff00]/25 bg-[#95ff00]/10 text-lg font-bold text-cyan-200">
                   {i + 1}
                 </div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-cyan-400/80">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#95ff00]/80">
                   {stage.stage}
                 </span>
               </div>
@@ -178,14 +178,14 @@ function LearningJourneyArtifact({ data }) {
                   {(stage.details || []).map((detail, detailIndex) => (
                     <span
                       key={detailIndex}
-                      className="rounded-full border border-cyan-500/20 bg-cyan-500/8 px-3 py-1 text-xs text-cyan-100"
+                      className="rounded-full border border-[#95ff00]/20 bg-[#95ff00]/8 px-3 py-1 text-xs text-cyan-100"
                     >
                       {parseAndRenderMath(detail)}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
+              <div className="rounded-2xl border border-[#95ff00]/20 bg-[#95ff00]/10 p-4">
                 <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-300/80">
                   Checkpoint
                 </div>
@@ -221,12 +221,12 @@ function MisconceptionMatrixArtifact({ data }) {
                 <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-rose-300/80">Common mistake</div>
                 <p className="mt-2 text-sm leading-6 text-rose-50/95">{parseAndRenderMath(item.misconception)}</p>
               </div>
-              <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
+              <div className="rounded-2xl border border-[#95ff00]/20 bg-[#95ff00]/10 p-4">
                 <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-300/80">Correct view</div>
                 <p className="mt-2 text-sm leading-6 text-emerald-50/95">{parseAndRenderMath(item.correction)}</p>
               </div>
               <div className="grid gap-3 md:grid-cols-2">
-                <div className="rounded-2xl border border-cyan-500/15 bg-black/25 p-4">
+                <div className="rounded-2xl border border-[#95ff00]/15 bg-black/25 p-4">
                   <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-300/80">Why confusing</div>
                   <p className="mt-2 text-sm leading-6 text-slate-300">{item.why_confusing}</p>
                 </div>
@@ -263,13 +263,13 @@ function FormulaBoardArtifact({ data }) {
     >
       <ul className="space-y-4">
         {formulas.map((f, i) => (
-          <li key={i} className="rounded-2xl border border-cyan-500/15 bg-black/25 p-4">
+          <li key={i} className="rounded-2xl border border-[#95ff00]/15 bg-black/25 p-4">
             {/* Name may be plain text or contain inline math — use parser */}
             <div className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-pink-300/90">
               {parseAndRenderMath(f.name)}
             </div>
             {/* Formula is ALWAYS a LaTeX expression — render directly as display math */}
-            <div className="rounded-xl border border-cyan-500/15 bg-slate-950/70 px-4 py-3 text-cyan-100">
+            <div className="rounded-xl border border-[#95ff00]/15 bg-slate-950/70 px-4 py-3 text-cyan-100">
               <MathRenderer content={stripMathDelimiters(f.formula)} block={true} />
             </div>
             {f.meaning && (
@@ -296,10 +296,10 @@ function ConceptGraphArtifact({ data }) {
       description="The root idea is placed first, followed by the connected concepts and their relationships."
     >
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)]">
-        <div className="rounded-3xl border border-cyan-500/15 bg-black/25 p-5">
+        <div className="rounded-3xl border border-[#95ff00]/15 bg-black/25 p-5">
           {root && (
             <div className="mb-5 flex justify-center">
-              <div className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 text-center text-base font-semibold text-cyan-100 shadow-[0_0_40px_rgba(34,211,238,0.15)]">
+              <div className="rounded-full border border-[#95ff00]/30 bg-[#95ff00]/10 px-6 py-3 text-center text-base font-semibold text-cyan-100 shadow-[0_0_40px_rgba(34,211,238,0.15)]">
                 {root.label}
               </div>
             </div>
@@ -321,7 +321,7 @@ function ConceptGraphArtifact({ data }) {
             ))}
           </div>
         </div>
-        <div className="rounded-3xl border border-cyan-500/15 bg-black/25 p-5">
+        <div className="rounded-3xl border border-[#95ff00]/15 bg-black/25 p-5">
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Relationship paths</h4>
           <div className="space-y-3">
             {edges.map((e, i) => (
@@ -348,7 +348,7 @@ function ExamRevisionArtifact({ data }) {
     >
       <ul className="grid gap-3 md:grid-cols-2">
         {points.map((p, i) => (
-          <li key={i} className="flex items-start gap-3 rounded-2xl border border-cyan-500/15 bg-black/25 p-4 text-sm text-slate-200">
+          <li key={i} className="flex items-start gap-3 rounded-2xl border border-[#95ff00]/15 bg-black/25 p-4 text-sm text-slate-200">
             <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-pink-500/15 text-xs font-bold text-pink-300">
               {i + 1}
             </span>

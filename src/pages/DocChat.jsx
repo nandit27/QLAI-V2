@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
   Copy,
   Loader2,
@@ -19,6 +18,8 @@ import { documentService, docChatService } from "../services/api";
 import TextareaAutosize from "react-textarea-autosize";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
+
+import { Button } from "../components/ui/Button";
 
 const getFileUrlFromUploadResponse = (uploadResponse) => {
   if (!uploadResponse) return null;
@@ -71,7 +72,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="mt-4 pt-3 border-t border-slate-200 dark:border-white/5 flex items-center gap-1"
+      className="mt-4 pt-3 border-t border-white/10 dark:border-white/5 flex items-center gap-1"
     >
       {/* Thumbs Up */}
       <motion.button
@@ -81,7 +82,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
         className={`group relative p-2 rounded-lg transition-all duration-200 ${
           thumbsState === "up" 
             ? "bg-primary/20 text-[#00AA55] dark:text-[#95ff00]" 
-            : "hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+            : "hover:bg-neutral-900 dark:hover:bg-white/5 text-slate-400 hover:text-gray-400 dark:hover:text-white"
         }`}
         title="Helpful"
       >
@@ -99,7 +100,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
         className={`group relative p-2 rounded-lg transition-all duration-200 ${
           thumbsState === "down" 
             ? "bg-red-500/20 text-red-500 dark:text-red-400" 
-            : "hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+            : "hover:bg-neutral-900 dark:hover:bg-white/5 text-slate-400 hover:text-gray-400 dark:hover:text-white"
         }`}
         title="Not helpful"
       >
@@ -131,7 +132,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
         className={`group relative p-2 rounded-lg transition-all duration-200 ${
           copied
             ? "bg-primary/20 text-[#00AA55] dark:text-[#95ff00]"
-            : "hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+            : "hover:bg-neutral-900 dark:hover:bg-white/5 text-slate-400 hover:text-gray-400 dark:hover:text-white"
         }`}
         title="Copy to clipboard"
       >
@@ -151,7 +152,7 @@ const BotActions = ({ content, onRegenerate, onThumb, ttsEnabled }) => {
           className={`group relative p-2 rounded-lg transition-all duration-200 ${
             isSpeaking
               ? "bg-primary/20 text-[#00AA55] dark:text-[#95ff00] cursor-wait"
-              : "hover:bg-slate-100 dark:hover:bg-white/5 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+              : "hover:bg-neutral-900 dark:hover:bg-white/5 text-slate-400 hover:text-gray-400 dark:hover:text-white"
           }`}
           title="Read aloud"
         >
@@ -321,7 +322,7 @@ const DocChat = () => {
   // which prevents browser embed restrictions that cause blank previews.
 
   return (
-    <div className="min-h-screen bg-[#f1f3f6] dark:bg-black text-slate-900 dark:text-white pt-28 overflow-hidden transition-colors duration-200">
+    <div className="min-h-screen bg-[#f1f3f6] dark:bg-black text-white dark:text-white pt-28 overflow-hidden transition-colors duration-200">
       <div className="max-w-7xl mx-auto h-[calc(100vh-8rem)] px-6 flex flex-col">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -329,7 +330,7 @@ const DocChat = () => {
           className="mb-6 flex justify-between items-center"
         >
           <div>
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-transparent dark:bg-gradient-to-r dark:from-[#95ff00] dark:to-[#00CC7D] dark:bg-clip-text">
+            <h1 className="text-2xl font-bold text-white dark:text-transparent dark:bg-gradient-to-r dark:from-[#95ff00] dark:to-[#00CC7D] dark:bg-clip-text">
               Document Chat
             </h1>
             <p className="text-sm text-slate-500 dark:text-gray-400 mt-0.5">
@@ -349,23 +350,23 @@ const DocChat = () => {
         >
           {/* Left: Document preview */}
           {showPreview && (
-          <section className="bg-white dark:bg-black/40 backdrop-blur-md rounded-3xl border border-slate-200 dark:border-white/10 h-full overflow-hidden flex flex-col shadow-sm">
-            <div className="h-16 px-6 border-b border-slate-100 dark:border-white/10 flex items-center justify-between">
+          <section className="bg-[#0a0a0a] dark:bg-black/40 backdrop-blur-md rounded-3xl border border-white/10 dark:border-white/10 h-full overflow-hidden flex flex-col shadow-sm">
+            <div className="h-16 px-6 border-b border-white/10 dark:border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-red-50 dark:bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center">
                   <span className="material-symbols-outlined font-variation-settings-fill-0">description</span>
                 </div>
                 <div>
-                  <h2 className="text-sm font-bold text-slate-900 dark:text-white">{fileName}</h2>
+                  <h2 className="text-sm font-bold text-white dark:text-white">{fileName}</h2>
                 </div>
               </div>
             </div>
-            <div className="flex-1 min-h-0 flex justify-center bg-slate-50 dark:bg-transparent">
+            <div className="flex-1 min-h-0 flex justify-center bg-[#0a0a0a] dark:bg-transparent">
               {fileUrl ? (
                 <iframe
                   src={fileUrl}
                   title="Document Preview"
-                  className="w-full h-full bg-white dark:bg-black border-none"
+                  className="w-full h-full bg-[#0a0a0a] dark:bg-black border-none"
                 />
               ) : (
                 <div className="h-full flex items-center justify-center text-slate-400 dark:text-gray-400">
@@ -388,37 +389,39 @@ const DocChat = () => {
           )}
 
           {/* Right: Chat */}
-          <section className="bg-white dark:bg-black/40 backdrop-blur-md rounded-3xl border border-slate-200 dark:border-white/10 h-full flex flex-col overflow-hidden shadow-sm">
+          <section className="bg-[#0a0a0a] dark:bg-black/40 backdrop-blur-md rounded-3xl border border-white/10 dark:border-white/10 h-full flex flex-col overflow-hidden shadow-sm">
             {/* Chat header from HTML new layout */}
-            <div className="h-16 px-6 border-b border-slate-100 dark:border-white/10 flex items-center justify-between">
+            <div className="h-16 px-6 border-b border-white/10 dark:border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <button 
+                <Button
                   onClick={() => setShowPreview(!showPreview)}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 text-slate-500 transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-neutral-900 dark:hover:bg-white/10 text-slate-500 transition-colors"
                   title={showPreview ? "Full Screen Chat" : "Show Document"}
-                >
+                  variant="ghost"
+                  size="icon">
                   <span className="material-symbols-outlined text-[20px]">
                     {showPreview ? "fullscreen" : "fullscreen_exit"}
                   </span>
-                </button>
+                </Button>
                 <div className="w-8 h-8 bg-primary dark:bg-white/10 rounded-full flex items-center justify-center hidden sm:flex">
                   <span className="material-symbols-outlined text-black dark:text-[#95ff00] text-lg font-variation-settings-fill-1">auto_awesome</span>
                 </div>
-                <h2 className="text-sm font-bold text-slate-900 dark:text-white tracking-tight">QuickLearn Assistant</h2>
+                <h2 className="text-sm font-bold text-white dark:text-white tracking-tight">QuickLearn Assistant</h2>
               </div>
-              <button 
-                onClick={handleClearFiles} 
+              <Button
+                onClick={handleClearFiles}
                 disabled={clearingEmbeddings}
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-slate-200 dark:border-white/10 rounded-lg text-slate-500 mb-0 hover:text-red-600 hover:border-red-200 hover:bg-red-50 dark:text-slate-400 dark:hover:text-red-400 dark:hover:border-red-500/30 dark:hover:bg-red-500/10 transition-all bg-white dark:bg-transparent shadow-sm"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-white/10 dark:border-white/10 rounded-lg text-slate-500 mb-0 hover:text-red-600 hover:border-red-200 hover:bg-red-50 dark:text-slate-400 dark:hover:text-red-400 dark:hover:border-red-500/30 dark:hover:bg-red-500/10 transition-all bg-[#0a0a0a] dark:bg-transparent shadow-sm"
                 title="Clear Chat"
-              >
+                variant="ghost"
+                size="icon">
                 {clearingEmbeddings ? (
                    <Loader2 className="w-4 h-4 animate-spin" />
                 ) : (
                    <span className="material-symbols-outlined text-[18px]">delete_sweep</span>
                 )}
                 <span className="text-[11px] font-bold uppercase tracking-wider hidden sm:inline leading-none mt-0.5">Clear Chat</span>
-              </button>
+              </Button>
             </div>
             
             {/* Chat Messages */}
@@ -434,7 +437,7 @@ const DocChat = () => {
                   >
                     {m.type === "user" ? (
                       /* User Message */
-                      <div className="flex items-start gap-4 justify-end">
+                      (<div className="flex items-start gap-4 justify-end">
                         <div className="flex-1 flex flex-col items-end space-y-2">
                           <div className="bg-primary dark:bg-primary/20 text-black dark:text-[#95ff00] p-4 rounded-2xl rounded-tr-none shadow-sm max-w-[90%]">
                             <p className="text-[14px] leading-relaxed whitespace-pre-wrap">{m.content}</p>
@@ -443,20 +446,20 @@ const DocChat = () => {
                         <div className="w-8 h-8 bg-primary dark:bg-primary/20 rounded-lg flex-shrink-0 flex items-center justify-center shadow-sm">
                           <span className="material-symbols-outlined text-black dark:text-[#95ff00] text-sm font-variation-settings-fill-1">person</span>
                         </div>
-                      </div>
+                      </div>)
                     ) : (
                       /* Bot Message */
-                      <div className="flex items-start gap-4">
+                      (<div className="flex items-start gap-4">
                         <div className="w-8 h-8 bg-slate-200 dark:bg-white/10 rounded-lg flex-shrink-0 flex items-center justify-center shadow-sm">
                           <span className="material-symbols-outlined text-slate-500 dark:text-[#95ff00] text-sm">smart_toy</span>
                         </div>
                         <div className="flex-1 space-y-2">
-                          <div className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 p-5 rounded-2xl rounded-tl-none shadow-sm">
+                          <div className="bg-[#0a0a0a] dark:bg-white/5 border border-white/10 dark:border-white/10 p-5 rounded-2xl rounded-tl-none shadow-sm">
                             <div className="prose prose-slate dark:prose-invert max-w-none 
-                                prose-headings:text-slate-900 dark:prose-headings:text-white prose-headings:font-bold prose-headings:mt-4 prose-headings:mb-2 
-                                prose-p:text-slate-600 dark:prose-p:text-gray-300 prose-p:my-2 prose-p:leading-relaxed prose-p:text-[14px]
-                                prose-strong:text-slate-900 dark:prose-strong:text-[#95ff00] prose-strong:font-semibold 
-                                prose-li:text-slate-600 dark:prose-li:text-gray-300 prose-li:my-1 prose-li:text-[14px]
+                                prose-headings:text-white dark:prose-headings:text-white prose-headings:font-bold prose-headings:mt-4 prose-headings:mb-2 
+                                prose-p:text-gray-400 dark:prose-p:text-gray-300 prose-p:my-2 prose-p:leading-relaxed prose-p:text-[14px]
+                                prose-strong:text-white dark:prose-strong:text-[#95ff00] prose-strong:font-semibold 
+                                prose-li:text-gray-400 dark:prose-li:text-gray-300 prose-li:my-1 prose-li:text-[14px]
                                 prose-ul:list-none prose-ul:pl-0 prose-ul:my-3 prose-ul:space-y-2 
                                 prose-ol:list-decimal prose-ol:ml-6 prose-ol:my-3 prose-ol:space-y-2">
                               <ReactMarkdown
@@ -491,7 +494,7 @@ const DocChat = () => {
                             />
                           </div>
                         </div>
-                      </div>
+                      </div>)
                     )}
                   </motion.div>
                 ))}
@@ -502,7 +505,7 @@ const DocChat = () => {
                   <div className="w-8 h-8 bg-slate-200 dark:bg-white/10 rounded-lg flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-slate-500 dark:text-[#95ff00] text-sm">smart_toy</span>
                   </div>
-                  <div className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 p-4 rounded-2xl rounded-tl-none flex items-center gap-3 text-slate-500 dark:text-[#95ff00]">
+                  <div className="bg-[#0a0a0a] dark:bg-white/5 border border-white/10 dark:border-white/10 p-4 rounded-2xl rounded-tl-none flex items-center gap-3 text-slate-500 dark:text-[#95ff00]">
                     <Loader2 className="w-4 h-4 animate-spin" />
                     <span className="text-sm font-medium">Analyzing document...</span>
                   </div>
@@ -511,8 +514,8 @@ const DocChat = () => {
             </div>
 
             {/* Chat Input Area */}
-            <div className="p-6 border-t border-slate-100 dark:border-white/10 bg-white dark:bg-black/40">
-              <div className="relative bg-slate-100 dark:bg-[#1E1E1E] rounded-2xl p-2 flex items-center gap-3 border border-transparent focus-within:border-primary/30 dark:focus-within:border-[#95ff00]/30 transition-colors pl-4">
+            <div className="p-6 border-t border-white/10 dark:border-white/10 bg-[#0a0a0a] dark:bg-black/40">
+              <div className="relative bg-neutral-900 dark:bg-[#1E1E1E] rounded-2xl p-2 flex items-center gap-3 border border-transparent focus-within:border-primary/30 dark:focus-within:border-[#95ff00]/30 transition-colors pl-4">
                 <TextareaAutosize
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
@@ -529,15 +532,16 @@ const DocChat = () => {
                   }}
                 />
                 {/* Voice Input Button */}
-                <button
+                <Button
                   type="button"
-                  className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors"
+                  className="p-2 text-slate-400 hover:text-gray-400 dark:hover:text-white transition-colors"
                   title="Voice input"
-                >
+                  variant="ghost"
+                  size="icon">
                   <span className="material-symbols-outlined">mic</span>
-                </button>
+                </Button>
                 {/* Send Button */}
-                <button
+                <Button
                   onClick={() => handleAsk()}
                   disabled={loading || !input.trim()}
                   className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-sm transition-all ${
@@ -545,13 +549,14 @@ const DocChat = () => {
                       ? "bg-slate-200 dark:bg-white/10 text-slate-400 dark:text-gray-500 cursor-not-allowed"
                       : "bg-primary dark:bg-primary/20 text-black dark:text-[#95ff00] hover:scale-105"
                   }`}
-                >
+                  variant="ghost"
+                  size="icon">
                   {loading ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <span className="material-symbols-outlined font-variation-settings-fill-1">arrow_right_alt</span>
                   )}
-                </button>
+                </Button>
               </div>
               <p className="text-[10px] text-center text-slate-400 dark:text-slate-500 mt-4 font-medium">Quick Learn.AI can make mistakes. Verify important information.</p>
             </div>

@@ -3,6 +3,8 @@ import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { Star, Send, Bot } from 'lucide-react';
 import axios from 'axios';
 
+import { Button } from "../components/ui/Button";
+
 const MatchedTeachers = () => {
   const navigate = useNavigate();
   const { doubtId } = useParams();
@@ -131,19 +133,20 @@ const MatchedTeachers = () => {
                         <div className="flex items-center gap-3 text-sm text-gray-400">
                           <Star className="w-4 h-4 text-[#95ff00]" />
                           <span>{teacher.rating}/5</span>
-                          <span className="text-gray-600">•</span>
+                          <span className="text-gray-400">•</span>
                           <span>{teacher.doubtsSolved} doubts solved</span>
                         </div>
                       </div>
                     </div>
                     
-                    <button
+                    <Button
                       onClick={() => navigate(`/doubt/${doubtId}/chat`)}
                       className="flex items-center gap-2 px-6 py-3 bg-[#95ff00]/10 text-[#95ff00] rounded-lg border border-[#95ff00]/30 hover:bg-[#95ff00]/20 transition-all duration-300"
-                    >
+                      variant="ghost"
+                      size="icon">
                       <Send className="w-4 h-4" />
                       <span>Chat</span>
-                    </button>
+                    </Button>
                   </div>
                 ))}
               </div>

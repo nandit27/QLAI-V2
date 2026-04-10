@@ -45,7 +45,7 @@ const nodeStyles = {
     textAlign: "center",
   },
   detail: {
-    background: "#10b981",
+    background: "#95ff00",
     color: "black",
     border: "2px solid #059669",
     borderRadius: "8px",

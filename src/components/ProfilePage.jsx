@@ -200,7 +200,7 @@ const ProfilePage = () => {
                 className="bg-black/40 backdrop-blur-md border border-white/10 rounded-lg p-6"
               >
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-emerald-400/10 rounded-full">
+                  <div className="p-3 bg-[#95ff00]/10 rounded-full">
                     <div className="h-6 w-6 bg-gray-700 rounded animate-pulse"></div>
                   </div>
                   <div>
@@ -289,7 +289,7 @@ const ProfilePage = () => {
             <div className="flex items-center space-x-6">
               <Avatar className="h-24 w-24">
                 <AvatarImage src={avatar} />
-                <AvatarFallback className="bg-emerald-400/10 text-emerald-400">
+                <AvatarFallback className="bg-[#95ff00]/10 text-[#95ff00]">
                   {name.charAt(0)}
                 </AvatarFallback>
               </Avatar>
@@ -304,13 +304,13 @@ const ProfilePage = () => {
             </div>
             <div className="hidden md:flex items-center space-x-6">
               <div className="text-center">
-                <p className="text-3xl font-bold text-emerald-400">
+                <p className="text-3xl font-bold text-[#95ff00]">
                   <CountUp key={totalQuizzes} to={totalQuizzes} duration={2} />
                 </p>
                 <p className="text-sm text-gray-400">Quizzes</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-emerald-400">
+                <p className="text-3xl font-bold text-[#95ff00]">
                   <CountUp key={averageScore} to={averageScore} suffix="%" duration={2} />
                 </p>
                 <p className="text-sm text-gray-400">Avg. Score</p>
@@ -324,8 +324,8 @@ const ProfilePage = () => {
           <Card className="bg-black/40 backdrop-blur-md border border-white/10">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="p-3 bg-emerald-400/10 rounded-full">
-                  <Trophy className="h-6 w-6 text-emerald-400" />
+                <div className="p-3 bg-[#95ff00]/10 rounded-full">
+                  <Trophy className="h-6 w-6 text-[#95ff00]" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Best Score</p>
@@ -340,8 +340,8 @@ const ProfilePage = () => {
           <Card className="bg-black/40 backdrop-blur-md border border-white/10">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="p-3 bg-emerald-400/10 rounded-full">
-                  <Target className="h-6 w-6 text-emerald-400" />
+                <div className="p-3 bg-[#95ff00]/10 rounded-full">
+                  <Target className="h-6 w-6 text-[#95ff00]" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Recent Trend</p>
@@ -370,8 +370,8 @@ const ProfilePage = () => {
           <Card className="bg-black/40 backdrop-blur-md border border-white/10">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="p-3 bg-emerald-400/10 rounded-full">
-                  <BookOpen className="h-6 w-6 text-emerald-400" />
+                <div className="p-3 bg-[#95ff00]/10 rounded-full">
+                  <BookOpen className="h-6 w-6 text-[#95ff00]" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Topics Covered</p>
@@ -390,8 +390,8 @@ const ProfilePage = () => {
           <Card className="bg-black/40 backdrop-blur-md border border-white/10">
             <CardContent className="p-6">
               <div className="flex items-center space-x-4">
-                <div className="p-3 bg-emerald-400/10 rounded-full">
-                  <Clock className="h-6 w-6 text-emerald-400" />
+                <div className="p-3 bg-[#95ff00]/10 rounded-full">
+                  <Clock className="h-6 w-6 text-[#95ff00]" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Study Sessions</p>
@@ -430,7 +430,7 @@ const ProfilePage = () => {
           <TabsContent value="performance">
             {loading ? (
               <div className="flex items-center justify-center py-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-400"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95ff00]"></div>
               </div>
             ) : statistics.length === 0 ? (
               <Card className="bg-black/40 backdrop-blur-md border border-white/10">
@@ -449,7 +449,7 @@ const ProfilePage = () => {
               <div className="grid gap-6 md:grid-cols-2">
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-emerald-400">
+                    <CardTitle className="text-[#95ff00]">
                       Score Progression
                     </CardTitle>
                   </CardHeader>
@@ -490,7 +490,7 @@ const ProfilePage = () => {
 
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-emerald-400">
+                    <CardTitle className="text-[#95ff00]">
                       Performance by Topic
                     </CardTitle>
                   </CardHeader>
@@ -528,7 +528,7 @@ const ProfilePage = () => {
           <TabsContent value="topics">
             {loading ? (
               <div className="flex items-center justify-center py-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-400"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#95ff00]"></div>
               </div>
             ) : statistics.length === 0 ? (
               <Card className="bg-black/40 backdrop-blur-md border border-white/10">
@@ -547,7 +547,7 @@ const ProfilePage = () => {
               <div className="grid gap-6 md:grid-cols-2">
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-emerald-400">
+                    <CardTitle className="text-[#95ff00]">
                       Topic Distribution
                     </CardTitle>
                   </CardHeader>
@@ -588,7 +588,7 @@ const ProfilePage = () => {
 
                 <Card className="bg-black/40 backdrop-blur-md border border-white/10">
                   <CardHeader>
-                    <CardTitle className="text-emerald-400">
+                    <CardTitle className="text-[#95ff00]">
                       Topic Details
                     </CardTitle>
                   </CardHeader>
@@ -598,7 +598,7 @@ const ProfilePage = () => {
                         <div key={index} className="space-y-2">
                           <div className="flex justify-between text-sm">
                             <span className="text-gray-400">{topic.topic}</span>
-                            <span className="text-emerald-400">
+                            <span className="text-[#95ff00]">
                               {topic.averageScore}%
                             </span>
                           </div>
@@ -618,7 +618,7 @@ const ProfilePage = () => {
           <TabsContent value="history">
             <Card className="bg-black/40 backdrop-blur-md border border-white/10">
               <CardHeader>
-                <CardTitle className="text-emerald-400">Quiz History</CardTitle>
+                <CardTitle className="text-[#95ff00]">Quiz History</CardTitle>
               </CardHeader>
               <CardContent>
                 {statistics.length === 0 ? (
@@ -635,14 +635,14 @@ const ProfilePage = () => {
                   <Table>
                     <TableHeader>
                       <TableRow className="border-white/10">
-                        <TableHead className="text-emerald-400">Date</TableHead>
-                        <TableHead className="text-emerald-400">
+                        <TableHead className="text-[#95ff00]">Date</TableHead>
+                        <TableHead className="text-[#95ff00]">
                           Topic
                         </TableHead>
-                        <TableHead className="text-emerald-400">
+                        <TableHead className="text-[#95ff00]">
                           Score
                         </TableHead>
-                        <TableHead className="text-emerald-400">
+                        <TableHead className="text-[#95ff00]">
                           Trend
                         </TableHead>
                       </TableRow>
@@ -712,7 +712,7 @@ const ProfilePage = () => {
         {recommendations.length > 0 && (
           <Card className="bg-black/40 backdrop-blur-md border border-white/10">
             <CardHeader>
-              <CardTitle className="text-emerald-400 flex items-center">
+              <CardTitle className="text-[#95ff00] flex items-center">
                 <BookOpen className="h-5 w-5 mr-2" />
                 YouTube Video Recommendations
               </CardTitle>
@@ -723,7 +723,7 @@ const ProfilePage = () => {
             <CardContent>
               {loadingRecommendations ? (
                 <div className="flex items-center justify-center py-8">
-                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-emerald-400"></div>
+                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#95ff00]"></div>
                   <span className="ml-2 text-gray-400">
                     Loading recommendations...
                   </span>

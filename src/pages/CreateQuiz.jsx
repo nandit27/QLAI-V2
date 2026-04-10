@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Youtube, Upload, FileText, X } from 'lucide-react';
 import DottedBackground from '../components/DottedBackground';
 import { BorderTrailCard } from '../components/core/BorderTrailCard';
@@ -17,6 +16,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { quizRoomService, teacherYTQuizService, documentBloomQuizService } from '../services/api';
+
+import { Button } from "../components/ui/Button";
 
 // Predefined topics for suggestions
 const AVAILABLE_TOPICS = [
@@ -440,25 +441,26 @@ const CreateQuiz = () => {
                 >
                   {filteredTopics.length > 0 ? (
                     filteredTopics.map((topic, index) => (
-                      <button
+                      <Button
                         key={index}
                         type="button"
                         onClick={() => handleAddTopic(topic)}
                         className="w-full px-5 py-3.5 text-left text-white hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-200 flex items-center gap-3 text-base"
-                      >
+                        variant="ghost"
+                        size="icon">
                         <span className="text-[#95ff00] text-lg">+</span>
                         {topic}
-                      </button>
+                      </Button>
                     ))
                   ) : (
-                    <button
+                    <Button
                       type="button"
                       onClick={() => handleAddTopic(topicInput.trim())}
                       className="w-full px-5 py-3.5 text-left text-white hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-200 flex items-center gap-3 text-base"
                     >
                       <span className="text-[#95ff00] text-lg">+</span>
                       Add "{topicInput.trim()}" as custom topic
-                    </button>
+                    </Button>
                   )}
                 </div>
               )}
@@ -475,13 +477,14 @@ const CreateQuiz = () => {
                     className="inline-flex items-center gap-2 bg-[#95ff00]/15 border border-[#95ff00]/60 text-[#95ff00] px-4 py-2.5 rounded-xl text-sm font-semibold backdrop-blur-sm"
                   >
                     <span>{topic}</span>
-                    <button
+                    <Button
                       type="button"
                       onClick={() => handleRemoveTopic(topic)}
                       className="hover:bg-[#95ff00]/30 rounded-full p-1 transition-colors"
-                    >
+                      variant="ghost"
+                      size="icon">
                       <X className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </motion.div>
                 ))}
               </div>
@@ -516,28 +519,30 @@ const CreateQuiz = () => {
                   Difficulty Level
                 </label>
                 <div className="relative">
-                  <button
+                  <Button
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
-                  >
+                    variant="ghost"
+                    size="icon">
                     <span className={selectedDifficulty ? 'text-white' : 'text-gray-500'}>{selectedDifficulty || 'Select difficulty'}</span>
                     <svg className="w-5 h-5 text-[#95ff00]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                  </button>
+                  </Button>
                   
                   {isDropdownOpen && (
                     <div className="absolute left-0 w-full mt-2 bg-[#000805] border-2 border-[#00784A] rounded-xl overflow-hidden z-20 shadow-2xl"
                       onMouseLeave={() => setIsDropdownOpen(false)}
                     >
                       {['Easy', 'Medium', 'Hard'].map((difficulty) => (
-                        <button
+                        <Button
                           key={difficulty}
                           type="button"
                           onClick={() => handleDifficultySelect(difficulty)}
                           className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-300 text-white font-semibold text-base"
-                        >
+                          variant="ghost"
+                          size="icon">
                           {difficulty}
-                        </button>
+                        </Button>
                       ))}
                     </div>
                   )}
@@ -673,28 +678,30 @@ const CreateQuiz = () => {
                   Difficulty Level
                 </label>
                 <div className="relative">
-                  <button
+                  <Button
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
-                  >
+                    variant="ghost"
+                    size="icon">
                     <span className={selectedDifficulty ? 'text-white' : 'text-gray-500'}>{selectedDifficulty || 'Select difficulty'}</span>
                     <svg className="w-5 h-5 text-[#95ff00]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                  </button>
+                  </Button>
                   
                   {isDropdownOpen && (
                     <div className="absolute left-0 w-full mt-2 bg-[#000805] border-2 border-[#00784A] rounded-xl overflow-hidden z-20 shadow-2xl"
                       onMouseLeave={() => setIsDropdownOpen(false)}
                     >
                       {['Easy', 'Medium', 'Hard'].map((difficulty) => (
-                        <button
+                        <Button
                           key={difficulty}
                           type="button"
                           onClick={() => handleDifficultySelect(difficulty)}
                           className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-300 text-white font-semibold text-base"
-                        >
+                          variant="ghost"
+                          size="icon">
                           {difficulty}
-                        </button>
+                        </Button>
                       ))}
                     </div>
                   )}
@@ -811,26 +818,28 @@ const CreateQuiz = () => {
             transition={{ delay: 0.15 }}
             className="flex items-center justify-center gap-4 mt-8"
           >
-            <button
+            <Button
               onClick={() => setQuizMode('auto')}
               className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
                 quizMode === 'auto'
                   ? 'bg-[#95ff00] text-[#000805] shadow-lg shadow-[#95ff00]/30'
                   : 'bg-transparent text-gray-400 hover:text-gray-300'
               }`}
-            >
+              variant="ghost"
+              size="sm">
               Auto Mode
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setQuizMode('custom')}
               className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
                 quizMode === 'custom'
                   ? 'bg-[#95ff00] text-[#000805] shadow-lg shadow-[#95ff00]/30'
                   : 'bg-transparent text-gray-400 hover:text-gray-300'
               }`}
-            >
+              variant="ghost"
+              size="sm">
               Custom Mode
-            </button>
+            </Button>
           </motion.div>
         </div>
 
@@ -923,7 +932,7 @@ const CreateQuiz = () => {
                               or{" "}
                               <span className="text-[#95ff00] font-semibold">click to browse</span>
                             </p>
-                            <p className="text-gray-600 text-xs mt-3">
+                            <p className="text-gray-400 text-xs mt-3">
                               Supports PDF, PPT, PPTX, DOC, DOCX
                             </p>
                           </div>
@@ -970,14 +979,15 @@ const CreateQuiz = () => {
                                   </p>
                                 </div>
                               </div>
-                              <button
+                              <Button
                                 type="button"
                                 onClick={() => removeFile(index)}
                                 className="text-gray-400 hover:text-red-400 transition-colors disabled:opacity-50"
                                 disabled={uploadingDocument}
-                              >
+                                variant="ghost"
+                                size="icon">
                                 <X className="w-5 h-5" />
-                              </button>
+                              </Button>
                             </div>
                           ))}
                         </motion.div>
@@ -1008,28 +1018,30 @@ const CreateQuiz = () => {
                             Difficulty Level
                           </label>
                           <div className="relative">
-                            <button
+                            <Button
                               type="button"
                               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                               className="w-full bg-[#000805] border-[#00784A] border-2 rounded-xl py-4 px-5 text-left text-white flex items-center justify-between hover:border-[#95ff00] transition-all duration-300 h-14 font-semibold text-lg"
-                            >
+                              variant="ghost"
+                              size="icon">
                               <span className={selectedDifficulty ? 'text-white' : 'text-gray-500'}>{selectedDifficulty || 'Select difficulty'}</span>
                               <svg className="w-5 h-5 text-[#95ff00]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                            </button>
+                            </Button>
                             
                             {isDropdownOpen && (
                               <div className="absolute left-0 w-full mt-2 bg-[#000805] border-2 border-[#00784A] rounded-xl overflow-hidden z-20 shadow-2xl"
                                 onMouseLeave={() => setIsDropdownOpen(false)}
                               >
                                 {['Easy', 'Medium', 'Hard'].map((difficulty) => (
-                                  <button
+                                  <Button
                                     key={difficulty}
                                     type="button"
                                     onClick={() => handleDifficultySelect(difficulty)}
                                     className="w-full px-5 py-4 text-left hover:bg-[#0C3D2A] hover:text-[#95ff00] transition-all duration-300 text-white font-semibold text-base"
-                                  >
+                                    variant="ghost"
+                                    size="icon">
                                     {difficulty}
-                                  </button>
+                                  </Button>
                                 ))}
                               </div>
                             )}

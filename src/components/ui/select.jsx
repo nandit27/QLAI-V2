@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState } from 'react'
 import { cn } from '@/lib/utils'
 
+import { Button } from "../../components/ui/Button";
+
 const SelectContext = createContext()
 
 export function Select({ children, ...props }) {
@@ -17,16 +19,17 @@ export function SelectTrigger({ className, children, ...props }) {
   const { value } = useContext(SelectContext)
 
   return (
-    <button
+    <Button
       className={cn(
         "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm",
         className
       )}
       {...props}
-    >
+      variant="ghost"
+      size="icon">
       {value || children}
-    </button>
-  )
+    </Button>
+  );
 }
 
 export function SelectValue({ placeholder, ...props }) {

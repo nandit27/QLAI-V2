@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { calculateBloomAnalysis } from '../utils/bloomAnalysis';
 
+import { Button } from "../components/ui/Button";
+
 const StudentResults = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -192,12 +194,12 @@ const StudentResults = () => {
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="max-w-2xl bg-black/40 backdrop-blur-md rounded-2xl p-8 border border-white/10">
           <p className="text-red-400 text-center mb-4">No results data available</p>
-          <button
+          <Button
             onClick={() => navigate('/')}
             className="w-full bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] font-medium py-3 px-4 rounded-xl hover:bg-[#95ff00]/20 transition-all duration-300"
           >
             Back to Home
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -407,7 +409,7 @@ const StudentResults = () => {
                         <div className="space-y-2">
                           {hasObjectOptions ? (
                             // Display object format options: {A: "...", B: "..."}
-                            Object.entries(question.options).map(([key, value]) => {
+                            (Object.entries(question.options).map(([key, value]) => {
                               const isUserAnswer = key === userAnswer;
                               const isCorrectAnswer = key === question.answer;
                               
@@ -439,10 +441,10 @@ const StudentResults = () => {
                                   )}
                                 </div>
                               );
-                            })
+                            }))
                           ) : (
                             // Fallback: Show user answer and correct answer
-                            <>
+                            (<>
                               {wasAnswered && (
                                 <div className={`flex items-center gap-3 rounded-lg border p-3 text-white ${
                                   isCorrect 
@@ -467,7 +469,7 @@ const StudentResults = () => {
                                   </div>
                                 </div>
                               )}
-                            </>
+                            </>)
                           )}
                         </div>
 

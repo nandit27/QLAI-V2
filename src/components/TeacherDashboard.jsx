@@ -5,6 +5,8 @@ import axios from 'axios';
 import socket from '../utils/socket.js';
 import { doubtService, quizRecordService } from '../services/api';
 
+import { Button } from "../components/ui/Button";
+
 const TeacherDashboard = () => {
   const navigate = useNavigate();
   const [newDoubts, setNewDoubts] = useState([]);
@@ -158,7 +160,7 @@ const TeacherDashboard = () => {
 
   const getStatusColor = (status) => {
     // TODO: API - Map actual status values from backend
-    if (status === 'completed') return { bg: 'bg-emerald-500/10', text: 'text-emerald-400', border: 'border-emerald-500/20', dot: 'bg-emerald-400' };
+    if (status === 'completed') return { bg: 'bg-[#95ff00]/10', text: 'text-[#95ff00]', border: 'border-[#95ff00]/20', dot: 'bg-[#95ff00]' };
     if (status === 'active') return { bg: 'bg-yellow-500/10', text: 'text-yellow-400', border: 'border-yellow-500/20', dot: 'bg-yellow-400 animate-pulse' };
     return { bg: 'bg-gray-500/10', text: 'text-gray-400', border: 'border-gray-500/20', dot: 'bg-gray-400' };
   };
@@ -191,7 +193,6 @@ const TeacherDashboard = () => {
       {/* Light Leaks */}
       <div className="absolute top-[-10%] left-[-10%] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(0,255,153,0.05)_0%,transparent_70%)] pointer-events-none z-0"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(0,255,153,0.05)_0%,transparent_70%)] pointer-events-none z-0"></div>
-
       <main className="max-w-screen-2xl mx-auto px-8 pt-12 pb-24 relative z-10 mt-20">
         {/* Hero Section */}
         <section className="relative mb-24 py-12">
@@ -202,7 +203,7 @@ const TeacherDashboard = () => {
               </span>
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
                 Namaste, <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FF99] to-emerald-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FF99] to-[#95ff00]">
                   {userInfo?.username || 'Teacher'}
                 </span>
               </h1>
@@ -247,7 +248,7 @@ const TeacherDashboard = () => {
                 </svg>
                 <p className="text-2xl font-bold">{totalQuizzes}</p>
                 <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Total Quizzes</p>
-                <span className="text-[10px] text-emerald-400 mt-2 block">+12% Month</span>
+                <span className="text-[10px] text-[#95ff00] mt-2 block">+12% Month</span>
               </motion.div>
 
               <motion.div 
@@ -260,7 +261,7 @@ const TeacherDashboard = () => {
                 </svg>
                 <p className="text-2xl font-bold">{totalStudentsHelped}</p>
                 <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Students Helped</p>
-                <span className="text-[10px] text-emerald-400 mt-2 block">+8% Reach</span>
+                <span className="text-[10px] text-[#95ff00] mt-2 block">+8% Reach</span>
               </motion.div>
 
               <motion.div 
@@ -323,12 +324,12 @@ const TeacherDashboard = () => {
                             {doubt.studentName || 'Student'}
                           </span>
                         </div>
-                        <button 
+                        <Button 
                           onClick={() => handleJoinChat(doubt._id)}
                           className="text-[10px] font-black text-[#00FF99] uppercase tracking-widest hover:brightness-125 transition-all"
                         >
                           Solve Now
-                        </button>
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -347,9 +348,9 @@ const TeacherDashboard = () => {
               <h2 className="text-2xl font-black text-white uppercase tracking-tight">
                 Recent Quiz Records
               </h2>
-              <button className="text-xs text-[#00FF99] font-bold uppercase tracking-widest border-b border-[#00FF99]/30 hover:border-[#00FF99] transition-all pb-1">
+              <Button className="text-xs text-[#00FF99] font-bold uppercase tracking-widest border-b border-[#00FF99]/30 hover:border-[#00FF99] transition-all pb-1">
                 Archive
-              </button>
+              </Button>
             </div>
 
             {loadingQuizRecords ? (
@@ -398,7 +399,6 @@ const TeacherDashboard = () => {
                           </p>
                         </div>
                       </div>
-
                       {/* Audience */}
                       <div className="col-span-2 flex items-center gap-1.5">
                         <svg className="w-3.5 h-3.5 text-white/30 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -407,7 +407,6 @@ const TeacherDashboard = () => {
                         <span className="text-sm font-semibold text-white/70">{record.totalStudents}</span>
                         <span className="text-xs text-white/30 hidden xl:inline">students</span>
                       </div>
-
                       {/* Performance */}
                       <div className="col-span-3 flex items-center gap-3">
                         <div className="flex-1 h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
@@ -420,7 +419,6 @@ const TeacherDashboard = () => {
                           {avgPerformance}%
                         </span>
                       </div>
-
                       {/* Status */}
                       <div className="col-span-2">
                         <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-black ${statusColors.bg} ${statusColors.text} border ${statusColors.border} uppercase tracking-wider`}>
@@ -428,15 +426,15 @@ const TeacherDashboard = () => {
                           {status}
                         </span>
                       </div>
-
                       {/* Actions */}
                       <div className="col-span-1 flex justify-end">
-                        <button
+                        <Button
                           onClick={(e) => handleDeleteRecord(e, record._id, false)}
                           disabled={deletingId === record._id}
                           className="p-2 rounded-xl text-red-400/70 hover:text-red-400 hover:bg-red-400/10 border border-transparent hover:border-red-400/20 transition-all duration-200 disabled:opacity-40"
                           title="Delete quiz record"
-                        >
+                          variant="ghost"
+                          size="icon">
                           {deletingId === record._id ? (
                             <svg className="animate-spin h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
@@ -447,7 +445,7 @@ const TeacherDashboard = () => {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                             </svg>
                           )}
-                        </button>
+                        </Button>
                       </div>
                     </div>
                   );
@@ -531,12 +529,13 @@ const TeacherDashboard = () => {
 
                   {/* Actions */}
                   <div className="flex items-center gap-2 mt-auto">
-                    <button
+                    <Button
                       onClick={(e) => handleDeleteRecord(e, draft._id, true)}
                       disabled={deletingId === draft._id}
                       className="p-2.5 rounded-xl border border-red-400/20 hover:border-red-400/50 text-red-400/70 hover:text-red-400 hover:bg-red-400/10 transition-all duration-200 disabled:opacity-40 shrink-0"
                       title="Delete draft"
-                    >
+                      variant="ghost"
+                      size="icon">
                       {deletingId === draft._id ? (
                         <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
@@ -547,9 +546,9 @@ const TeacherDashboard = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                         </svg>
                       )}
-                    </button>
+                    </Button>
 
-                    <button
+                    <Button
                       onClick={() => navigate('/quiz-preview-new', {
                         state: {
                           quizData: { title: draft.title, quiz: draft.quizData },
@@ -558,17 +557,19 @@ const TeacherDashboard = () => {
                       })}
                       className="p-2.5 rounded-xl border border-white/[0.08] hover:border-yellow-400/40 text-white/50 hover:text-yellow-400 hover:bg-yellow-400/10 transition-all duration-200 shrink-0"
                       title="Edit draft"
-                    >
+                      variant="ghost"
+                      size="icon">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                       </svg>
-                    </button>
+                    </Button>
 
-                    <button
+                    <Button
                       onClick={() => handleShareDraft(draft._id)}
                       disabled={sharingDraftId === draft._id}
                       className="flex-1 flex items-center justify-center gap-2 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/25 hover:border-blue-400/60 text-blue-400 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-200 disabled:opacity-60"
-                    >
+                      variant="ghost"
+                      size="icon">
                       {sharingDraftId === draft._id ? (
                         <>
                           <svg className="animate-spin h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -585,7 +586,7 @@ const TeacherDashboard = () => {
                           Share Now
                         </>
                       )}
-                    </button>
+                    </Button>
                   </div>
                 </div>
               ))}
@@ -605,11 +606,13 @@ const TeacherDashboard = () => {
           )}
         </div>
       </main>
-
       {/* Floating Create Quiz Button */}
       <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50">
         <Link to="/create-quiz">
-          <button className="group relative flex items-center gap-4 bg-black border border-[#00FF99]/50 hover:border-[#00FF99] px-8 py-5 rounded-full transition-all duration-300 shadow-[0_0_40px_rgba(0,255,153,0.15)] hover:shadow-[0_0_60px_rgba(0,255,153,0.3)] hover:-translate-y-2">
+          <Button
+            className="group relative flex items-center gap-4 bg-black border border-[#00FF99]/50 hover:border-[#00FF99] px-8 py-5 rounded-full transition-all duration-300 shadow-[0_0_40px_rgba(0,255,153,0.15)] hover:shadow-[0_0_60px_rgba(0,255,153,0.3)] hover:-translate-y-2"
+            variant="ghost"
+            size="icon">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00FF99]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="w-10 h-10 rounded-full bg-[#00FF99] flex items-center justify-center text-black relative z-10">
               <svg className="w-6 h-6 font-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -619,13 +622,11 @@ const TeacherDashboard = () => {
             <span className="text-[#00FF99] font-black tracking-[0.15em] uppercase text-sm relative z-10">
               Create New Quiz
             </span>
-          </button>
+          </Button>
         </Link>
       </div>
-
       {/* Bottom Gradient */}
       <div className="fixed bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-[#00FF99]/5 to-transparent pointer-events-none z-0"></div>
-
       {/* ── Delete Confirmation Modal ─────────────────────────────────── */}
       {confirmModal.open && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center">
@@ -660,18 +661,18 @@ const TeacherDashboard = () => {
 
             {/* Actions */}
             <div className="flex gap-3">
-              <button
+              <Button
                 onClick={() => setConfirmModal({ open: false, recordId: null, isDraft: false })}
                 className="flex-1 py-3 rounded-xl border border-white/10 text-white/60 hover:text-white hover:border-white/30 text-xs font-black uppercase tracking-widest transition-all duration-200"
               >
                 Cancel
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={confirmAndDelete}
                 className="flex-1 py-3 rounded-xl bg-red-500/10 border border-red-500/40 text-red-400 hover:bg-red-500/20 hover:border-red-500 text-xs font-black uppercase tracking-widest transition-all duration-200 shadow-[0_0_20px_rgba(239,68,68,0.1)] hover:shadow-[0_0_30px_rgba(239,68,68,0.2)]"
-              >
+                variant="destructive">
                 Yes, Delete
-              </button>
+              </Button>
             </div>
           </motion.div>
         </div>

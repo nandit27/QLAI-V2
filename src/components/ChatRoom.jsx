@@ -5,6 +5,8 @@ import { chatService } from '../services/api';
 import { Bot, Send } from 'lucide-react';
 import ChatMessage from './ChatMessage';
 
+import { Button } from "../components/ui/Button";
+
 const ChatRoom = () => {
   const { doubtId } = useParams();
   const location = useLocation();
@@ -153,15 +155,15 @@ const ChatRoom = () => {
               className="flex-1 bg-black/40 border border-white/10 rounded-xl px-4 py-3 
                 focus:outline-none focus:border-[#95ff00]/50 transition-colors"
             />
-            <button
+            <Button
               type="submit"
               className="px-6 py-3 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] 
                 font-medium rounded-xl hover:bg-[#95ff00]/20 hover:border-[#95ff00]/50 
                 transition-all duration-300 flex items-center gap-2"
-            >
+              variant="ringHover">
               <Send className="w-5 h-5" />
               Send
-            </button>
+            </Button>
           </div>
         </form>
       </div>

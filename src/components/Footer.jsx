@@ -44,10 +44,10 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-[#0c0e11] border-t border-white/[0.06] relative overflow-hidden">
-      {/* Subtle ambient glow — no moving gradient */}
+    <footer className="bg-transparent border-t border-[var(--border)] relative overflow-hidden">
+      {/* Subtle ambient glow — mapped dynamically */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/[0.03] blur-3xl rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[var(--primary-muted)] blur-3xl rounded-full opacity-50" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -70,15 +70,15 @@ function Footer() {
                 transition={{ duration: 0.2 }}
               >
                 {/* Logo dot + wordmark */}
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <div className="w-4 h-4 rounded-full bg-primary" />
+                <div className="w-8 h-8 rounded-full bg-[var(--primary-muted)] flex items-center justify-center border border-[var(--primary)]/20">
+                  <div className="w-4 h-4 rounded-full bg-[var(--primary)]" />
                 </div>
-                <span className="text-xl font-bold font-heading text-white">
+                <span className="text-xl font-bold font-sans tracking-tight text-[var(--foreground)]">
                   QuickLearnAI
                 </span>
               </motion.div>
 
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-[var(--text-muted)] text-sm leading-relaxed font-medium">
                 Empowering education through AI and expert teachers. Making learning accessible, interactive, and effective.
               </p>
 
@@ -97,7 +97,7 @@ function Footer() {
                     whileHover={{ scale: 1.15 }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.2 }}
-                    className="w-9 h-9 rounded-full bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
+                    className="w-9 h-9 rounded-full bg-[var(--surface-container-low)] border border-[var(--border)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--primary)] hover:bg-[var(--primary-muted)] hover:border-[var(--primary)]/30 transition-all duration-300"
                   >
                     <Icon className="w-4 h-4" />
                   </motion.a>
@@ -108,16 +108,16 @@ function Footer() {
             {/* Link Sections */}
             {Object.entries(links).map(([category, items], categoryIndex) => (
               <motion.div key={category} variants={itemVariants}>
-                <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-5 font-heading">
+                <h4 className="text-[var(--foreground)] font-semibold text-sm uppercase tracking-widest mb-5">
                   {category}
-                  <div className="mt-2 h-px w-8 bg-primary/40 rounded-full" />
+                  <div className="mt-2 h-px w-8 bg-[var(--primary)]/40 rounded-full" />
                 </h4>
                 <ul className="space-y-3">
                   {items.map((item, index) => (
                     <li key={index}>
                       <Link
                         to={item.path}
-                        className="text-gray-400 hover:text-primary text-sm transition-all duration-300 inline-flex items-center gap-1 group"
+                        className="text-[var(--text-secondary)] hover:text-[var(--primary)] text-sm font-medium transition-all duration-300 inline-flex items-center gap-1 group font-sans"
                       >
                         <motion.span
                           whileHover={{ x: 4 }}
@@ -137,14 +137,14 @@ function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-white/[0.06] py-6"
+          className="border-t border-[var(--border)] py-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-[var(--text-muted)] font-medium">
               © {new Date().getFullYear()} QuickLearnAI. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
@@ -156,7 +156,7 @@ function Footer() {
                 <Link
                   key={index}
                   to={link.path}
-                  className="text-sm text-gray-500 hover:text-primary transition-all duration-300"
+                  className="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] font-medium transition-all duration-300"
                 >
                   {link.label}
                 </Link>

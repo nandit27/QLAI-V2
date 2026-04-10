@@ -9,7 +9,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   DollarSign,
@@ -27,6 +26,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import TeacherEditModal from "../components/TeacherEditModal";
 import TeacherAddModal from "../components/TeacherAddModal";
+
+import { Button } from "../components/ui/Button";
 
 const StatCard = ({ title, value, icon: Icon }) => (
   <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#95ff00]/30 transition-all duration-300">
@@ -286,7 +287,7 @@ const AdminDashboard = () => {
             }
           />
           <div className="flex justify-end space-x-3">
-            <button
+            <Button
               onClick={() => {
                 setShowApprovalModal(false);
                 setSelectedTeacher(null);
@@ -296,8 +297,8 @@ const AdminDashboard = () => {
               disabled={isProcessing}
             >
               Cancel
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() =>
                 processTeacherRequest(
                   selectedTeacher,
@@ -307,9 +308,10 @@ const AdminDashboard = () => {
               }
               className="px-4 py-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] rounded-lg hover:bg-[#95ff00]/20"
               disabled={isProcessing || !approvalReason.trim()}
-            >
+              variant="ghost"
+              size="icon">
               {isProcessing ? "Processing..." : "Approve"}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -333,7 +335,7 @@ const AdminDashboard = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8 text-center"
         >
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#95ff00] via-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#95ff00] via-[#95ff00] to-blue-400 bg-clip-text text-transparent mb-4">
             Admin Control Center
           </h1>
           <p className="text-gray-400 text-lg">
@@ -665,7 +667,7 @@ const AdminDashboard = () => {
                                       teacher.subject.map((sub, index) => (
                                         <span
                                           key={index}
-                                          className="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-400 rounded-full border border-cyan-500/30"
+                                          className="px-2 py-1 text-xs bg-[#95ff00]/20 text-[#95ff00] rounded-full border border-[#95ff00]/30"
                                         >
                                           {sub.field}
                                         </span>
@@ -731,7 +733,7 @@ const AdminDashboard = () => {
                     </CardTitle>
                     <Button
                       onClick={() => setShowAddModal(true)}
-                      className="bg-gradient-to-r from-[#95ff00] to-cyan-400 text-black font-semibold hover:opacity-90 transition-opacity"
+                      className="bg-gradient-to-r from-[#95ff00] to-[#95ff00] text-black font-semibold hover:opacity-90 transition-opacity"
                     >
                       <UserPlus className="w-4 h-4 mr-2" />
                       Add New Teacher
@@ -783,7 +785,7 @@ const AdminDashboard = () => {
                                       teacher.subject.map((sub, index) => (
                                         <span
                                           key={index}
-                                          className="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-400 rounded-full border border-cyan-500/30"
+                                          className="px-2 py-1 text-xs bg-[#95ff00]/20 text-[#95ff00] rounded-full border border-[#95ff00]/30"
                                         >
                                           {sub.field}
                                         </span>

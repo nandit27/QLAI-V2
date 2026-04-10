@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { AlertTriangle, RefreshCw } from 'lucide-react';
 
+import { Button } from "../components/ui/Button";
+
 /**
  * Full-page maintenance screen displayed when the site is under maintenance.
  * This blocks all user interaction until maintenance is complete.
@@ -64,14 +66,15 @@ const MaintenancePage = ({ message, onRetry, isRetrying }) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <button
+          <Button
             onClick={onRetry}
             disabled={isRetrying}
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
+            variant="ghost"
+            size="icon">
             <RefreshCw className={`w-5 h-5 ${isRetrying ? 'animate-spin' : ''}`} />
             {isRetrying ? 'Checking...' : 'Check Again'}
-          </button>
+          </Button>
         </motion.div>
 
         {/* Additional info */}

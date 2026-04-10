@@ -4,6 +4,8 @@ import { statisticsService, youtubeService, questionBankService } from '../servi
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import { Button } from "../components/ui/Button";
+
 const RecommendationPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -233,14 +235,15 @@ const RecommendationPage = () => {
             <h2 className="text-3xl font-bold text-[#95ff00] mb-6">Topics for Practice</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {practiceTopics.map(({ topic, avgScore, attempts }) => (
-                <button
+                <Button
                   key={topic}
                   onClick={() => handlePracticeClick(topic)}
                   disabled={generatingQuestions === topic}
                   className={`bg-black/50 rounded-xl p-6 border border-zinc-800/50 
                     hover:border-[#95ff00]/30 transition-all duration-300 text-left
                     ${generatingQuestions === topic ? 'opacity-75 cursor-wait' : ''}`}
-                >
+                  variant="ghost"
+                  size="icon">
                   <h3 className="text-xl font-semibold text-white mb-2">{topic}</h3>
                   <div className="space-y-2">
                     <p className="text-gray-400">
@@ -259,7 +262,7 @@ const RecommendationPage = () => {
                   <div className="mt-4 text-sm text-gray-500">
                     Click to generate and download practice questions PDF
                   </div>
-                </button>
+                </Button>
               ))}
             </div>
           </div>

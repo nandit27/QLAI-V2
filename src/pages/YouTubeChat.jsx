@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Youtube, User, Bot, Loader2, ArrowLeft } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { useLocation, useNavigate } from 'react-router-dom';

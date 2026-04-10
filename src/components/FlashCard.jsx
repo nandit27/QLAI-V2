@@ -3,6 +3,8 @@ import { Card } from '@/components/ui/card';
 import ReactCardFlip from 'react-card-flip';
 import Modal from 'react-modal';
 
+import { Button } from "../components/ui/Button";
+
 const FlashCard = ({ title, content, videoId, start, end }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -87,18 +89,18 @@ const FlashCard = ({ title, content, videoId, start, end }) => {
                 allowFullScreen
               ></iframe>
               {!isPlaying && (
-                <button
+                <Button
                   onClick={handlePlay}
                   className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-6xl opacity-100 hover:opacity-90 transition-opacity"
-                >
+                  variant="ghost"
+                  size="icon">
                   ▶
-                </button>
+                </Button>
               )}
             </div>
           </div>
         </Card>
       </ReactCardFlip>
-
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -126,12 +128,13 @@ const FlashCard = ({ title, content, videoId, start, end }) => {
         }}
         contentLabel="Video Modal"
       >
-        <button 
-          onClick={closeModal} 
+        <Button
+          onClick={closeModal}
           className="absolute top-4 right-4 text-gray-400 hover:text-white z-10 bg-transparent border-none text-2xl"
-        >
+          variant="ghost"
+          size="icon">
           ×
-        </button>
+        </Button>
         <iframe
           ref={(el) => {
             if (el && window.YT) {

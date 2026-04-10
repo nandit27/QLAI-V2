@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const BloomTaxonomyChart = ({ analysis }) => {
   const levels = [
-    { key: "remember", label: "Remember", color: "#10B981", icon: "💭" },
+    { key: "remember", label: "Remember", color: "#95ff00", icon: "💭" },
     { key: "understand", label: "Understand", color: "#3B82F6", icon: "💡" },
     { key: "apply", label: "Apply", color: "#8B5CF6", icon: "⚡" },
     { key: "analyze", label: "Analyze", color: "#F59E0B", icon: "🔍" },

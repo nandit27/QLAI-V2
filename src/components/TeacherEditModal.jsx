@@ -158,15 +158,16 @@ const TeacherEditModal = ({ teacher, onClose, onUpdate }) => {
         >
           {/* Header */}
           <div className="sticky top-0 bg-black/80 backdrop-blur-md border-b border-white/10 p-6 flex items-center justify-between z-10">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#95ff00] to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#95ff00] to-[#95ff00] bg-clip-text text-transparent">
               Edit Teacher Details
             </h2>
-            <button
+            <Button
               onClick={onClose}
               className="text-gray-400 hover:text-white transition-colors"
-            >
+              variant="ghost"
+              size="icon">
               <X className="w-6 h-6" />
-            </button>
+            </Button>
           </div>
 
           {/* Form */}
@@ -336,23 +337,24 @@ const TeacherEditModal = ({ teacher, onClose, onUpdate }) => {
                       className="flex-1 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                       placeholder="e.g., Algebra, Calculus"
                     />
-                    <button
+                    <Button
                       type="button"
                       onClick={() => removeArrayItem(index, "subjectSubcategories")}
                       className="px-3 py-2 bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg hover:bg-red-500/20 transition-colors"
-                    >
+                      variant="ghost"
+                      size="icon">
                       <Trash2 className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </motion.div>
                 ))}
-                <button
+                <Button
                   type="button"
                   onClick={() => addArrayItem("subjectSubcategories")}
                   className="flex items-center gap-2 px-4 py-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] rounded-lg hover:bg-[#95ff00]/20 transition-colors"
                 >
                   <Plus className="w-4 h-4" />
                   Add Subcategory
-                </button>
+                </Button>
               </div>
               {errors.subjectSubcategories && (
                 <p className="text-red-400 text-sm mt-1">
@@ -383,23 +385,24 @@ const TeacherEditModal = ({ teacher, onClose, onUpdate }) => {
                       className="flex-1 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#95ff00] transition-colors"
                       placeholder="e.g., Certified Mathematics Teacher"
                     />
-                    <button
+                    <Button
                       type="button"
                       onClick={() => removeArrayItem(index, "certifications")}
                       className="px-3 py-2 bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg hover:bg-red-500/20 transition-colors"
-                    >
+                      variant="ghost"
+                      size="icon">
                       <Trash2 className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </motion.div>
                 ))}
-                <button
+                <Button
                   type="button"
                   onClick={() => addArrayItem("certifications")}
                   className="flex items-center gap-2 px-4 py-2 bg-[#95ff00]/10 border border-[#95ff00]/30 text-[#95ff00] rounded-lg hover:bg-[#95ff00]/20 transition-colors"
                 >
                   <Plus className="w-4 h-4" />
                   Add Certification
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -473,7 +476,7 @@ const TeacherEditModal = ({ teacher, onClose, onUpdate }) => {
               </Button>
               <Button
                 type="submit"
-                className="flex-1 bg-gradient-to-r from-[#95ff00] to-cyan-400 text-black font-semibold hover:opacity-90"
+                className="flex-1 bg-gradient-to-r from-[#95ff00] to-[#95ff00] text-black font-semibold hover:opacity-90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Updating..." : "Update Teacher"}

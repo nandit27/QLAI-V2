@@ -6,6 +6,8 @@ import { useGoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import axios from "axios";
 import PropTypes from "prop-types";
 
+import { Button } from "../components/ui/Button";
+
 const CAROUSEL_IMAGES = [
   "/Quiz-based.jpeg",
   "/Flash-cards.jpeg",
@@ -30,9 +32,12 @@ const ImageCarousel = () => {
       ))}
       <div style={{ position: "absolute", bottom: "16px", left: 0, right: 0, display: "flex", justifyContent: "center", gap: "8px" }}>
         {CAROUSEL_IMAGES.map((_, i) => (
-          <button key={i} onClick={() => setCurrent(i)}
+          <Button
+            key={i}
+            onClick={() => setCurrent(i)}
             style={{ width: i === current ? "20px" : "8px", height: "8px", borderRadius: "4px", backgroundColor: i === current ? "#95ff00" : "rgba(255,255,255,0.4)", border: "none", transition: "all 0.3s", cursor: "pointer", padding: 0 }}
-          />
+            variant="ghost"
+            size="icon" />
         ))}
       </div>
     </div>
@@ -236,7 +241,7 @@ const LoginModalContent = ({ isOpen, onClose, onSignUpClick }) => {
           }
         `}</style>
         {/* close button */}
-        <button
+        <Button
           onClick={onClose}
           style={{
             position: "absolute", top: "12px", right: "12px", zIndex: 1001,
@@ -246,7 +251,8 @@ const LoginModalContent = ({ isOpen, onClose, onSignUpClick }) => {
             display: "flex", alignItems: "center", justifyContent: "center",
           }}
           aria-label="Close"
-        >&#x2715;</button>
+          variant="ghost"
+          size="icon">&#x2715;</Button>
         {/* left panel */}
         <div className="login-modal-left" style={{ width: "50%", backgroundColor: "#000A06", padding: "32px", minHeight: "520px", display: "flex", flexDirection: "column" }}>
       {error && (
@@ -266,22 +272,24 @@ const LoginModalContent = ({ isOpen, onClose, onSignUpClick }) => {
       <div className="grid grid-cols-2 gap-2 p-1 mb-6 rounded-lg"
             style={{ backgroundColor: "#111111", border: "" }}
           >
-            <button
+            <Button
+              variant="ghost"
               type="button"
               onClick={() => setActiveTab("student")}
               onMouseEnter={() => setHoveredTab("student")}
               onMouseLeave={() => setHoveredTab(null)}
               style={getTabStyle("student")}
               className="px-4 py-2 rounded-lg font-medium text-sm"
-            >Student</button>
-            <button
+            >Student</Button>
+            <Button
+              variant="ghost"
               type="button"
               onClick={() => setActiveTab("teacher")}
               onMouseEnter={() => setHoveredTab("teacher")}
               onMouseLeave={() => setHoveredTab(null)}
               style={getTabStyle("teacher")}
               className="px-4 py-2 rounded-lg font-medium text-sm"
-            >Teacher</button>
+            >Teacher</Button>
           </div>
 
       <Tabs value={activeTab} onChange={setActiveTab}>
@@ -317,12 +325,12 @@ const LoginModalContent = ({ isOpen, onClose, onSignUpClick }) => {
                 Forgot password?
               </a>
             </div>
-            <button
+            <Button
               type="submit"
               className="w-full py-2.5 px-4 bg-[#95ff00]/10 border border-[#95ff00] text-[#95ff00] hover:bg-[#95ff00]/20 rounded-lg transition-all duration-200 font-medium"
-            >
+              variant="ringHover">
               Login as Student
-            </button>
+            </Button>
 
             {/* //added divider */}
             <div className="flex items-center justify-center gap-3 text-gray-500 text-sm my-1">
@@ -333,23 +341,26 @@ const LoginModalContent = ({ isOpen, onClose, onSignUpClick }) => {
 
             {/* Google Login Button */}
             <div className="text-center">
-              <button
+              <Button
                 onClick={googleLogin}
                 type="button"
-                className="w-full py-3 px-4 rounded-xl flex items-center justify-center gap-3 transition-all" style={{ backgroundColor: "#1a1f2e", border: "1px solid #2d3748" }}
-              >
+                className="w-full py-3 px-4 rounded-xl flex items-center justify-center gap-3 transition-all"
+                style={{ backgroundColor: "#1a1f2e", border: "1px solid #2d3748" }}
+                variant="ghost"
+                size="icon">
                 <img
                   src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                   className="w-5 h-5"
                   alt="Google"
                 />
                 <span>Continue with Google</span>
-              </button>
+              </Button>
             </div>
 
             <div className="text-center text-sm text-white">
               Don&apos;t have an account?{" "}
-              <button
+              <Button
+                variant="ghost"
                 onClick={() => {
                   onClose();
                   onSignUpClick();
@@ -357,7 +368,7 @@ const LoginModalContent = ({ isOpen, onClose, onSignUpClick }) => {
                 className="text-[#95ff00] hover:text-[#95ff00]/80 font-medium transition-colors"
               >
                 Sign up
-              </button>
+              </Button>
             </div>
           </form>
         </TabContent>
@@ -393,12 +404,12 @@ const LoginModalContent = ({ isOpen, onClose, onSignUpClick }) => {
                 Forgot password?
               </a>
             </div>
-            <button
+            <Button
               type="submit"
               className="w-full py-2.5 px-4 bg-[#95ff00]/10 border border-[#95ff00] text-[#95ff00] hover:bg-[#95ff00]/20 rounded-lg transition-all duration-200 font-medium"
-            >
+              variant="ringHover">
               Login as Teacher
-            </button>
+            </Button>
 
             {/* added divider */}
             <div className="flex items-center justify-center gap-3 text-gray-500 text-sm my-1">

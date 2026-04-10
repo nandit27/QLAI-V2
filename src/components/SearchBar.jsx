@@ -2,6 +2,8 @@ import { PaperAirplaneIcon, MicrophoneIcon } from '@heroicons/react/24/outline'
 import { useState, useEffect } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 
+import { Button } from "../components/ui/Button";
+
 function SearchBar() {
   const navigate = useNavigate()
   const [isListening, setIsListening] = useState(false)
@@ -46,7 +48,6 @@ function SearchBar() {
           background: `radial-gradient(circle at ${glowPosition.x}px ${glowPosition.y}px, rgba(0, 255, 157, 0.3), transparent 50%)`
         }}
       />
-      
       <div 
         className="relative flex items-center bg-black/50 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-[#95ff00]/50 transition-all duration-300"
         onMouseMove={handleMouseMove}
@@ -71,26 +72,28 @@ function SearchBar() {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <button 
+          <Button
             onClick={() => setIsListening(!isListening)}
             className={`p-2 rounded-xl transition-all duration-300 ${
               isListening 
                 ? 'bg-[#95ff00]/20 text-[#95ff00] scale-110' 
                 : 'hover:bg-white/10 text-gray-400 hover:text-[#95ff00]'
             }`}
-          >
+            variant="ghost"
+            size="icon">
             <MicrophoneIcon className={`w-5 h-5 ${isListening ? 'animate-pulse' : ''}`} />
-          </button>
-          <button 
+          </Button>
+          <Button
             onClick={handleClick}
             className="p-2 hover:bg-white/10 rounded-xl transition-all duration-300 group hover:scale-110"
-          >
+            variant="ghost"
+            size="icon">
             <PaperAirplaneIcon className="w-5 h-5 text-gray-400 group-hover:text-[#95ff00] transition-colors" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default SearchBar

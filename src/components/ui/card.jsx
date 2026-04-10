@@ -18,5 +18,5 @@ export function CardContent({ className, ...props }) {
 }
 
 export function CardDescription({ className, ...props }) {
-  return <p className={cn("text-base leading-normal text-gray-600", className)} {...props} />
+  return <p className={cn("text-base leading-normal text-gray-400", className)} {...props} />
 }

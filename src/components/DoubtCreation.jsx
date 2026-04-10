@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Upload, Type, Image as ImageIcon } from 'lucide-react';
 import { userService } from '../services/api';
 import { useNavigate } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import axios from 'axios';
+
+import { Button } from "../components/ui/Button";
 
 const DoubtCreation = () => {
   const [file, setFile] = useState(null);
@@ -133,28 +134,30 @@ const DoubtCreation = () => {
         </div>
         
         <div className="flex gap-4 mb-8">
-          <button
+          <Button
             onClick={() => setActiveTab('text')}
             className={`flex-1 py-4 px-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 ${
               activeTab === 'text'
                 ? 'bg-gradient-to-r from-[#95ff00]/10 to-[#95ff00]/20 border border-[#95ff00]/30 text-[#95ff00] shadow-lg shadow-[#95ff00]/5'
                 : 'bg-black/40 border border-white/10 text-white/70 hover:border-[#95ff00]/20 hover:text-[#95ff00]/70'
             }`}
-          >
+            variant="ghost"
+            size="icon">
             <Type className="w-5 h-5" />
             <span className="font-medium">Text</span>
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={() => setActiveTab('image')}
             className={`flex-1 py-4 px-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 ${
               activeTab === 'image'
                 ? 'bg-gradient-to-r from-[#95ff00]/10 to-[#95ff00]/20 border border-[#95ff00]/30 text-[#95ff00] shadow-lg shadow-[#95ff00]/5'
                 : 'bg-black/40 border border-white/10 text-white/70 hover:border-[#95ff00]/20 hover:text-[#95ff00]/70'
             }`}
-          >
+            variant="ghost"
+            size="icon">
             <ImageIcon className="w-5 h-5" />
             <span className="font-medium">Image</span>
-          </button>
+          </Button>
         </div>
 
         <div className="bg-black/40 backdrop-blur-md rounded-2xl border border-white/10 p-6">

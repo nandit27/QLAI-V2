@@ -14,8 +14,9 @@ export default function DottedBackground({ children, className = "" }) {
 
     const dotSpacing = 20;
     const dotRadius = 2;
-    const fadeFactor = 0.1;
+    const fadeFactor = 0.08;
     const brightnessRadius = 130;
+    const dotColor = "#0d7a4e";
 
     const dots = [];
 
@@ -46,7 +47,7 @@ export default function DottedBackground({ children, className = "" }) {
         const brightness = Math.max(1 - dist / brightnessRadius, fadeFactor);
 
         ctx.globalAlpha = brightness;
-        ctx.fillStyle = "#95ff00";
+        ctx.fillStyle = dotColor;
         ctx.beginPath();
         ctx.arc(x, y, dotRadius, 0, 1.5 * Math.PI);
         ctx.fill();
@@ -61,7 +62,6 @@ export default function DottedBackground({ children, className = "" }) {
       canvas.width = width;
       canvas.height = height;
 
-      // Regenerate dots for new dimensions
       dots.length = 0;
       for (let x = 0; x < width; x += dotSpacing) {
         for (let y = 0; y < height; y += dotSpacing) {

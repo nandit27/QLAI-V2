@@ -41,7 +41,7 @@ function FAQ() {
   ];
 
   return (
-    <div className="py-32 bg-[#0c0e11] relative overflow-hidden">
+    <div className="py-32 relative overflow-hidden bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
@@ -57,42 +57,42 @@ function FAQ() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6"
+            className="inline-flex items-center space-x-2 bg-[var(--primary-muted)] border border-[var(--primary)]/20 rounded-full px-6 py-2 mb-6"
           >
             <motion.span
-              className="h-2 w-2 bg-primary rounded-full"
+              className="h-2 w-2 bg-[var(--primary)] rounded-full"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="text-primary text-sm font-medium">Got Questions?</span>
+            <span className="text-[var(--primary)] text-sm font-semibold tracking-wide">Got Questions?</span>
           </motion.div>
 
           <motion.h2
-            className="font-heading text-4xl md:text-6xl font-bold mb-4 text-white"
+            className="font-sans text-5xl md:text-6xl font-bold mb-6 tracking-tight text-[var(--foreground)]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Frequently Asked{' '}
-            <span className="text-primary">Questions</span>
+            <span className="text-[var(--primary)]">Questions</span>
           </motion.h2>
 
           <motion.p
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-[var(--text-muted)] text-lg md:text-xl max-w-2xl mx-auto font-medium"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
             Everything you need to know about{' '}
-            <span className="text-white font-medium">QuickLearnAI</span>
+            <span className="text-[var(--foreground)] font-semibold">QuickLearnAI</span>
           </motion.p>
         </motion.div>
 
         {/* FAQ List */}
         <motion.div
-          className="space-y-3"
+          className="space-y-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -107,38 +107,33 @@ function FAQ() {
               viewport={{ once: true }}
               className={[
                 "rounded-2xl border overflow-hidden",
-                "transition-all duration-300",
+                "transition-all duration-300 shadow-sm",
                 openIndex === index
-                  ? "border-primary/30 bg-[#1a1d22]"
-                  : "border-white/[0.08] bg-[#1a1d22] hover:border-white/20"
+                  ? "border-[var(--primary)] bg-[var(--surface)]"
+                  : "border-[var(--border)] bg-[var(--surface-container-low)] hover:bg-[var(--surface-variant)] hover:border-[var(--primary)]/30"
               ].join(" ")}
-              whileHover={{ scale: 1.01 }}
             >
-              <motion.button
+              <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left transition-all duration-300 hover:bg-white/[0.02]"
-                whileTap={{ scale: 0.99 }}
+                className="w-full px-6 py-5 flex items-center justify-between text-left transition-all duration-300 group"
               >
-                <motion.span
-                  className="text-white font-medium text-base pr-4"
-                  whileHover={{ x: 4 }}
-                  transition={{ duration: 0.2 }}
+                <span
+                  className="text-[var(--foreground)] font-semibold text-lg md:text-base pr-4 group-hover:translate-x-1 transition-transform duration-300"
                 >
                   {faq.question}
-                </motion.span>
+                </span>
 
                 <motion.div
                   animate={{
                     rotate: openIndex === index ? 45 : 0,
                     scale: openIndex === index ? 1.1 : 1
                   }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="flex-shrink-0 transition-all duration-300"
-                  whileHover={{ scale: 1.2 }}
+                  transition={{ duration: 0.3, ease: 'backOut' }}
+                  className="flex-shrink-0"
                 >
-                  <Plus className="w-5 h-5 text-primary" />
+                  <Plus className="w-5 h-5 text-[var(--primary)]" />
                 </motion.div>
-              </motion.button>
+              </button>
 
               <AnimatePresence>
                 {openIndex === index && (
@@ -147,26 +142,20 @@ function FAQ() {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{
-                      height: { duration: 0.4, ease: "easeOut" },
+                      height: { duration: 0.4, ease: "easeInOut" },
                       opacity: { duration: 0.3, delay: 0.1 }
                     }}
-                    className="overflow-hidden border-t border-white/[0.06]"
+                    className="overflow-hidden border-t border-[var(--border-variant)]"
                   >
-                    <motion.div
-                      className="px-6 py-5 bg-primary/[0.03]"
-                      initial={{ y: -10 }}
-                      animate={{ y: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 }}
+                    <div
+                      className="px-6 pb-6 pt-4 bg-[var(--surface-container-lowest)]"
                     >
-                      <motion.p
-                        className="text-gray-400 leading-relaxed"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.4, delay: 0.2 }}
+                      <p
+                        className="text-[var(--text-secondary)] leading-relaxed text-base"
                       >
                         {faq.answer}
-                      </motion.p>
-                    </motion.div>
+                      </p>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -183,32 +172,26 @@ function FAQ() {
           className="mt-20 text-center max-w-xl mx-auto"
         >
           <motion.div
-            className="p-8 rounded-3xl bg-[#1a1d22] border border-white/[0.08] transition-all duration-300"
-            whileHover={{ scale: 1.02, borderColor: "rgba(149,255,0,0.2)" }}
-            transition={{ duration: 0.3 }}
+            className="p-8 rounded-[2rem] bg-[var(--surface-container-low)] border border-[var(--border)] transition-all duration-300 hover:border-[var(--primary)] group"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
           >
-            <motion.h3
-              className="text-xl font-semibold font-heading text-white mb-3"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
+            <h3
+              className="text-2xl font-bold text-[var(--foreground)] mb-3 tracking-tight group-hover:-translate-y-1 transition-transform duration-300"
             >
               Still have questions?
-            </motion.h3>
-            <motion.p
-              className="text-gray-400 mb-6"
-              initial={{ opacity: 0.8 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.2 }}
+            </h3>
+            <p
+              className="text-[var(--text-muted)] mb-8 text-base font-medium"
             >
               Can&apos;t find the answer you&apos;re looking for? Our support team is here to help.
-            </motion.p>
+            </p>
             <motion.a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=iamquicklearn.ai@gmail.com&su=Support%20Request%20-%20QuickLearn%20AI&body=Hi%20QuickLearn%20AI%20Support%20Team,%0D%0A%0D%0AI%20need%20assistance%20with:%0D%0A%0D%0A[Please%20describe%20your%20issue%20here]%0D%0A%0D%0AThank%20you!"
+              href="mailto:iamquicklearn.ai@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-primary text-black text-sm font-semibold rounded-full transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(149,255,0,0.25)]"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="inline-block px-8 py-3.5 bg-[var(--primary)] text-[var(--primary-foreground)] text-base font-semibold rounded-full shadow-[0_4px_20px_rgba(var(--highlight-rgb),_0.3)] transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5"
+              whileTap={{ scale: 0.98 }}
             >
               Contact Support
             </motion.a>

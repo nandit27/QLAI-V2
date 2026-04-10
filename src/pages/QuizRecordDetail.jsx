@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, Download, Trophy, Calendar, Users, FileQuestion } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { quizRecordService } from '../services/api';

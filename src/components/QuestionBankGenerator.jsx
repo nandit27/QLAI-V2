@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { questionBankService, statisticsService } from "../services/api";
 import { toast } from "react-toastify";
 
+import { Button } from "../components/ui/Button";
+
 const QuestionBankGenerator = () => {
   const [topic, setTopic] = useState("");
   const [loading, setLoading] = useState(false);
@@ -118,7 +120,6 @@ const QuestionBankGenerator = () => {
           }}
         />
       </div>
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -137,7 +138,8 @@ const QuestionBankGenerator = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex bg-white/10 rounded-2xl p-1 mb-8 max-w-md mx-auto"
         >
-          <button
+          <Button
+            variant="ghost"
             onClick={() => setActiveTab("manual")}
             className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
               activeTab === "manual"
@@ -146,8 +148,9 @@ const QuestionBankGenerator = () => {
             }`}
           >
             Manual Input
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="ghost"
             onClick={() => setActiveTab("improvement")}
             className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
               activeTab === "improvement"
@@ -156,7 +159,7 @@ const QuestionBankGenerator = () => {
             }`}
           >
             Need Improvement
-          </button>
+          </Button>
         </motion.div>
 
         {/* Tab Content */}
@@ -208,27 +211,23 @@ const QuestionBankGenerator = () => {
                 </motion.div>
               </div>
 
-              <motion.button
-                type="submit"
-                disabled={loading}
-                className={`w-full py-4 px-8 rounded-lg text-lg font-semibold transition-all duration-300
-                  ${
-                    loading
-                      ? "bg-gray-700 cursor-not-allowed"
-                      : "bg-[#95ff00] hover:bg-[#95ff00]/80 text-black"
-                  }`}
-                whileHover={{ scale: loading ? 1 : 1.02 }}
-                whileTap={{ scale: loading ? 1 : 0.98 }}
-              >
-                {loading ? (
-                  <div className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-2"></div>
-                    Generating Questions...
-                  </div>
-                ) : (
-                  "Generate Questions"
-                )}
-              </motion.button>
+              <Button asChild variant="shine" className="w-full py-4 h-auto rounded-lg text-lg font-semibold border-none">
+                <motion.button
+                  type="submit"
+                  disabled={loading}
+                  whileHover={{ scale: loading ? 1 : 1.02 }}
+                  whileTap={{ scale: loading ? 1 : 0.98 }}
+                >
+                  {loading ? (
+                    <div className="flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-black mr-2"></div>
+                      Generating Questions...
+                    </div>
+                  ) : (
+                    "Generate Questions"
+                  )}
+                </motion.button>
+              </Button>
             </form>
 
             {/* Stats Section */}
@@ -319,22 +318,23 @@ const QuestionBankGenerator = () => {
                       </div>
                     </div>
 
-                    <motion.button
-                      onClick={() => handleTopicGenerate(topicData.topic)}
-                      disabled={loading}
-                      className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 disabled:opacity-50"
-                      whileHover={{ scale: loading ? 1 : 1.02 }}
-                      whileTap={{ scale: loading ? 1 : 0.98 }}
-                    >
-                      {loading ? (
-                        <div className="flex items-center justify-center">
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                          Generating...
-                        </div>
-                      ) : (
-                        "Generate Practice Questions"
-                      )}
-                    </motion.button>
+                    <Button asChild variant="shine" className="w-full py-3 h-auto rounded-lg font-medium border-none shadow-md mt-4">
+                      <motion.button
+                        onClick={() => handleTopicGenerate(topicData.topic)}
+                        disabled={loading}
+                        whileHover={{ scale: loading ? 1 : 1.02 }}
+                        whileTap={{ scale: loading ? 1 : 0.98 }}
+                      >
+                        {loading ? (
+                          <div className="flex items-center justify-center">
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-black mr-2"></div>
+                            Generating...
+                          </div>
+                        ) : (
+                          "Generate Practice Questions"
+                        )}
+                      </motion.button>
+                    </Button>
                   </motion.div>
                 ))}
               </div>

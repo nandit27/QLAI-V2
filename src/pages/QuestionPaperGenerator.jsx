@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Upload, FileText, Loader2, Download, ArrowRight } from 'lucide-react';
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { paperService } from '../services/api';
 import { UploadLoadingScreen, GeneratingLoadingScreen, DownloadLoadingScreen } from '../components/LoadingScreens';
+
+import { Button } from "../components/ui/Button";
 
 const QuestionPaperGenerator = () => {
     const [file, setFile] = useState(null);
@@ -86,7 +87,6 @@ const QuestionPaperGenerator = () => {
       {isLoading && currentStep === 1 && <UploadLoadingScreen />}
       {isLoading && currentStep === 2 && <GeneratingLoadingScreen />}
       {isLoading && currentStep === 3 && <DownloadLoadingScreen />}
-      
       <div className="max-w-4xl mx-auto p-6">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">
@@ -222,20 +222,22 @@ const QuestionPaperGenerator = () => {
                         transition-all duration-300 appearance-none"
                     />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
-                      <button
+                      <Button
                         onClick={() => setNumQuestions(prev => Math.max(1, prev - 1))}
                         className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
                           text-[#95ff00] flex items-center justify-center transition-all duration-300"
-                      >
+                        variant="ghost"
+                        size="icon">
                         -
-                      </button>
-                      <button
+                      </Button>
+                      <Button
                         onClick={() => setNumQuestions(prev => Math.min(100, prev + 1))}
                         className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
                           text-[#95ff00] flex items-center justify-center transition-all duration-300"
-                      >
+                        variant="ghost"
+                        size="icon">
                         +
-                      </button>
+                      </Button>
                     </div>
                     <div className="absolute left-0 -bottom-6 text-sm text-gray-500">
                       Recommended: 20-50 questions
@@ -260,20 +262,22 @@ const QuestionPaperGenerator = () => {
                         transition-all duration-300 appearance-none"
                     />
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
-                      <button
+                      <Button
                         onClick={() => setNumPapers(prev => Math.max(1, prev - 1))}
                         className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
                           text-[#95ff00] flex items-center justify-center transition-all duration-300"
-                      >
+                        variant="ghost"
+                        size="icon">
                         -
-                      </button>
-                      <button
+                      </Button>
+                      <Button
                         onClick={() => setNumPapers(prev => Math.min(10, prev + 1))}
                         className="w-8 h-8 rounded-lg bg-[#95ff00]/10 hover:bg-[#95ff00]/20 
                           text-[#95ff00] flex items-center justify-center transition-all duration-300"
-                      >
+                        variant="ghost"
+                        size="icon">
                         +
-                      </button>
+                      </Button>
                     </div>
                     <div className="absolute left-0 -bottom-6 text-sm text-gray-500">
                       Maximum: 10 papers

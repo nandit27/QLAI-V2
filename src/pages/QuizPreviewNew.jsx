@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Check, Save, Edit, ArrowLeft, X, Clock, BookmarkCheck } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import socket from '../utils/socket';
 import { quizRecordService } from '../services/api';
+
+import { Button } from "../components/ui/Button";
 
 const QuestionCard = ({ question, index, isEditing, updateQuestion }) => {
   const [editedQuestion, setEditedQuestion] = useState(question);
@@ -327,12 +328,12 @@ const QuizPreviewNew = () => {
       <div className="min-h-screen bg-black text-white pt-24 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4 text-center">
           <p className="text-red-400">No quiz data found. Please generate a quiz first.</p>
-          <button 
+          <Button 
             onClick={() => navigate('/create-quiz')}
             className="text-[#95ff00] hover:underline"
           >
             Return to Quiz Creator
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -353,13 +354,14 @@ const QuizPreviewNew = () => {
     <div className="min-h-screen bg-black text-white pt-24">
       <div className="max-w-3xl mx-auto p-8">
         <div className="flex flex-col gap-4 mb-8">
-          <button 
+          <Button
             onClick={handleBack}
             className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors w-fit"
-          >
+            variant="ghost"
+            size="icon">
             <ArrowLeft className="w-5 h-5" />
             {existingDraftId ? 'Back to Dashboard' : 'Back to Editor'}
-          </button>
+          </Button>
 
           <div className="flex items-center flex-wrap gap-3">
             <Button 

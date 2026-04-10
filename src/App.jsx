@@ -15,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
-
+import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
@@ -58,7 +58,7 @@ const QuestionBankGenerator = lazy(
   () => import("./components/QuestionBankGenerator"),
 );
 const AIChat = lazy(() => import("./pages/AIChat"));
-const Statistics = lazy(() => import("./components/Statstics"));
+const TeamAccordion = lazy(() => import("./components/TeamAccordion"));
 const TextHoverEffect = lazy(() => import("./components/TextHoverEffect"));
 const ContainerScrollDemo = lazy(() => import("./components/ContainerScrollDemo"));
 const EmailVerification = lazy(() => import("./pages/EmailVerification"));
@@ -169,9 +169,9 @@ function Home() {
           </Suspense>
         </section>
 
-        <section data-section-id="statistics" className="transform-gpu">
+        <section data-section-id="team-accordion" className="transform-gpu">
           <Suspense fallback={<LoadingSpinner />}>
-            <Statistics />
+            <TeamAccordion />
           </Suspense>
         </section>
 
@@ -181,6 +181,16 @@ function Home() {
               <TextHoverEffect text="QUICKLEARNAI" className="w-full" />
             </Suspense>
           </div>
+        </section>
+
+        <section data-section-id="testimonials" className="transform-gpu">
+          <Testimonials />
+        </section>
+
+        <section data-section-id="subscription" className="transform-gpu">
+          <Suspense fallback={<LoadingSpinner />}>
+            <Subscription />
+          </Suspense>
         </section>
 
         <section data-section-id="faq" className="transform-gpu">
@@ -263,7 +273,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
         {/* Toast with optimized config */}
         <ToastContainer
           position="top-right"

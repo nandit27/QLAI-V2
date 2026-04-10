@@ -1,236 +1,200 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import DottedBackground from "./DottedBackground";
+import { ArrowRight, Play } from "lucide-react";
 import { BorderTrailCard } from "./core/BorderTrailCard";
-import { useState } from "react";
+
+function VideoThumbnail({ onClick }) {
+  return (
+    <div 
+      className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer overflow-hidden group bg-[#08130e]"
+      onClick={onClick}
+    >
+      {/* High-End Tech Gradient Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#134226] via-[#08130e] to-[#030604] opacity-90" />
+      
+      {/* Brand Text Watermark mimicing the provided mockup exactly */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40 transition-opacity duration-700 group-hover:opacity-20 scale-95 group-hover:scale-100 transition-transform">
+         <span className="text-4xl md:text-7xl font-blocky font-bold tracking-[0.2em] text-white/90">
+            QUICK<span className="text-[#2ebd68]">LEARN.AI</span>
+         </span>
+      </div>
+
+      {/* Premium Play Button */}
+      <div className="relative flex items-center justify-center">
+        {/* Pulsing Concentric Rings - Elegant green */}
+        <motion.div
+          className="absolute inset-0 rounded-full border border-[#2ebd68]/60"
+          animate={{ scale: [1, 1.8], opacity: [0.8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
+        />
+        <motion.div
+          className="absolute inset-0 rounded-full border border-[#2ebd68]/30"
+          animate={{ scale: [1, 2.5], opacity: [0.5, 0] }}
+          transition={{ duration: 1.5, delay: 0.3, repeat: Infinity, ease: "easeOut" }}
+        />
+        
+        {/* Solid Center */}
+        <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(46,189,104,0.3)] relative z-10 transition-transform duration-300 group-hover:scale-110">
+          <Play className="w-8 h-8 md:w-10 md:h-10 text-[#1a6b3c] fill-[#1a6b3c] ml-1" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function Hero() {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlayClick = () => {
-    setIsPlaying(true);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.1
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 20 },
+    },
   };
 
   return (
-    <DottedBackground className="flex-1 w-full flex items-center justify-center relative overflow-hidden min-h-screen">
-      <div className="text-center relative z-10 mt-40 max-w-4xl mx-auto px-4">
+    <section className="relative w-full min-h-[100dvh] bg-[var(--background)] overflow-hidden flex flex-col pt-24 md:pt-32">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,700;1,700&display=swap');
+        
+        .font-blocky {
+          font-family: 'Chakra Petch', sans-serif;
+          text-transform: uppercase;
+        }
+        .graph-paper-bg {
+          background-image: 
+            linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+          background-size: 40px 40px;
+        }
+        .dark .graph-paper-bg {
+          background-image: 
+            linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+        }
+      `}</style>
+      
+      {/* Background Texture */}
+      <div className="absolute inset-0 graph-paper-bg pointer-events-none" />
+      {/* Subtle fade at the bottom of the background */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--background)] to-transparent pointer-events-none z-10" />
 
-        {/* ── Eyebrow badge ──────────────────────────────────────────── */}
+      {/* Main Content Area */}
+      <div className="relative z-20 flex flex-col items-center text-center px-6 max-w-5xl mx-auto flex-1">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-5 py-2 mb-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center w-full"
         >
-          <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-          <span className="text-primary text-sm font-semibold tracking-wide">
-            AI-Powered Learning Platform
-          </span>
-        </motion.div>
-
-        {/* ── Main heading ────────────────────────────────────────────── */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-          className="font-heading text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.05]"
-        >
-          {/* Line 1 */}
-          <motion.span
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="block text-white"
-          >
-            EXAMS ARE A
-          </motion.span>
-
-          {/* Line 2 — highlighted + glow */}
-          <motion.span
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="block text-primary italic text-glow-primary"
-          >
-            NIGHTMARE.
-          </motion.span>
-
-          {/* Line 3 */}
-          <motion.span
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="block text-white"
-          >
-            NOT ANYMORE.
-          </motion.span>
-        </motion.h1>
-
-        {/* ── Underline accent ────────────────────────────────────────── */}
-        <motion.div
-          className="w-24 h-1 bg-primary rounded-full mx-auto mb-8"
-          initial={{ width: 0, opacity: 0 }}
-          animate={{ width: 96, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
-        />
-
-        {/* ── Subheading paragraph ────────────────────────────────────── */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
-          className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-body"
-        >
-          Stop juggling notes, quizzes, and PDFs.{" "}
-          <motion.span
-            className="text-white font-semibold"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            QuickLearn AI
-          </motion.span>{" "}
-          does everything — faster, smarter, stress-free.
-        </motion.p>
-
-        {/* ── CTA Buttons ─────────────────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-            <Link
-              to="/quiz"
-              className="inline-flex items-center gap-2 bg-primary text-black font-semibold px-8 py-3 rounded-full text-sm hover:bg-primary/90 transition-all duration-300 shadow-[0_0_24px_rgba(149,255,0,0.3)]"
-            >
-              Get Started Free
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+          {/* Badge */}
+          <motion.div variants={itemVariants} className="mb-8 md:mb-10 mt-4">
+            <span className="inline-block py-1.5 px-4 rounded-full border border-[var(--border)] bg-[var(--surface-container-low)]/50 backdrop-blur-sm text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#1a6b3c] dark:text-[#2ebd68] shadow-sm">
+              Generated by students for students.
+            </span>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-            <button
-              onClick={handlePlayClick}
-              className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-3 rounded-full text-sm hover:bg-white/5 hover:border-white/30 transition-all duration-300"
+          {/* Headline - Elegant Dark Green */}
+          <motion.h1 
+            className="flex flex-col items-center justify-center w-full mb-8 text-balance relative"
+          >
+            <motion.span variants={itemVariants} className="font-blocky text-6xl md:text-8xl lg:text-[7.5rem] text-[var(--foreground)] tracking-tight leading-[0.9] z-10 text-center">
+              Exams are a<br className="hidden md:block" /> nightmare
+            </motion.span>
+            <motion.span variants={itemVariants} className="font-blocky italic text-[#1a6b3c] dark:text-[#2ebd68] text-5xl md:text-7xl lg:text-[6.5rem] mt-2 md:mt-4 z-20 select-none text-center">
+              NOT ANYMORE
+            </motion.span>
+          </motion.h1>
+
+          {/* Subheading */}
+          <motion.p variants={itemVariants} className="text-base md:text-lg text-[var(--text-muted)] max-w-2xl font-medium leading-relaxed mb-10 text-balance z-10">
+            Replace scattered notes, endless PDFs, and frantic quizzes with one elegant, AI-powered study journal.
+          </motion.p>
+
+          {/* CTAs - Classy Brand Green */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto z-10">
+            <Link 
+              to="/quiz"
+              className="group flex items-center justify-center gap-2 bg-[#1a6b3c] hover:bg-[#13522d] text-white px-8 py-3.5 rounded-full font-bold tracking-wide uppercase text-sm transition-all duration-200 w-full sm:w-auto shadow-[0_4px_20px_rgba(26,107,60,0.2)] hover:shadow-[0_4px_25px_rgba(26,107,60,0.3)]"
             >
-              <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
+              Start learning free
+              <div className="flex items-center justify-center rounded-full bg-white/20 p-1 group-hover:translate-x-1 transition-transform duration-300">
+                <ArrowRight className="w-4 h-4 ml-0.5 text-white" />
+              </div>
+            </Link>
+            
+            <button 
+              onClick={() => setIsPlaying(true)}
+              className="flex items-center justify-center gap-2 border-2 border-[var(--border)] bg-[var(--surface-container-lowest)] hover:bg-[var(--surface-variant)] text-[var(--foreground)] px-8 py-3.5 rounded-full font-bold tracking-wide uppercase text-sm transition-all duration-200 w-full sm:w-auto"
+            >
+              <Play className="w-4 h-4 text-[#1a6b3c] dark:text-[#2ebd68] fill-current" />
               Watch Demo
             </button>
           </motion.div>
         </motion.div>
+      </div>
 
-        {/* ── Video Player Section (logic + animations unchanged) ───── */}
+      {/* Video Preview Card */}
+      <div className="relative z-20 w-full max-w-5xl mx-auto px-4 mt-16 md:mt-24 mb-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
-          className="relative max-w-4xl mx-auto mb-16"
+           initial={{ opacity: 0, y: 150 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.5 }}
         >
-          <BorderTrailCard
-            className="p-1"
-            size={80}
+          <BorderTrailCard 
+            className="w-full bg-[#050505] rounded-[1.5rem] md:rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col p-0.5 sm:p-1"
+            size={180}
             transition={{
               repeat: Infinity,
-              duration: 12,
+              duration: 10,
               ease: 'linear',
             }}
           >
-            <div className="relative group">
-              <div className="bg-black/80 backdrop-blur-md rounded-3xl overflow-hidden border border-gray-600/30">
-                <div className="aspect-video bg-black flex items-center justify-center relative overflow-hidden">
-                  {/* Always show YouTube iframe but control playback */}
-                  <iframe
-                    className="absolute inset-0 w-full h-full rounded-3xl"
-                    src={`https://www.youtube.com/embed/Ui-Qv5YKu-0?${isPlaying ? 'autoplay=1&' : ''}rel=0&modestbranding=1`}
-                    title="QuickLearn AI"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-
-                  {/* Custom Play Button Overlay (only show when not playing) */}
-                  {!isPlaying && (
-                    <motion.button
-                      onClick={handlePlayClick}
-                      className="absolute inset-0 w-full h-full flex items-center justify-center z-10 bg-black/20 hover:bg-black/10 transition-all duration-300 group/btn"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="relative">
-                        {/* Main Play Button */}
-                        <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 group-hover/btn:shadow-primary/60 transition-all duration-300">
-                          <motion.div
-                            className="w-0 h-0 border-l-[16px] border-l-black border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"
-                            whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 0.2 }}
-                          />
-                        </div>
-
-                        {/* Pulse Ring */}
-                        <motion.div
-                          className="absolute inset-0 rounded-full border-2 border-primary/60"
-                          animate={{
-                            scale: [1, 1.8, 1],
-                            opacity: [0.8, 0, 0.8]
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeOut"
-                          }}
-                        />
-
-                        {/* Secondary Pulse */}
-                        <motion.div
-                          className="absolute inset-0 rounded-full border border-primary/40"
-                          animate={{
-                            scale: [1, 2.2, 1],
-                            opacity: [0.6, 0, 0.6]
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeOut",
-                            delay: 0.5
-                          }}
-                        />
-                      </div>
-                    </motion.button>
-                  )}
+            <div className="w-full h-full bg-[#050505] rounded-[calc(1.5rem-0.125rem)] md:rounded-[calc(2rem-0.25rem)] overflow-hidden">
+              
+              {/* Media UI Topbar */}
+              <div className="w-full flex items-center justify-between px-6 py-3 border-b border-white/5 bg-white/[0.02]">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-white/20" />
+                  <div className="w-3 h-3 rounded-full bg-white/20" />
+                  <div className="w-3 h-3 rounded-full bg-white/20" />
                 </div>
+                <div className="text-xs font-bold text-white/40 tracking-[0.1em] font-blocky uppercase">quicklearn.ai/study</div>
+                <div className="w-8" />
+              </div>
 
-                {/* Video Info Overlay */}
-                {!isPlaying && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 2 }}
-                      className="flex items-center justify-between text-white"
-                    >
-                      <div>
-                        <h3 className="text-lg font-semibold text-primary font-heading">QuickLearn AI</h3>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-400">
-                        <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                        <span>2:34</span>
-                      </div>
-                    </motion.div>
-                  </div>
-                )}
+              {/* Video Player Box */}
+              <div className="w-full aspect-video bg-black relative overflow-hidden group">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/Ui-Qv5YKu-0?${isPlaying ? 'autoplay=1&' : ''}rel=0&modestbranding=1`}
+                  title="QuickLearn AI"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+
+                {!isPlaying && <VideoThumbnail onClick={() => setIsPlaying(true)} />}
               </div>
             </div>
           </BorderTrailCard>
         </motion.div>
-
       </div>
-    </DottedBackground>
+    </section>
   );
 }
 

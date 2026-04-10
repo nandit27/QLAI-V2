@@ -1,83 +1,89 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
-import { Button } from './ui/button';
+import { Check, Sparkles } from "lucide-react";
 import PaymentButton from './PaymentButton';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Button } from "./ui/Button";
 
-const SubscriptionCard = ({ plan, price, features, isPopular }) => {
+function FilledCheck() {
+  return (
+    <div className="rounded-full p-0.5" style={{ backgroundColor: "#0d7a4e" }}>
+      <Check size={10} strokeWidth={3} color="#ffffff" />
+    </div>
+  );
+}
+
+function PricingCard({ titleBadge, priceLabel, priceSuffix = "/month", features, className = "", userData, plan, price, isPopular = false }) {
+  return (
+    <div className={`relative overflow-hidden rounded-2xl border transition-all duration-300 hover:shadow-lg ${
+      isPopular 
+        ? 'border-[#0d7a4e]/30 bg-gradient-to-br from-[#0d7a4e]/5 to-[#22d68a]/5' 
+        : 'border-[var(--border)] bg-[var(--surface)]'
+    } ${className}`}>
+      {isPopular && (
+        <div className="absolute inset-0 bg-gradient-radial from-[#0d7a4e]/10 to-transparent pointer-events-none" />
+      )}
+      
+      <div className="flex items-center gap-3 p-4 relative z-10">
+        <span 
+          className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-widest ${
+            isPopular ? 'text-[#0d7a4e]' : 'text-[var(--foreground-secondary)]'
+          }`}
+          style={isPopular ? { backgroundColor: 'rgba(13, 122, 78, 0.1)' } : { backgroundColor: 'var(--surface-variant)' }}
+        >
+          {titleBadge}
+        </span>
+        <div className="ml-auto relative z-10">
+          {userData ? (
+            <div className="[&>button]:!w-auto [&>button]:!h-auto [&>button]:!rounded-full [&>button]:!border [&>button]:!border-[#0d7a4e]/20 [&>button]:!bg-[#0d7a4e] [&>button]:!px-4 [&>button]:!py-1.5 [&>button]:!text-sm [&>button]:!font-semibold [&>button]:!text-white [&>button]:transition [&>button]:hover:!bg-[#085538]">
+              <PaymentButton
+                membershipType={plan}
+                price={parseInt(price)}
+                name={userData.name || 'User'}
+                email={userData.email || 'user@example.com'}
+                contact={userData.contact || '0000000000'}
+              />
+            </div>
+          ) : (
+            <Button
+              onClick={() => alert('Please login to continue')}
+              className="rounded-full border border-[var(--border)] px-4 py-1.5 text-sm font-medium text-[var(--foreground)] transition hover:border-[#0d7a4e]/40 hover:text-[#0d7a4e]"
+              variant="shine">
+              Login to Subscribe
+            </Button>
+          )}
+        </div>
+      </div>
+      <div className="flex items-end gap-2 px-4 py-2 relative z-10">
+        <span className="font-mono text-5xl font-semibold tracking-tight text-[var(--foreground)]">
+          {priceLabel}
+        </span>
+        {priceLabel !== "Free" && priceLabel !== "₹0" && priceLabel !== "$0" && (
+          <span className="mb-1 text-sm text-[var(--foreground-muted)]">{priceSuffix}</span>
+        )}
+      </div>
+      <ul className="grid gap-4 p-4 text-sm text-[var(--foreground-secondary)] relative z-10">
+        {features.map((f, i) => (
+          <li key={i} className="flex items-center gap-3">
+            <FilledCheck />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default function Subscription() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    // Get user data from localStorage
     const userInfo = localStorage.getItem('user-info');
     if (userInfo) {
       setUserData(JSON.parse(userInfo));
     }
   }, []);
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`group relative overflow-hidden rounded-2xl border ${
-        isPopular ? 'border-[#95ff00]/30' : 'border-white/10'
-      } bg-black/40 backdrop-blur-md hover:border-[#95ff00]/30 transition-all duration-500`}
-    >
-      {/* Gradient Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#95ff00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      {isPopular && (
-        <div className="absolute top-0 right-0 bg-[#95ff00] text-black text-sm font-medium px-4 py-1 rounded-bl-lg">
-          Popular
-        </div>
-      )}
-      
-      <div className="relative p-8 space-y-6">
-        <h3 className="text-2xl font-bold text-white group-hover:text-[#95ff00] transition-colors duration-300">
-          {plan}
-        </h3>
-        
-        <div className="text-3xl font-bold">
-          <span className="text-[#95ff00]">₹{price}</span>
-          <span className="text-gray-400 text-lg">/month</span>
-        </div>
-        
-        <div className="space-y-4">
-          {features.map((feature, index) => (
-            <div key={index} className="flex items-start space-x-3">
-              <Check className="w-5 h-5 text-[#95ff00] mt-0.5" />
-              <span className="text-gray-400">{feature}</span>
-            </div>
-          ))}
-        </div>
-        
-        {userData ? (
-          <PaymentButton
-            membershipType={plan}
-            price={parseInt(price)}
-            name={userData.name || 'Nandit'}
-            email={userData.email || 'nandit@gmail.com'}
-            contact={userData.contact || '7990785212'}
-          />
-        ) : (
-          <Button
-            variant="primary"
-            size="large"
-            className="w-full"
-            onClick={() => alert('Please login to continue')}
-          >
-            Login to Subscribe
-          </Button>
-        )}
-      </div>
-    </motion.div>
-  );
-};
-
-const Subscription = () => {
   const plans = [
     {
       plan: "Explorer",
@@ -86,8 +92,7 @@ const Subscription = () => {
         "Upto 3 video summaries per week",
         "Upto 3 quizzes per week",
         "Gemini / Llama AI Integration"
-      ],
-      isPopular: false
+      ]
     },
     {
       plan: "Scholar",
@@ -99,8 +104,7 @@ const Subscription = () => {
         "Chat with YouTube Videos",
         "Live Teacher Doubt Resolution",
         "Web Searched Question Bank"
-      ],
-      isPopular: true
+      ]
     },
     {
       plan: "Achiever",
@@ -110,47 +114,132 @@ const Subscription = () => {
         "All Features Included",
         "Priority Support",
         "Advanced Analytics"
-      ],
-      isPopular: false
+      ]
     }
   ];
 
+  const explorerPlan = plans.find(p => p.plan === "Explorer");
+  const scholarPlan = plans.find(p => p.plan === "Scholar");
+  const achieverPlan = plans.find(p => p.plan === "Achiever");
+
   return (
-    <section className="mt-6 py-24 bg-black">
+    <section className="relative py-24 px-4 overflow-hidden bg-[var(--background)]">
       <ToastContainer />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="text-center mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#95ff00] to-[#95ff00]/50 bg-clip-text text-transparent"
-          >
-            Choose Your Learning Journey
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
-          >
-            Select the plan that best fits your learning needs and start your journey with QuickLearn AI
-          </motion.p>
+      
+      {/* Background decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-20 left-1/4 w-96 h-96 rounded-full opacity-10"
+          style={{
+            background: 'radial-gradient(circle, rgba(13, 122, 78, 0.15) 0%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
+        />
+        <div
+          className="absolute bottom-20 right-1/4 w-80 h-80 rounded-full opacity-10"
+          style={{
+            background: 'radial-gradient(circle, rgba(34, 214, 138, 0.12) 0%, transparent 70%)',
+            filter: 'blur(50px)',
+          }}
+        />
+      </div>
+
+      {/* Heading */}
+      <div className="relative z-10 text-center mb-12">
+        <div className="inline-flex items-center gap-2 rounded-full bg-[#0d7a4e]/10 px-5 py-2 mb-6">
+          <Sparkles className="w-4 h-4 text-[#0d7a4e]" />
+          <span className="text-sm font-semibold text-[#0d7a4e] uppercase tracking-wider">
+            Pricing
+          </span>
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--foreground)] mb-4">
+          Simple, transparent pricing
+        </h2>
+        <p className="text-[var(--foreground-secondary)] max-w-xl mx-auto text-base">
+          Start free, upgrade when you're ready. No hidden fees.
+        </p>
+      </div>
+
+      {/* Bento Grid */}
+      <div className="relative z-10 mx-auto max-w-6xl grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-8">
+
+        {/* Featured/most popular card - Scholar Plan */}
+        <div className="relative overflow-hidden rounded-2xl border border-[#0d7a4e]/30 bg-gradient-to-br from-[#0d7a4e]/5 to-[#22d68a]/5 lg:col-span-5">
+          <div className="absolute inset-0 bg-gradient-radial from-[#0d7a4e]/10 to-transparent pointer-events-none" />
+          
+          <div className="flex items-center gap-3 p-4 relative z-10">
+            <span 
+              className="rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[#0d7a4e]"
+              style={{ backgroundColor: 'rgba(13, 122, 78, 0.1)' }}
+            >
+              Most Popular
+            </span>
+            <span 
+              className="hidden lg:flex items-center gap-1 rounded-full border border-[#0d7a4e]/20 px-3 py-1 text-xs text-[#0d7a4e]"
+              style={{ backgroundColor: 'rgba(13, 122, 78, 0.05)' }}
+            >
+              <Sparkles size={10} className="mr-1" /> Most Recommended
+            </span>
+            <div className="ml-auto relative z-10">
+              {userData ? (
+                <div className="[&>button]:!w-auto [&>button]:!h-auto [&>button]:!rounded-full [&>button]:!bg-[#0d7a4e] [&>button]:!px-5 [&>button]:!py-1.5 [&>button]:!text-sm [&>button]:!font-semibold [&>button]:!text-white [&>button]:transition [&>button]:hover:!bg-[#085538]">
+                  <PaymentButton
+                    membershipType={scholarPlan.plan}
+                    price={parseInt(scholarPlan.price)}
+                    name={userData.name || 'User'}
+                    email={userData.email || 'user@example.com'}
+                    contact={userData.contact || '0000000000'}
+                  />
+                </div>
+              ) : (
+                <Button
+                  onClick={() => alert('Please login to continue')}
+                  className="rounded-full bg-[#0d7a4e] px-5 py-1.5 text-sm font-semibold text-white transition hover:bg-[#085538]"
+                  variant="shine">
+                  Login to Subscribe
+                </Button>
+              )}
+            </div>
+          </div>
+          <div className="flex flex-col p-4 lg:flex-row relative z-10">
+            <div className="pb-4 lg:w-[30%]">
+              <span className="font-mono text-5xl font-semibold tracking-tight text-[var(--foreground)]">₹{scholarPlan.price}</span>
+              <span className="text-sm text-[var(--foreground-muted)]">/month</span>
+            </div>
+            <ul className="grid gap-4 text-sm text-[var(--foreground-secondary)] lg:w-[70%]">
+              {scholarPlan.features.map((f, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <FilledCheck />
+                  <span className="leading-relaxed">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Subscription Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <SubscriptionCard
-              key={index}
-              {...plan}
-            />
-          ))}
-        </div>
+        {/* Free plan - Explorer */}
+        <PricingCard
+          titleBadge={explorerPlan.plan}
+          priceLabel={`₹${explorerPlan.price}`}
+          features={explorerPlan.features}
+          className="lg:col-span-3"
+          userData={userData}
+          plan={explorerPlan.plan}
+          price={explorerPlan.price}
+        />
+
+        {/* Bottom card - Achiever */}
+        <PricingCard
+          titleBadge={achieverPlan.plan}
+          priceLabel={`₹${achieverPlan.price}`}
+          features={achieverPlan.features}
+          className="lg:col-span-4 lg:col-start-3 md:col-span-2"
+          userData={userData}
+          plan={achieverPlan.plan}
+          price={achieverPlan.price}
+          isPopular={true}
+        />
       </div>
     </section>
   );
-};
-
-export default Subscription;
+}
