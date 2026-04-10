@@ -19,7 +19,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const getFileUrlFromUploadResponse = (uploadResponse) => {
   if (!uploadResponse) return null;

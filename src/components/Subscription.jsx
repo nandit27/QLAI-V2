@@ -3,7 +3,7 @@ import { Check, Sparkles } from "lucide-react";
 import PaymentButton from './PaymentButton';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Button } from "./ui/Button";
+import { Button } from "./ui/button";
 
 function FilledCheck() {
   return (

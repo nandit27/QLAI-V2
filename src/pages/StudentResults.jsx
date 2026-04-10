@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { calculateBloomAnalysis } from '../utils/bloomAnalysis';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const StudentResults = () => {
   const location = useLocation();

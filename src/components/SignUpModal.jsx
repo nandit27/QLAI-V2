@@ -4,7 +4,7 @@ import { Tabs, TabContent } from "./Tabs";
 import axios from "axios";
 import PropTypes from "prop-types";
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const CAROUSEL_IMAGES = [
   "/Quiz-based.jpeg",

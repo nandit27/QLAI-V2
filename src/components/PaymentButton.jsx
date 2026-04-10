@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { paymentService } from '../services/api';
 import { toast } from 'react-toastify';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const PaymentButton = ({ membershipType, price, name, email, contact }) => {
   const [isLoading, setIsLoading] = useState(false);

@@ -3,7 +3,7 @@ import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { Star, Send, Bot } from 'lucide-react';
 import axios from 'axios';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const MatchedTeachers = () => {
   const navigate = useNavigate();

@@ -5,7 +5,7 @@ import { calculateBloomAnalysis } from "../utils/bloomAnalysis";
 import { motion, AnimatePresence } from "framer-motion";
 import BloomTaxonomyChart from "./BloomTaxonomyChart";
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const QuizDisplay = ({ quizData, onFinish }) => {
   const navigate = useNavigate();

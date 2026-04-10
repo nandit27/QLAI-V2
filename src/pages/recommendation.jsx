@@ -4,7 +4,7 @@ import { statisticsService, youtubeService, questionBankService } from '../servi
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const RecommendationPage = () => {
   const [loading, setLoading] = useState(true);

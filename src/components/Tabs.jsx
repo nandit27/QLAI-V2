@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const Tabs = ({ children, value, onChange }) => {
   return <div className="w-full">{children}</div>;

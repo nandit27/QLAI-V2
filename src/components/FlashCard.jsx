@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import ReactCardFlip from 'react-card-flip';
 import Modal from 'react-modal';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const FlashCard = ({ title, content, videoId, start, end }) => {
   const [isFlipped, setIsFlipped] = useState(false);

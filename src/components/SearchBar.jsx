@@ -2,7 +2,7 @@ import { PaperAirplaneIcon, MicrophoneIcon } from '@heroicons/react/24/outline'
 import { useState, useEffect } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 function SearchBar() {
   const navigate = useNavigate()

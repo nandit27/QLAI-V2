@@ -5,7 +5,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useNavigate, useParams } from 'react-router-dom';
 import socket from '../utils/socket';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const QuizLobby = () => {
   const { toast } = useToast();

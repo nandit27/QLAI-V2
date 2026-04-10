@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import socket from '../utils/socket';
 import { quizRecordService } from '../services/api';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const QuestionCard = ({ question, index, isEditing, updateQuestion }) => {
   const [editedQuestion, setEditedQuestion] = useState(question);

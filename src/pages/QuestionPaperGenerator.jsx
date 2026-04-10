@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { paperService } from '../services/api';
 import { UploadLoadingScreen, GeneratingLoadingScreen, DownloadLoadingScreen } from '../components/LoadingScreens';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const QuestionPaperGenerator = () => {
     const [file, setFile] = useState(null);

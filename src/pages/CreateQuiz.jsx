@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/select";
 import { quizRoomService, teacherYTQuizService, documentBloomQuizService } from '../services/api';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 // Predefined topics for suggestions
 const AVAILABLE_TOPICS = [

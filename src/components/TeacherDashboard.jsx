@@ -5,7 +5,7 @@ import axios from 'axios';
 import socket from '../utils/socket.js';
 import { doubtService, quizRecordService } from '../services/api';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const TeacherDashboard = () => {
   const navigate = useNavigate();

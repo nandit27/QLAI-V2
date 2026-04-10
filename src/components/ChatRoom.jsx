@@ -5,7 +5,7 @@ import { chatService } from '../services/api';
 import { Bot, Send } from 'lucide-react';
 import ChatMessage from './ChatMessage';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const ChatRoom = () => {
   const { doubtId } = useParams();

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { AlertTriangle, RefreshCw } from 'lucide-react';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 /**
  * Full-page maintenance screen displayed when the site is under maintenance.

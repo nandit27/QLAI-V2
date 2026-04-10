@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Textarea } from "@/components/ui/textarea";
 import axios from 'axios';
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const DoubtCreation = () => {
   const [file, setFile] = useState(null);

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { questionBankService, statisticsService } from "../services/api";
 import { toast } from "react-toastify";
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const QuestionBankGenerator = () => {
   const [topic, setTopic] = useState("");

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../components/Footer";
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const ChatBot = () => {
   const navigate = useNavigate();

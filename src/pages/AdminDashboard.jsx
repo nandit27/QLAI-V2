@@ -27,7 +27,7 @@ import { toast } from "react-toastify";
 import TeacherEditModal from "../components/TeacherEditModal";
 import TeacherAddModal from "../components/TeacherAddModal";
 
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 
 const StatCard = ({ title, value, icon: Icon }) => (
   <Card className="bg-black/40 backdrop-blur-md border border-white/10 hover:border-[#95ff00]/30 transition-all duration-300">
