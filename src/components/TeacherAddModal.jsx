@@ -4,8 +4,6 @@ import { X, Plus, Trash2 } from "lucide-react";
 import { Button } from "./ui/button";
 import PropTypes from "prop-types";
 
-import { Button } from "../components/ui/Button";
-
 const TeacherAddModal = ({ onClose, onAdd }) => {
   const [formData, setFormData] = useState({
     username: "",
