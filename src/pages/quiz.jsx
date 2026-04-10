@@ -12,8 +12,6 @@ import NameInputModal from "../components/NameInputDialog";
 import { BorderTrailCard } from "../components/core/BorderTrailCard";
 import Footer from "../components/Footer";
 
-import { Button } from "../components/ui/Button";
-
 const QuizGenerator = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
